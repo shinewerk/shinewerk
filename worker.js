@@ -9,47 +9,48 @@ export default {
       return handleReviews(request, env);
     }
 
-    // 2) HTML-Routing nach Host
-    // Nur für die Startpfade ("/" oder "/index.html") manipulieren wir den Request,
-    // Assets (CSS/JS/Bilder) bleiben unverändert.
+    // 2) Subdomain → Redirect auf passende HTML-Datei
 
-    let rewrittenRequest = request;
-
-    if (host === "corporate.shinewerk.de" &&
-        (pathname === "/" || pathname === "/index.html")) {
-      rewrittenRequest = new Request(
-        new URL("/corporate.html", request.url),
-        request
-      );
-    } else if (host === "exclusive.shinewerk.de" &&
-               (pathname === "/" || pathname === "/index.html")) {
-      rewrittenRequest = new Request(
-        new URL("/exclusive.html", request.url),
-        request
-      );
-    } else if (host === "shinewerk.de" &&
-               (pathname === "/" || pathname === "/index.html")) {
-      // Root-Domain → index.html
-      rewrittenRequest = new Request(
-        new URL("/index.html", request.url),
-        request
+    // corporate.shinewerk.de → /corporate.html
+    if (
+      host === "corporate.shinewerk.de" &&
+      (pathname === "/" || pathname === "/index.html")
+    ) {
+      return Response.redirect(
+        "https://corporate.shinewerk.de/corporate.html",
+        302
       );
     }
 
-    // 3) Standard: Statische Assets
-    try {
-      return await env.ASSETS.fetch(rewrittenRequest);
-    } catch (err) {
-      // Fallback Root
-      return await env.ASSETS.fetch(
-        new Request(new URL("/index.html", request.url), request)
+    // exclusive.shinewerk.de → /exclusive.html
+    if (
+      host === "exclusive.shinewerk.de" &&
+      (pathname === "/" || pathname === "/index.html")
+    ) {
+      return Response.redirect(
+        "https://exclusive.shinewerk.de/exclusive.html",
+        302
       );
+    }
+
+    // 3) Standard: statische Assets + Root-Domain-Fallback
+    try {
+      return await env.ASSETS.fetch(request);
+    } catch (err) {
+      if (host === "shinewerk.de") {
+        return await env.ASSETS.fetch(
+          new Request(new URL("/index.html", request.url), request)
+        );
+      }
+      return new Response("Not found", { status: 404 });
     }
   }
 };
 
 async function handleReviews(request, env) {
-  const apiUrl = new URL("https://maps.googleapis.com/maps/api/place/details/json");
+  const apiUrl = new URL(
+    "https://maps.googleapis.com/maps/api/place/details/json"
+  );
 
   apiUrl.searchParams.set("place_id", env.GOOGLE_PLACE_ID);
   apiUrl.searchParams.set("fields", "rating,user_ratings_total,reviews");
