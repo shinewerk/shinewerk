@@ -1,25 +1,39 @@
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
+    const host = url.host;
 
-    // 1) API-Endpoint für Reviews
+    // API Endpoint bleibt unverändert
     if (url.pathname === "/reviews") {
       return handleReviews(request, env);
     }
 
-    // 2) Standard: Statische Assets (HTML, Bilder, CSS, JS)
-      try {
-        return await env.ASSETS.fetch(request);
-      } catch (err) {
-        return await env.ASSETS.fetch(
-          new Request(url.origin + "/index.html", request)
-        );
-      }
+    // Host → HTML Datei
+    let htmlFile = "/index.html";
+
+    if (host === "corporate.shinewerk.de") {
+      htmlFile = "/corporate.html";
+    }
+
+    if (host === "exclusive.shinewerk.de") {
+      htmlFile = "/exclusive.html";
+    }
+
+    try {
+      // gewünschte Datei abrufen
+      return await env.ASSETS.fetch(
+        new Request(url.origin + htmlFile, request)
+      );
+    } catch (err) {
+      // fallback auf index.html
+      return await env.ASSETS.fetch(
+        new Request(url.origin + "/index.html", request)
+      );
+    }
   }
 };
 
 async function handleReviews(request, env) {
-  // Google Places Details API aufrufen
   const apiUrl = new URL("https://maps.googleapis.com/maps/api/place/details/json");
 
   apiUrl.searchParams.set("place_id", env.GOOGLE_PLACE_ID);
@@ -52,7 +66,6 @@ async function handleReviews(request, env) {
   return new Response(JSON.stringify(simplified), {
     headers: {
       "Content-Type": "application/json",
-      // CORS, falls du später Subdomains / andere Origins nutzt:
       "Access-Control-Allow-Origin": "*"
     }
   });
