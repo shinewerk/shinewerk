@@ -749,39 +749,25 @@
       position: static; /* damit Zahlen sich an der ganzen Row ausrichten */
     }
 
-.timeline-num-bg {
-  position: absolute;
-  top: -18px;
-  left: 4px;
-  font-size: 80px;
-  font-style: italic;
-  background: linear-gradient(
-    120deg,
-    var(--timeline-gradient-from),
-    var(--timeline-gradient-to)
-  );
-  -webkit-background-clip: text;
-  color: transparent;
-  opacity: 0.85;
-  filter: blur(4px);
-  pointer-events: none;
-  user-select: none;
-  z-index: 0;
-  animation: timeline-glide 1.8s ease-in-out infinite alternate;
-}
-
-@keyframes timeline-glide {
-  0% {
-    transform: translateX(-12px) skewX(-14deg);
-    filter: blur(8px);
-    opacity: 0.55;
-  }
-  100% {
-    transform: translateX(10px) skewX(-18deg);
-    filter: blur(2px);
-    opacity: 0.9;
-  }
-}
+    .timeline-num-bg {
+      position: absolute;
+      top: -18px;
+      left: 4px;     /* hinter der „Schritt“-Spalte */
+      font-size: 80px;
+      font-style: italic;
+      background: linear-gradient(
+        120deg,
+        var(--timeline-gradient-from),
+        var(--timeline-gradient-to)
+      );
+      -webkit-background-clip: text;
+      color: transparent;
+      opacity: 0.70;
+      filter: blur(5px);
+      pointer-events: none;
+      user-select: none;
+      z-index: 0;
+    }
 
     .timeline-title {
       font-size: 15px;
