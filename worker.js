@@ -1,10 +1,9 @@
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-    const hostname = url.hostname; // wichtiger als host
+    const hostname = url.hostname;
     const pathname = url.pathname;
 
-    // Debug: einmal schauen, was wirklich ankommt
     console.log("HOSTNAME:", hostname, "PATH:", pathname);
 
     // 1) API-Endpoint für Reviews
@@ -37,16 +36,16 @@ export default {
     }
 
     // 3) Standard: statische Assets + Root-Domain-Fallback
-    try {
-      return await env.ASSETS.fetch(request);
-    } catch (err) {
-      if (hostname === "shinewerk.de") {
-        return await env.ASSETS.fetch(
-          new Request(new URL("/index.html", request.url), request)
-        );
-      }
-      return new Response("Not found", { status: 404 });
+    const assetResponse = await env.ASSETS.fetch(request);
+
+    // Root-Domain bekommt immer index.html als Fallback
+    if (assetResponse.status === 404 && hostname === "shinewerk.de") {
+      return env.ASSETS.fetch(
+        new Request(new URL("/index.html", request.url), request)
+      );
     }
+
+    return assetResponse;
   }
 };
 
