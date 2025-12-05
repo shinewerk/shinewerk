@@ -9,46 +9,41 @@ export default {
       return handleReviews(request, env);
     }
 
-    // 2) Host-basiertes Routing nur für die Start-URL "/"
-    //    Alle anderen Pfade (CSS/JS/Images) laufen normal über ASSETS
+    // 2) HTML-Routing nach Host
+    // Nur für die Startpfade ("/" oder "/index.html") manipulieren wir den Request,
+    // Assets (CSS/JS/Bilder) bleiben unverändert.
 
-    // corporate.shinewerk.de → corporate.html
+    let rewrittenRequest = request;
+
     if (host === "corporate.shinewerk.de" &&
         (pathname === "/" || pathname === "/index.html")) {
-      try {
-        return await env.ASSETS.fetch(
-          new Request(new URL("/corporate.html", request.url), request)
-        );
-      } catch (err) {
-        return new Response("corporate.html nicht gefunden", { status: 404 });
-      }
+      rewrittenRequest = new Request(
+        new URL("/corporate.html", request.url),
+        request
+      );
+    } else if (host === "exclusive.shinewerk.de" &&
+               (pathname === "/" || pathname === "/index.html")) {
+      rewrittenRequest = new Request(
+        new URL("/exclusive.html", request.url),
+        request
+      );
+    } else if (host === "shinewerk.de" &&
+               (pathname === "/" || pathname === "/index.html")) {
+      // Root-Domain → index.html
+      rewrittenRequest = new Request(
+        new URL("/index.html", request.url),
+        request
+      );
     }
 
-    // exclusive.shinewerk.de → exclusive.html
-    if (host === "exclusive.shinewerk.de" &&
-        (pathname === "/" || pathname === "/index.html")) {
-      try {
-        return await env.ASSETS.fetch(
-          new Request(new URL("/exclusive.html", request.url), request)
-        );
-      } catch (err) {
-        return new Response("exclusive.html nicht gefunden", { status: 404 });
-      }
-    }
-
-    // 3) Standard: Statische Assets + Root-Domain auf index.html
+    // 3) Standard: Statische Assets
     try {
-      // Normale Auslieferung (CSS, JS, Bilder, direkte HTML-Links)
-      return await env.ASSETS.fetch(request);
+      return await env.ASSETS.fetch(rewrittenRequest);
     } catch (err) {
-      // Fallback nur für die Hauptdomain
-      if (host === "shinewerk.de") {
-        return await env.ASSETS.fetch(
-          new Request(new URL("/index.html", request.url), request)
-        );
-      }
-
-      return new Response("Not found", { status: 404 });
+      // Fallback Root
+      return await env.ASSETS.fetch(
+        new Request(new URL("/index.html", request.url), request)
+      );
     }
   }
 };
