@@ -1,1 +1,598 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Datenschutzerklärung – ShineWerk Fahrzeugpflege</title>
+  <meta name="description" content="Datenschutzerklärung von ShineWerk – DM Management zur Verarbeitung personenbezogener Daten und Nutzung des Kundenportals." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+  <style>
+    /* gleiche Basis-Styles wie oben, für Konsistenz */
+    :root {
+      --bg: #f5f5f7;
+      --bg-elevated: #ffffff;
+      --text-main: #0f172a;
+      --text-soft: #6b7280;
+      --accent: #2563eb;
+      --accent-soft: rgba(37, 99, 235, 0.1);
+      --border-subtle: rgba(15, 23, 42, 0.08);
+      --nav-height: 70px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.16);
+    }
 
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background: radial-gradient(circle at top, #e5edff 0, #f5f5f7 32%, #f5f5f7 100%);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      height: var(--nav-height);
+      backdrop-filter: blur(20px);
+      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 55%),
+                  rgba(245, 245, 247, 0.92);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.28);
+    }
+
+    .nav {
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-img {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+    }
+
+    .logo-text span:first-child {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .logo-text span:last-child {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      opacity: 0.9;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.15s ease-out;
+      white-space: nowrap;
+      gap: 6px;
+    }
+
+    .btn-outline {
+      border-color: rgba(148, 163, 184, 0.5);
+      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.9), rgba(248, 250, 252, 0.7));
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(37, 99, 235, 0.5);
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.18);
+      transform: translateY(-1px);
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(248, 250, 252, 0.92);
+      padding: 0;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .nav-toggle-line {
+      width: 16px;
+      height: 1.5px;
+      border-radius: 999px;
+      background: #111827;
+      display: block;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    .legal-section {
+      padding: 80px 0 90px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      align-items: flex-start;
+      margin-bottom: 32px;
+      flex-wrap: wrap;
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: 32px;
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+      margin: 0;
+      background: linear-gradient(120deg, #0f172a, #1d4ed8);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .section-description {
+      font-size: 14px;
+      color: var(--text-soft);
+      max-width: 380px;
+      margin: 4px 0 0;
+      line-height: 1.6;
+    }
+
+    .legal-card {
+      border-radius: 24px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      padding: 28px 26px 30px;
+      font-size: 14px;
+      line-height: 1.75;
+      color: var(--text-soft);
+    }
+
+    .legal-card h2 {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      margin: 0 0 18px;
+      color: var(--text-main);
+    }
+
+    .legal-card h3 {
+      font-weight: 600;
+      margin: 18px 0 8px;
+      font-size: 15px;
+      color: var(--text-main);
+    }
+
+    .legal-card p {
+      margin: 4px 0 8px;
+    }
+
+    .legal-card strong {
+      color: var(--text-main);
+    }
+
+    .legal-card ul {
+      padding-left: 18px;
+      margin: 4px 0 10px;
+    }
+
+    .legal-card li {
+      margin: 2px 0;
+    }
+
+    footer {
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
+      padding: 22px 0 30px;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.06), transparent);
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-top: 40px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-main);
+    }
+
+    .whatsapp-fab {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+    }
+
+    .whatsapp-fab a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 0 0, #4ade80, #16a34a);
+      color: #ecfdf3;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 18px 55px rgba(22, 163, 74, 0.5);
+      border: 1px solid rgba(187, 247, 208, 0.6);
+    }
+
+    .whatsapp-fab a:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 65px rgba(22, 163, 74, 0.65);
+    }
+
+    .whatsapp-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: #ecfdf3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #16a34a;
+      font-size: 15px;
+    }
+
+    @media (max-width: 960px) {
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .legal-card {
+        padding: 22px 18px 24px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: var(--nav-height);
+        padding: 10px 20px 14px;
+        background: rgba(245, 245, 247, 0.95);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 14px;
+      }
+
+      .site-header.is-open .nav-links {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+
+      .whatsapp-fab a span.label {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+  <header class="site-header">
+    <div class="container nav">
+      <div class="logo">
+        <img src="logo.png" alt="ShineWerk Logo" class="logo-img" />
+        <div class="logo-text">
+          <span>ShineWerk</span>
+          <span>Fahrzeugpflege &amp; Versiegelung</span>
+        </div>
+      </div>
+
+      <button class="nav-toggle" aria-label="Menü öffnen oder schließen">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+
+      <nav class="nav-links">
+        <a href="https://shinewerk.de">Home</a>
+        <a href="https://exclusive.shinewerk.de">Exclusive</a>
+        <a href="https://corporate.shinewerk.de">Corporate</a>
+        <a href="https://wa.me/4915562648989" class="btn btn-outline" target="_blank" rel="noopener">
+          Kontakt via WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="legal-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-eyebrow">Rechtliches</div>
+            <h1 class="section-title">Datenschutzerklärung.</h1>
+          </div>
+          <p class="section-description">
+            Informationen gemäß DSGVO zur Verarbeitung personenbezogener Daten durch ShineWerk –
+            DM Management sowie zur Nutzung des Kundenportals „ShineBase“.
+          </p>
+        </div>
+
+        <article class="legal-card">
+          <h2>Datenschutzerklärung</h2>
+
+          <p>Vertragspartner: DM Management, nachfolgend „ShineWerk“ oder „wir“ genannt.</p>
+
+          <h3>1. Allgemeine Hinweise</h3>
+          <p>
+            Der Schutz Ihrer personenbezogenen Daten ist uns ein wichtiges Anliegen. Nachfolgend
+            informieren wir Sie gemäß den geltenden Datenschutzbestimmungen, insbesondere der
+            EU-Datenschutzgrundverordnung (DSGVO), über Art, Umfang und Zweck der Verarbeitung
+            personenbezogener Daten im Rahmen unserer Geschäftsbeziehungen sowie der Nutzung
+            unseres Kundenportals „ShineBase“.
+          </p>
+
+          <h3>2. Verantwortliche Stelle im Sinne der DSGVO</h3>
+          <p>DM Management<br>
+             Krautgärten 12<br>
+             76744 Wörth am Rhein<br>
+             Deutschland
+          </p>
+          <p>
+            E-Mail: info@shinewerk.de<br>
+            Telefon: +49 155 62648989
+          </p>
+
+          <h3>3. Erhebung und Verarbeitung personenbezogener Daten</h3>
+          <p>
+            Wir verarbeiten personenbezogene Daten ausschließlich im Rahmen der gesetzlichen
+            Vorschriften. Eine Erhebung erfolgt, wenn Sie uns diese freiwillig mitteilen – zum
+            Beispiel im Rahmen einer Anfrage, einer Buchung oder durch die Nutzung unseres
+            digitalen Kundenportals.
+          </p>
+          <p>Verarbeitete Daten können insbesondere sein:</p>
+          <ul>
+            <li>Vor- und Nachname</li>
+            <li>E-Mail-Adresse</li>
+            <li>Telefonnummer</li>
+            <li>Adressdaten (z.&nbsp;B. für Rechnungserstellung)</li>
+            <li>fahrzeugbezogene Informationen</li>
+            <li>Kommunikationsinhalte (z.&nbsp;B. Nachrichtenverlauf im Kundenportal)</li>
+          </ul>
+
+          <h3>4. Kundendashboard (ShineBase)</h3>
+          <p>
+            Im Rahmen unseres digitalen Kundenportals „ShineBase“ erhalten Kunden einen
+            personalisierten Zugang zu Leistungen wie Terminübersicht, Dokumentation
+            (z.&nbsp;B. Vorher-/Nachher-Bilder) und Rechnungen.
+          </p>
+          <p>
+            Aus technischen Gründen kann der vollständige Name (ggf. auch Initialen oder
+            Profilbild) für andere registrierte Kunden sichtbar sein, beispielsweise in
+            Mitgliederübersichten oder Kommentarfunktionen. Wir achten darauf, die Darstellung
+            so datensparsam wie möglich zu gestalten.
+          </p>
+
+          <h3>5. Zwecke und Rechtsgrundlagen der Verarbeitung</h3>
+          <p>
+            Die Verarbeitung personenbezogener Daten erfolgt zur Anbahnung, Durchführung und
+            Beendigung unserer Vertragsbeziehungen (Art. 6 Abs. 1 lit. b DSGVO), zur Erfüllung
+            gesetzlicher Pflichten (Art. 6 Abs. 1 lit. c DSGVO) sowie auf Grundlage unseres
+            berechtigten Interesses an einer effizienten und sicheren Abwicklung unserer
+            Leistungen (Art. 6 Abs. 1 lit. f DSGVO).
+          </p>
+          <p>
+            Soweit eine Einwilligung erforderlich ist (z.&nbsp;B. für bestimmte Formen der
+            Kontaktaufnahme oder Marketingmaßnahmen), erfolgt die Verarbeitung auf Grundlage von
+            Art. 6 Abs. 1 lit. a DSGVO. Eine erteilte Einwilligung kann jederzeit mit Wirkung
+            für die Zukunft widerrufen werden.
+          </p>
+
+          <h3>6. Speicherdauer</h3>
+          <p>
+            Personenbezogene Daten werden nur so lange gespeichert, wie es für die genannten
+            Zwecke erforderlich ist oder wir gesetzlich dazu verpflichtet sind (z.&nbsp;B.
+            handels- und steuerrechtliche Aufbewahrungspflichten).
+          </p>
+          <p>
+            Nach Wegfall der Zweckbindung bzw. Ablauf gesetzlicher Fristen werden die Daten
+            routinemäßig gelöscht oder anonymisiert.
+          </p>
+
+          <h3>7. Ihre Rechte als betroffene Person</h3>
+          <p>
+            Ihnen stehen gemäß Art. 15 ff. DSGVO folgende Rechte zu:
+          </p>
+          <ul>
+            <li>Recht auf Auskunft über die zu Ihrer Person gespeicherten Daten</li>
+            <li>Recht auf Berichtigung unrichtiger oder unvollständiger Daten</li>
+            <li>Recht auf Löschung Ihrer Daten (sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen)</li>
+            <li>Recht auf Einschränkung der Verarbeitung</li>
+            <li>Recht auf Datenübertragbarkeit</li>
+            <li>Recht auf Widerspruch gegen die Verarbeitung auf Grundlage berechtigter Interessen</li>
+            <li>Recht auf Beschwerde bei einer zuständigen Datenschutzaufsichtsbehörde</li>
+          </ul>
+          <p>
+            Bitte richten Sie entsprechende Anfragen schriftlich oder per E-Mail an die oben
+            genannte Kontaktadresse.
+          </p>
+
+          <h3>8. Externe Dienstleister</h3>
+          <p>
+            Zur Bereitstellung bestimmter Funktionen (z.&nbsp;B. Hosting, E-Mail-Versand,
+            Kundenportal, Abrechnungssysteme) setzen wir ausgewählte externe Dienstleister ein.
+            Diese werden im Rahmen von Auftragsverarbeitungsverträgen nach Art. 28 DSGVO
+            verpflichtet und verarbeiten personenbezogene Daten ausschließlich nach unseren
+            Weisungen.
+          </p>
+
+          <h3>9. Sicherheit der Verarbeitung</h3>
+          <p>
+            Wir treffen technische und organisatorische Maßnahmen, um Ihre Daten vor Verlust,
+            Missbrauch, unbefugtem Zugriff oder Offenlegung zu schützen. Dennoch kann eine
+            absolute Sicherheit bei der Datenübertragung im Internet nicht garantiert werden.
+            Die Nutzung unserer Website und unseres Kundenportals erfolgt daher auf eigene
+            Verantwortung.
+          </p>
+
+          <h3>10. Änderungen dieser Datenschutzerklärung</h3>
+          <p>
+            Wir behalten uns vor, diese Datenschutzerklärung anzupassen, um sie an aktuelle
+            rechtliche Anforderungen oder Änderungen unserer Leistungen anzupassen. Die jeweils
+            gültige Version ist jederzeit auf dieser Website abrufbar.
+          </p>
+
+          <h3>11. Kontakt</h3>
+          <p>
+            Bei Fragen zum Datenschutz oder zur Verarbeitung Ihrer personenbezogenen Daten
+            kontaktieren Sie uns bitte unter:
+          </p>
+          <p>
+            ShineWerk – DM Management<br>
+            Krautgärten 12<br>
+            76744 Wörth am Rhein
+          </p>
+          <p>
+            E-Mail: info@shinewerk.de<br>
+            Telefon: +49 155 62648989
+          </p>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> ShineWerk. Alle Rechte vorbehalten.</div>
+      <div class="footer-links">
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
+        <a href="/agb">AGB</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<div class="whatsapp-fab">
+  <a href="https://wa.me/4915562648989" target="_blank" rel="noopener" aria-label="WhatsApp Chat mit ShineWerk starten">
+    <span class="whatsapp-icon">🟢</span>
+    <span class="label">WhatsApp</span>
+  </a>
+</div>
+
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    var yearEl = document.getElementById("year");
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    const header = document.querySelector(".site-header");
+    const toggle = document.querySelector(".nav-toggle");
+
+    if (header && toggle) {
+      toggle.addEventListener("click", function () {
+        header.classList.toggle("is-open");
+      });
+    }
+  });
+</script>
+</body>
+</html>
