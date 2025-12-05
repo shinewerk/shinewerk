@@ -1096,6 +1096,13 @@
           <span>Fahrzeugpflege &amp; Versiegelung</span>
         </div>
       </div>
+
+      <!-- Mobile Toggle -->
+    <button class="nav-toggle" aria-label="Menü öffnen oder schließen">
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+    </button>
+      
       <nav class="nav-links">
         <a href="https://shinewerk.de">Home</a>
         <a href="https://exclusive.shinewerk.de">Exclusive</a>
@@ -1621,10 +1628,19 @@
     }
   }
 
-  document.addEventListener("DOMContentLoaded", function () {
-    loadReviews();
-    document.getElementById("year").textContent = new Date().getFullYear();
-  });
+document.addEventListener("DOMContentLoaded", function () {
+  loadReviews();
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const header = document.querySelector(".site-header");
+  const toggle = document.querySelector(".nav-toggle");
+
+  if (header && toggle) {
+    toggle.addEventListener("click", function () {
+      header.classList.toggle("is-open");
+    });
+  }
+});
 </script>
 </body>
 </html>
