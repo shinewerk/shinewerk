@@ -1,1 +1,2080 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShineWerk Exclusive – Keramikversiegelung für Fahrzeuge, die bleiben sollen.</title>
+  <meta name="description" content="ShineWerk Exclusive ist die Keramikversiegelung für Fahrzeuge, die du bewusst langfristig halten willst. Strukturierte Vorbereitung, präzise Lackkorrektur und abgestimmte Keramiksysteme – ohne Schnellprogramme oder Baukasten-Pakete." />
+  <meta name="keywords" content="Fahrzeugaufbereitung Wörth am Rhein, Autoaufbereitung Wörth, Keramikversiegelung Karlsruhe, Lackkorrektur Südpfalz, professionelle Autopflege, Auto Detailing Wörth, Glanzpolitur, Hochglanzpolitur Auto, Versiegelung Fahrzeug, Keramik Coating, Fahrzeugaufbereitung Profi, Innenraumreinigung Auto, Motorraumreinigung, Autoaufbereitung Premium, Detailing Studio Südpfalz, Autopflege Spezialist Karlsruhe, Detailing Studio Wörth" />
+  
+  <!-- Serif font for headings -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
 
+  <style>
+    :root {
+      --bg: #020617;
+      --bg-soft: #02081f;
+      --bg-softer: #050720;
+      --bg-elevated: rgba(15, 23, 42, 0.94);
+      --border-subtle: rgba(148, 163, 184, 0.35);
+      --border-strong: rgba(148, 163, 184, 0.6);
+      --accent: #0f62fe;
+      --accent-soft: rgba(37, 99, 235, 0.1);
+      --accent-strong: #2563eb;
+      --accent-muted: rgba(37, 99, 235, 0.35);
+      --accent-soft-2: rgba(56, 189, 248, 0.08);
+      --accent-2: #38bdf8;
+      --accent-warm: #f97316;
+      --accent-warm-soft: rgba(249, 115, 22, 0.08);
+      --accent-danger: #f97373;
+      --accent-danger-soft: rgba(248, 113, 113, 0.09);
+      --text-main: #e5e7eb;
+      --text-soft: #9ca3af;
+      --text-softer: #6b7280;
+      --text-softest: #4b5563;
+      --success: #22c55e;
+      --success-soft: rgba(34, 197, 94, 0.08);
+      --danger: #ef4444;
+      --danger-soft: rgba(239, 68, 68, 0.08);
+      --warning: #facc15;
+      --warning-soft: rgba(250, 204, 21, 0.08);
+      --card-bg: radial-gradient(circle at 10% 0%, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.98));
+      --shadow-soft: 0 32px 60px rgba(15, 23, 42, 0.85);
+      --glass-border: 1px solid rgba(148, 163, 184, 0.35);
+      --glass-border-strong: 1px solid rgba(148, 163, 184, 0.5);
+      --glass-bg: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.92), rgba(15, 23, 42, 0.98));
+      --radius-card: 20px;
+      --radius-card-lg: 26px;
+      --radius-pill: 999px;
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
+      background: radial-gradient(circle at top, #020617 0, #020617 34%, #02061b 100%);
+      color: var(--text-main);
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+      letter-spacing: 0.01em;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 16px 16px 24px;
+    }
+
+    .container {
+      max-width: 1040px;
+      margin: 0 auto;
+      padding: 0 4px;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-family: "Playfair Display", system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
+      letter-spacing: 0.02em;
+    }
+
+    h1 {
+      font-size: clamp(32px, 4.1vw, 42px);
+      line-height: 1.07;
+    }
+
+    h2 {
+      font-size: clamp(24px, 3vw, 30px);
+      line-height: 1.15;
+    }
+
+    h3 {
+      font-size: 17px;
+      line-height: 1.35;
+    }
+
+    p {
+      font-size: 14px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .section-eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      margin: 0;
+      color: var(--text-main);
+    }
+
+    .section-description {
+      margin: 8px 0 0;
+      color: var(--text-soft);
+      max-width: 550px;
+      font-size: 13px;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+      gap: 24px;
+      margin-bottom: 24px;
+    }
+
+    .section-header > div {
+      max-width: 480px;
+    }
+
+    .section-header .section-description {
+      max-width: 360px;
+      text-align: left;
+    }
+
+    @media (max-width: 768px) {
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .section-header .section-description {
+        max-width: 100%;
+      }
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: none;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 18px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      font-size: 13px;
+      font-weight: 500;
+      cursor: pointer;
+      text-decoration: none;
+      white-space: nowrap;
+      transition: all 0.16s ease;
+      gap: 8px;
+    }
+
+    .btn-primary {
+      background: radial-gradient(circle at 0 0, #1d4ed8, #1d4ed8);
+      color: #e5e7eb;
+      border-color: rgba(37, 99, 235, 0.8);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.85);
+    }
+
+    .btn-primary .btn-icon {
+      font-size: 14px;
+      transform: translateY(0.5px);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 52px rgba(15, 23, 42, 0.9);
+      background: radial-gradient(circle at 0 0, #1d4ed8, #1d4ed8);
+    }
+
+    .btn-outline {
+      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.98), rgba(15, 23, 42, 0.98));
+      color: #e5e7eb;
+      border-color: rgba(148, 163, 184, 0.7);
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(148, 163, 184, 0.9);
+      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 1), rgba(15, 23, 42, 1));
+      transform: translateY(-1px);
+    }
+
+    .btn-text {
+      padding: 0;
+      border: none;
+      background: none;
+      font-size: 13px;
+      color: var(--accent-2);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      cursor: pointer;
+    }
+
+    .btn-text span.icon {
+      font-size: 15px;
+      transform: translateY(0.6px);
+    }
+
+    .btn-text:hover {
+      opacity: 0.9;
+      transform: translateY(-0.5px);
+    }
+
+    .badge-inline {
+      display: inline-flex;
+      align-items: center;
+      padding: 3px 10px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.96));
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 11px;
+      color: var(--text-soft);
+      gap: 6px;
+    }
+
+    .badge-inline-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 0 0, #22c55e, #22c55e);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.16);
+    }
+
+    .badge-inline-strong {
+      color: #e5e7eb;
+      font-weight: 500;
+    }
+
+    .eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    .hero-title span {
+      color: #e5e7eb;
+      text-shadow: 0 14px 45px rgba(15, 23, 42, 0.9);
+    }
+
+    .hero-subtitle {
+      margin-top: 14px;
+      color: var(--text-soft);
+      font-size: 14px;
+      max-width: 520px;
+    }
+
+    .hero-note {
+      margin-top: 16px;
+      font-size: 12px;
+      color: var(--text-softest);
+      max-width: 500px;
+    }
+
+    .hero-note strong {
+      color: #e5e7eb;
+    }
+
+    .hero {
+      position: relative;
+      padding: 18px 0 26px;
+      margin-bottom: 10px;
+      border-radius: 26px;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      background:
+        radial-gradient(circle at 0 0, rgba(37, 99, 235, 0.14), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(56, 189, 248, 0.12), transparent 50%),
+        radial-gradient(circle at 50% 115%, rgba(37, 99, 235, 0.17), transparent 55%),
+        radial-gradient(circle at 0 100%, rgba(56, 189, 248, 0.13), transparent 55%),
+        radial-gradient(circle at 100% 140%, rgba(37, 99, 235, 0.16), transparent 55%);
+      box-shadow:
+        0 22px 55px rgba(15, 23, 42, 0.9),
+        0 0 0 1px rgba(148, 163, 184, 0.16);
+      isolation: isolate;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image:
+        radial-gradient(circle at 0 0, rgba(59, 130, 246, 0.23), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(56, 189, 248, 0.22), transparent 55%),
+        radial-gradient(circle at 0 100%, rgba(59, 130, 246, 0.2), transparent 55%),
+        radial-gradient(circle at 100% 100%, rgba(56, 189, 248, 0.12), transparent 55%);
+      opacity: 0.82;
+      z-index: -2;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(to bottom, rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.98));
+      mix-blend-mode: multiply;
+      opacity: 0.9;
+      z-index: -1;
+    }
+
+    .hero-grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: stretch;
+      z-index: 1;
+    }
+
+    .hero-panel {
+      border-radius: 22px;
+      padding: 14px 14px 16px;
+      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.98));
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow: 0 24px 50px rgba(15, 23, 42, 0.9);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero-panel::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, rgba(59, 130, 246, 0.2), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(56, 189, 248, 0.16), transparent 55%),
+        radial-gradient(circle at 0 100%, rgba(59, 130, 246, 0.14), transparent 55%);
+      opacity: 0.85;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      pointer-events: none;
+    }
+
+    .hero-panel-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 14px;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-panel-eyebrow {
+      margin-bottom: 6px;
+    }
+
+    .hero-panel-title {
+      font-size: 14px;
+      color: #e5e7eb;
+      max-width: 230px;
+    }
+
+    .hero-pill {
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 11px;
+      background: rgba(15, 23, 42, 0.45);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #e5e7eb;
+    }
+
+    .hero-pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #053885;
+      box-shadow: 0 0 0 4px rgba(37, 99, 235, 0.35);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+      margin-bottom: 14px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-stat {
+      border-radius: 14px;
+      padding: 8px 9px;
+      background: rgba(15, 23, 42, 0.88);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      box-shadow: 0 10px 28px rgba(15, 23, 42, 0.85);
+    }
+
+    .hero-stat-label {
+      font-size: 10px;
+      color: var(--text-soft);
+      margin-bottom: 4px;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-stat-value {
+      font-size: 15px;
+      color: #e5e7eb;
+      font-weight: 600;
+    }
+
+    .hero-footer-line {
+      font-size: 11px;
+      color: var(--text-softest);
+      max-width: 300px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 18px;
+    }
+
+    .hero-actions .btn {
+      min-width: 0;
+    }
+
+    @media (max-width: 860px) {
+      .hero-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+      }
+
+      .hero-panel {
+        order: -1;
+      }
+
+      .hero {
+        padding: 16px 0 18px;
+      }
+
+      .hero-subtitle {
+        max-width: 100%;
+      }
+
+      .hero-note {
+        max-width: 100%;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .hero {
+        border-radius: 22px;
+      }
+
+      .page {
+        padding: 12px 12px 18px;
+      }
+
+      .hero-panel {
+        padding: 12px 12px 14px;
+      }
+
+      .hero-title {
+        font-size: 28px;
+      }
+
+      .hero-stat {
+        padding: 7px 8px;
+      }
+
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      margin-bottom: 8px;
+    }
+
+    .site-header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.96));
+      box-shadow:
+        0 18px 50px rgba(15, 23, 42, 0.9),
+        0 0 0 1px rgba(148, 163, 184, 0.32);
+      backdrop-filter: blur(16px);
+      -webkit-backdrop-filter: blur(16px);
+    }
+
+    .site-header-left {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-mark {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 0 0, #1d4ed8, #1d4ed8);
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 12px 30px rgba(15, 23, 42, 0.8);
+      flex-shrink: 0;
+    }
+
+    .logo-mark-inner {
+      width: 14px;
+      height: 14px;
+      border-radius: 999px;
+      border: 2px solid rgba(248, 250, 252, 0.98);
+      box-shadow: 0 0 0 1px rgba(15, 23, 42, 0.8), 0 0 18px rgba(248, 250, 252, 0.95);
+    }
+
+    .logo-text {
+      display: flex;
+      flex-direction: column;
+      gap: 1px;
+    }
+
+    .logo-main {
+      font-size: 14px;
+      font-weight: 600;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #e5e7eb;
+    }
+
+    .logo-sub {
+      font-size: 10px;
+      color: var(--text-soft);
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      font-size: 12px;
+    }
+
+    .nav a {
+      color: var(--text-soft);
+    }
+
+    .nav a:hover {
+      color: #e5e7eb;
+    }
+
+    .nav a.is-active {
+      color: #e5e7eb;
+    }
+
+    .nav-cta {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-cta-text {
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.13em;
+      color: var(--text-soft);
+    }
+
+    .nav-phone {
+      font-size: 13px;
+      font-weight: 500;
+      color: #e5e7eb;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .nav-phone-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--success);
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.25);
+    }
+
+    .nav-toggle {
+      display: none;
+      border-radius: 999px;
+      padding: 8px 10px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.9);
+      color: #e5e7eb;
+      cursor: pointer;
+      font-size: 12px;
+      gap: 7px;
+      align-items: center;
+    }
+
+    .nav-toggle span.icon {
+      font-size: 14px;
+    }
+
+    @media (max-width: 840px) {
+      .nav {
+        position: absolute;
+        inset: 100% 0 auto 0;
+        margin-top: 8px;
+        padding: 10px;
+        background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.97), rgba(15, 23, 42, 0.98));
+        border-radius: 18px;
+        border: 1px solid rgba(148, 163, 184, 0.5);
+        box-shadow: 0 16px 40px rgba(15, 23, 42, 0.95);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+      }
+
+      .site-header-inner {
+        border-radius: 18px;
+      }
+
+      .site-header {
+        top: 10px;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+      }
+
+      .site-header.is-open .nav {
+        display: flex;
+      }
+
+      .nav-cta {
+        width: 100%;
+        justify-content: space-between;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .logo-main {
+        font-size: 13px;
+      }
+
+      .logo-sub {
+        display: none;
+      }
+
+      .nav-phone {
+        font-size: 12px;
+      }
+
+      .site-header-inner {
+        padding-inline: 10px;
+      }
+    }
+
+    .site-main {
+      margin-top: 10px;
+    }
+
+    .anchor-offset {
+      position: relative;
+      top: -100px;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    @media (max-width: 840px) {
+      .anchor-offset {
+        top: -90px;
+      }
+    }
+
+    .services {
+      padding: 30px 0 18px;
+    }
+
+    .services-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+    }
+
+    .service-card {
+      border-radius: 20px;
+      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.99));
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+      padding: 12px 12px 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .service-card::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, rgba(37, 99, 235, 0.22), transparent 55%),
+        radial-gradient(circle at 80% 0, rgba(56, 189, 248, 0.18), transparent 55%);
+      opacity: 0.9;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .service-card-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .service-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
+      margin-bottom: 6px;
+    }
+
+    .service-title {
+      margin: 0 0 6px;
+      font-size: 16px;
+      color: #e5e7eb;
+    }
+
+    .service-text {
+      font-size: 13px;
+      color: var(--text-soft);
+      margin: 0 0 7px;
+    }
+
+    .service-meta {
+      font-size: 11px;
+      color: var(--text-softer);
+    }
+
+    .service-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      color: var(--accent-2);
+      margin-top: 4px;
+    }
+
+    .service-highlight-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent-2);
+      box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.16);
+    }
+
+    .service-footer {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px dashed rgba(148, 163, 184, 0.4);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      color: var(--text-softest);
+    }
+
+    .service-footer strong {
+      color: #e5e7eb;
+    }
+
+    .service-footer-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 9px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+    }
+
+    .service-footer-badge span.dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.18);
+    }
+
+    @media (max-width: 920px) {
+      .services-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .service-card {
+        padding: 12px 11px 13px;
+      }
+    }
+
+    .badge-inset {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.9);
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      box-shadow: 0 14px 40px rgba(15, 23, 42, 0.9);
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .badge-inset strong {
+      color: #e5e7eb;
+    }
+
+    .badge-inset span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 4px rgba(34, 197, 94, 0.2);
+    }
+
+    .reviews {
+      padding: 28px 0 22px;
+    }
+
+    .reviews-inner {
+      border-radius: 22px;
+      padding: 14px 14px 18px;
+      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.99));
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow: 0 20px 50px rgba(15, 23, 42, 0.9);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reviews-inner::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, rgba(59, 130, 246, 0.2), transparent 55%),
+        radial-gradient(circle at 100% 0, rgba(56, 189, 248, 0.18), transparent 55%);
+      opacity: 0.9;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .reviews-inner::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border-radius: 18px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      pointer-events: none;
+    }
+
+    .reviews-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 18px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .reviews-copy {
+      max-width: 420px;
+    }
+
+    .reviews-stats {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 10px;
+    }
+
+    .reviews-rating {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      font-size: 14px;
+      color: #e5e7eb;
+    }
+
+    .reviews-stars {
+      display: inline-flex;
+      align-items: center;
+      gap: 3px;
+      color: #fbbf24;
+      font-size: 13px;
+    }
+
+    .reviews-meta {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .reviews-google-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 12px;
+      color: #e5e7eb;
+      text-decoration: none;
+    }
+
+    .reviews-google-logo {
+      width: 16px;
+      height: 16px;
+      border-radius: 4px;
+      background:
+        conic-gradient(from 0deg,
+          #4285f4 0deg 90deg,
+          #34a853 90deg 180deg,
+          #fbbc05 180deg 270deg,
+          #ea4335 270deg 360deg);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reviews-google-logo::before {
+      content: "";
+      position: absolute;
+      inset: 3px;
+      border-radius: 3px;
+      background: #0f172a;
+    }
+
+    .reviews-google-logo::after {
+      content: "G";
+      position: absolute;
+      inset: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #e5e7eb;
+      font-size: 11px;
+      font-weight: 700;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", sans-serif;
+    }
+
+    .reviews-body {
+      margin-top: 16px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .reviews-marquee-shell {
+      position: relative;
+      overflow: hidden;
+      mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+      -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+    }
+
+    .reviews-track {
+      display: flex;
+      gap: 10px;
+      animation: marquee 55s linear infinite;
+    }
+
+    .reviews-track:hover {
+      animation-play-state: paused;
+    }
+
+    .review-card {
+      min-width: 260px;
+      max-width: 260px;
+      border-radius: 18px;
+      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.99));
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      padding: 10px 11px 11px;
+      font-size: 12px;
+      color: var(--text-soft);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.9);
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 6px;
+    }
+
+    .review-avatar {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 0 0, rgba(59, 130, 246, 0.2), rgba(15, 23, 42, 0.98));
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 12px;
+      font-weight: 600;
+      color: #e5e7eb;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+    }
+
+    .review-name {
+      font-size: 12px;
+      color: #e5e7eb;
+    }
+
+    .review-meta {
+      font-size: 10px;
+      color: var(--text-soft);
+    }
+
+    .review-stars {
+      font-size: 11px;
+      color: #facc15;
+      margin-bottom: 4px;
+    }
+
+    .review-text {
+      font-size: 12px;
+      line-height: 1.6;
+    }
+
+    .reviews-fallback {
+      margin-top: 12px;
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    @keyframes marquee {
+      0% {
+        transform: translateX(0);
+      }
+
+      100% {
+        transform: translateX(-50%);
+      }
+    }
+
+    @media (max-width: 840px) {
+      .reviews-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .reviews-stats {
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .reviews-inner {
+        padding: 12px 12px 14px;
+      }
+
+      .review-card {
+        min-width: 240px;
+        max-width: 240px;
+      }
+    }
+
+    #ablauf {
+      padding: 26px 0 22px;
+    }
+
+    .timeline-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 18px;
+      align-items: flex-start;
+    }
+
+    .timeline-copy {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .timeline-copy p + p {
+      margin-top: 8px;
+    }
+
+    .timeline-copy strong {
+      color: #e5e7eb;
+    }
+
+    .timeline-shell {
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.99));
+      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.9);
+      padding: 12px 11px 14px;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .timeline-shell::before {
+      content: "";
+      position: absolute;
+      inset: -40%;
+      background:
+        radial-gradient(circle at 0 0, rgba(37, 99, 235, 0.22), transparent 55%),
+        radial-gradient(circle at 80% 0, rgba(56, 189, 248, 0.18), transparent 55%);
+      opacity: 0.9;
+      mix-blend-mode: screen;
+      pointer-events: none;
+    }
+
+    .timeline-shell::after {
+      content: "";
+      position: absolute;
+      inset: 4px;
+      border-radius: 16px;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      pointer-events: none;
+    }
+
+    .timeline-inner {
+      position: relative;
+      z-index: 1;
+    }
+
+    .timeline-row {
+      display: grid;
+      grid-template-columns: auto minmax(0, 1fr);
+      gap: 10px;
+      padding: 5px 0;
+    }
+
+    .timeline-row + .timeline-row {
+      border-top: 1px dashed rgba(148, 163, 184, 0.45);
+      margin-top: 5px;
+    }
+
+    .timeline-step-col {
+      font-size: 11px;
+      color: var(--text-soft);
+      padding-top: 6px;
+    }
+
+    .timeline-step-label {
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+    }
+
+    .timeline-content {
+      position: relative;
+      padding-left: 26px;
+    }
+
+    .timeline-num-bg {
+      position: absolute;
+      left: 0;
+      top: -6px;
+      font-size: 32px;
+      font-weight: 600;
+      color: rgba(148, 163, 184, 0.2);
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Display", "Inter", sans-serif;
+    }
+
+    .timeline-title {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 3px;
+      color: #e5e7eb;
+    }
+
+    .timeline-text {
+      font-size: 12px;
+      color: var(--text-soft);
+      line-height: 1.6;
+    }
+
+    @media (max-width: 920px) {
+      .timeline-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    #faq {
+      position: relative;
+      overflow: hidden;
+    }
+
+    #faq::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("faq.png");
+      background-size: cover;
+      background-position: center;
+      filter: blur(3px);
+      opacity: 0.7;
+      z-index: 0;
+    }
+
+    #faq::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: linear-gradient(to right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.9));
+      z-index: 1;
+    }
+
+    #faq > .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .faq-inner {
+      padding: 26px 0 22px;
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1.1fr);
+      gap: 24px;
+      align-items: flex-start;
+    }
+
+    .faq-copy {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .faq-copy p + p {
+      margin-top: 8px;
+    }
+
+    .faq-copy strong {
+      color: #e5e7eb;
+    }
+
+    .faq-items {
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.99));
+      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.9);
+      padding: 10px 10px 12px;
+    }
+
+    .faq-item {
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.96);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      padding: 9px 9px 10px;
+      margin-bottom: 8px;
+    }
+
+    .faq-item:last-child {
+      margin-bottom: 0;
+    }
+
+    .faq-question {
+      font-size: 13px;
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: #e5e7eb;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .faq-question span.icon {
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+
+    .faq-answer {
+      font-size: 12px;
+      color: var(--text-soft);
+    }
+
+    @media (max-width: 920px) {
+      .faq-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+    }
+
+    #standort {
+      padding: 26px 0 22px;
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 32px;
+      align-items: stretch;
+    }
+
+    .location-card {
+      border-radius: 20px;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.96), rgba(15, 23, 42, 0.99));
+      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.9);
+      padding: 12px 12px 14px;
+    }
+
+    .location-card h3 {
+      margin: 0 0 6px;
+      font-size: 16px;
+      color: #e5e7eb;
+    }
+
+    .location-address {
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .location-meta {
+      margin-top: 10px;
+      font-size: 12px;
+      color: var(--text-softest);
+    }
+
+    .location-meta strong {
+      color: #e5e7eb;
+    }
+
+    .map-shell {
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      box-shadow: 0 18px 42px rgba(15, 23, 42, 0.9);
+      background: #020617;
+    }
+
+    .map-shell iframe {
+      width: 100%;
+      height: 260px;
+      border: 0;
+      display: block;
+    }
+
+    @media (max-width: 920px) {
+      .location-grid {
+        grid-template-columns: minmax(0, 1fr);
+        gap: 18px;
+      }
+
+      .map-shell iframe {
+        height: 220px;
+      }
+    }
+
+    .site-footer {
+      padding: 18px 0 4px;
+      font-size: 11px;
+      color: var(--text-softest);
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: center;
+      border-top: 1px dashed rgba(148, 163, 184, 0.4);
+      margin-top: 10px;
+    }
+
+    .site-footer a {
+      color: var(--text-soft);
+    }
+
+    .site-footer a:hover {
+      color: #e5e7eb;
+    }
+
+    .site-footer-right {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    @media (max-width: 640px) {
+      .site-footer {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    .whatsapp-fab {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 40;
+    }
+
+    .whatsapp-fab a {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 9px 13px;
+      border-radius: 999px;
+      background: #22c55e;
+      color: #022c22;
+      font-size: 13px;
+      font-weight: 500;
+      box-shadow: 0 18px 40px rgba(22, 163, 74, 0.55);
+      text-decoration: none;
+    }
+
+    .whatsapp-fab a span.icon {
+      font-size: 18px;
+    }
+
+    .whatsapp-fab a span.label {
+      display: inline-block;
+    }
+
+    @media (max-width: 520px) {
+      .whatsapp-fab {
+        right: 14px;
+        bottom: 14px;
+      }
+
+      .whatsapp-fab a {
+        padding: 9px 11px;
+      }
+
+      .whatsapp-fab a span.label {
+        display: none;
+      }
+    }
+
+    /* ===== EXCLUSIVE-SPEZIFISCHE ANPASSUNGEN ===== */
+
+    body.page--exclusive #faq::before,
+    body.page--exclusive #faq::after {
+      display: none;
+    }
+
+  </style>
+</head>
+
+<body class="page--exclusive">
+<div class="page">
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="site-header-inner">
+      <div class="site-header-left">
+        <a href="#top" class="logo">
+          <span class="logo-mark">
+            <span class="logo-mark-inner"></span>
+          </span>
+          <span class="logo-text">
+            <span class="logo-main">ShineWerk</span>
+            <span class="logo-sub">Fahrzeugaufbereitung &amp; Keramik</span>
+          </span>
+        </a>
+        <span class="badge-inline">
+          <span class="badge-inline-dot"></span>
+          <span>Begrenzte Termine – Anfrage empfohlen</span>
+        </span>
+      </div>
+
+      <nav class="nav">
+        <a href="#top" class="is-active">Start</a>
+        <a href="#leistungen">Leistungen</a>
+        <a href="#ablauf">Ablauf</a>
+        <a href="#faq">FAQ</a>
+        <a href="#standort">Standort</a>
+        <div class="nav-cta">
+          <span class="nav-cta-text">Direktkontakt</span>
+          <a href="tel:+4915562648989" class="nav-phone">
+            <span class="nav-phone-dot"></span>
+            <span>0155 62648989</span>
+          </a>
+        </div>
+      </nav>
+
+      <button class="nav-toggle" type="button" aria-label="Navigation öffnen">
+        <span class="icon">☰</span>
+        <span>Menü</span>
+      </button>
+    </div>
+  </header>
+
+  <main class="site-main">
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">ShineWerk Exclusive – Keramikversiegelung</div>
+          <h1 class="hero-title">
+            Fahrzeugaufbereitung für Menschen,<br />
+            die <span>keine Kompromisse fahren.</span>
+          </h1>
+          <p class="hero-subtitle">
+            ShineWerk Exclusive ist die spezialisierte Keramikversiegelung für Fahrzeuge,
+            die du bewusst langfristig halten willst – mit begrenzten Slots,
+            klarem Ablauf und Fokus auf sichtbares Ergebnis statt Minutenpreisen.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://wa.me/4915562648989" class="btn btn-primary" target="_blank" rel="noopener">
+              Termin buchen
+              <span class="btn-icon">↗</span>
+            </a>
+            <a href="#leistungen" class="btn btn-outline">
+              Leistungen &amp; Ablauf ansehen
+            </a>
+          </div>
+
+          <p class="hero-note">
+            <strong>Keine „schnell mal sauber“-Pakete.</strong><br />
+            Jedes Fahrzeug wird so behandelt, als würde es anschließend auf einem
+            Showfloor stehen – egal ob Daily, Performance-Fahrzeug oder Leasingrückgabe.
+          </p>
+        </div>
+
+        <aside class="hero-panel" aria-label="ShineWerk Kennzahlen">
+          <div class="hero-panel-header">
+            <div>
+              <div class="eyebrow hero-panel-eyebrow">Aktuelle Kennzahlen</div>
+              <div class="hero-panel-title">
+                Hohe Auslastung – Fokus auf wenige Fahrzeuge pro Woche.
+              </div>
+            </div>
+            <div class="hero-pill">
+              <span class="hero-pill-dot"></span>
+              Neue Anfragen willkommen
+            </div>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-label">Ø Wartezeit bis Termin</div>
+              <div class="hero-stat-value">3–7 Tage</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-label">Kundenzufriedenheit</div>
+              <div class="hero-stat-value">100&nbsp;%</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-label">Ø Google-Bewertung</div>
+              <div class="hero-stat-value">5,0 ★</div>
+            </div>
+          </div>
+
+          <p class="hero-footer-line">
+            Wir planen jede Aufbereitung so, dass du dein Fahrzeug nicht „irgendwie besser“,
+            sondern sichtbar auf einem anderen Level zurückbekommst.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <div class="reviews-inner">
+          <div class="reviews-header">
+            <div class="reviews-copy">
+              <div class="section-eyebrow">Kundenstimmen</div>
+              <h2 class="section-title">
+                Menschen, die ihr Auto niemand anderem anvertrauen.
+              </h2>
+              <p class="section-description">
+                Ein Großteil der Aufträge kommt über Weiterempfehlungen
+                und Google. Die folgenden Stimmen sind ein Auszug – live
+                einsehbar im Google-Profil von ShineWerk.
+              </p>
+            </div>
+
+            <div class="reviews-stats">
+              <div class="reviews-rating">
+                <div class="reviews-stars">★★★★★</div>
+                <div>5,0 von 5 Sternen</div>
+                <div class="reviews-meta">auf Basis echter Google-Bewertungen</div>
+              </div>
+
+              <a href="https://www.google.com/search?q=ShineWerk+W%C3%B6rth+am+Rhein" target="_blank" rel="noopener noreferrer" class="reviews-google-link">
+                <span class="reviews-google-logo"></span>
+                <span>Bewertungen auf Google ansehen</span>
+              </a>
+            </div>
+          </div>
+
+          <div class="reviews-body">
+            <div class="reviews-marquee-shell" aria-label="Kundenbewertungen">
+              <div class="reviews-track" id="reviews-track">
+                <!-- Wird per JavaScript mit Google-Reviews gefüllt -->
+              </div>
+            </div>
+
+            <div class="reviews-fallback" id="reviews-fallback">
+              <strong>Hinweis:</strong> Die Google-Bewertungen werden live geladen.
+              Sollte hier nichts erscheinen, liegt es meist an einem Blocker oder
+              an der Verbindung – die Bewertungen sind direkt im Google-Profil einsehbar.
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LEISTUNGEN / EXCLUSIVE-PAKETE -->
+    <section id="leistungen">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-eyebrow">EXCLUSIVE-Pakete</div>
+            <h2 class="section-title">
+              Keramikpakete für Fahrzeuge, die bleiben sollen.
+            </h2>
+          </div>
+          <p class="section-description">
+            Keine Baukasten-Programme und keine 70-Euro-Pflege. Drei klar definierte EXCLUSIVE-Pakete – jeweils mit strukturierter Vorbereitung,
+            präziser Lackkorrektur und abgestimmter Keramikversiegelung auf deinem Fahrzeug.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-label">EXCLUSIVE · Einstieg</div>
+            <h3 class="service-title">EXCLUSIVE Daily – Keramik auf perfektem Basislack</h3>
+            <p class="service-text">
+              Für Fahrzeuge, die regelmäßig bewegt werden, aber trotzdem wie ein Statement wirken sollen. Intensive Vorwäsche, tiefengerechte
+              Reinigung, einstufige Lackkorrektur und hochwertige Keramikversiegelung auf allen relevanten Lackflächen.
+            </p>
+            <p class="service-text">
+              Ideal für Daily Driver, junge Gebrauchte und Neuwagen mit leichten Waschanlagen-Spuren – mit Fokus auf klaren Glanz und deutlich
+              erleichterte Pflege.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-label">EXCLUSIVE · Fokus Lackbild</div>
+            <h3 class="service-title">EXCLUSIVE Correction – Mehrstufige Lackkorrektur &amp; Keramik</h3>
+            <p class="service-text">
+              Für Fahrzeuge mit deutlich sichtbaren Defekten: Swirls, Hologramme und Waschanlagen-Spuren. Mehrstufige Lackkorrektur mit Fokus auf
+              ein ruhiges, spiegelndes Lackbild – danach Keramiksystem mit erhöhter Schichtstärke für maximalen Tiefenglanz.
+            </p>
+            <p class="service-text">
+              Ideal für Sportwagen, Oberklasse und Leasingrückgaben mit Anspruch. Ziel ist eine drastische optische Aufwertung und eine saubere Basis
+              für langfristigen Werterhalt.
+            </p>
+          </article>
+
+          <article class="service-card">
+            <div class="service-label">EXCLUSIVE · Maximum</div>
+            <h3 class="service-title">EXCLUSIVE Complete – Lack, Felgen, Glas &amp; Details</h3>
+            <p class="service-text">
+              Das volle Paket für Fahrzeuge, die du bewusst langfristig halten willst. Umfassende Lackkorrektur, mehrlagige Keramikversiegelung,
+              versiegelte Felgenbetten (nach Ausbau), Glasversiegelung und Detailarbeiten an exponierten Bauteilen.
+            </p>
+            <p class="service-text">
+              Ideal für Sammlerfahrzeuge, High-Performance-Modelle und Fahrzeuge mit hoher emotionaler Bindung – mit Fokus auf maximalen Schutz,
+              kompromissloses Finish und ein Ergebnis, das auch auf Fotos besteht.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABLAUF (wie Index, passt auch für Exclusive) -->
+    <section id="ablauf">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-eyebrow">Ablauf</div>
+            <h2 class="section-title">
+              Klarer Prozess statt Bauchgefühl – von der Anfrage bis zur Übergabe.
+            </h2>
+          </div>
+          <p class="section-description">
+            Du sollst genau wissen, was passiert, wie lange es dauert und was
+            das Ergebnis ist. Der Ablauf ist bewusst schlank gehalten – ohne
+            unnötige Schleifen, aber mit genug Zeit für Perfektion.
+          </p>
+        </div>
+
+        <div class="timeline-grid">
+          <div class="timeline-copy">
+            <p>
+              ShineWerk arbeitet bewusst <strong>ohne Fließbandlogik</strong>. Stattdessen gibt es
+              einen klaren Ablauf, der bei jedem Fahrzeug durchlaufen wird – egal,
+              ob du mit einem Daily oder mit einem Performance-Fahrzeug kommst.
+            </p>
+            <p>
+              Das Ergebnis: Du weißt genau, <strong>wann</strong> dein Fahrzeug fertig ist,
+              <strong>was</strong> gemacht wurde und <strong>warum</strong> bestimmte Schritte sinnvoll sind.
+            </p>
+          </div>
+
+          <div class="timeline-shell">
+            <div class="timeline-inner">
+              <div class="timeline-row">
+                <div class="timeline-step-col">
+                  <div class="timeline-step-label">Schritt 1</div>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-num-bg" data-num="1">1</div>
+                  <div class="timeline-title">Anfrage &amp; Erstgespräch.</div>
+                  <p class="timeline-text">
+                    Du meldest dich per WhatsApp oder Telefon mit ein paar Infos zu Fahrzeug,
+                    Ist-Zustand und Zielbild. Wir klären, ob eher Aufbereitung, starke
+                    Lackkorrektur oder Keramik im Fokus steht – und ob dein Fahrzeug zum
+                    ShineWerk-Anspruch passt.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-row">
+                <div class="timeline-step-col">
+                  <div class="timeline-step-label">Schritt 2</div>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-num-bg" data-num="2">2</div>
+                  <div class="timeline-title">Vor-Ort-Check &amp; Planung.</div>
+                  <p class="timeline-text">
+                    Du bringst dein Fahrzeug nach Wörth. Vor Ort gehen wir das
+                    geplante Vorgehen noch einmal durch, definieren Prioritäten
+                    (z.B. Leasingrückgabe vs. Langzeitfahrzeug) und legen einen
+                    realistischen Zeitrahmen fest. Danach gehört der Fokus komplett
+                    deinem Fahrzeug – keine parallelen „Nebenaufträge“.
+                  </p>
+                </div>
+              </div>
+
+              <div class="timeline-row">
+                <div class="timeline-step-col">
+                  <div class="timeline-step-label">Schritt 3</div>
+                </div>
+                <div class="timeline-content">
+                  <div class="timeline-num-bg" data-num="3">3</div>
+                  <div class="timeline-title">Übergabe &amp; Pflegeplan.</div>
+                  <p class="timeline-text">
+                    Bei der Abholung schauen wir das Fahrzeug gemeinsam durch. Du
+                    bekommst eine klare Empfehlung, wie du das Ergebnis mit
+                    vertretbarem Aufwand hältst – inklusive ehrlicher Hinweise,
+                    was du vermeiden solltest (Waschstraße, falsche Tücher,
+                    aggressive Mittel etc.).
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section id="faq">
+      <div class="container">
+        <div class="faq-inner">
+          <div class="faq-grid">
+            <div>
+              <div class="section-eyebrow">FAQ</div>
+              <h2 class="section-title">
+                Häufige Fragen – klar beantwortet.
+              </h2>
+              <p class="faq-copy">
+                Viele Fragen wiederholen sich – gerade rund um Thema,
+                Dauer, Preise und Alltagstauglichkeit nach der Aufbereitung
+                bzw. Versiegelung. Die wichtigsten Antworten sind hier
+                gesammelt. Wenn etwas fehlt: kurzer Anruf oder WhatsApp
+                reicht.
+              </p>
+            </div>
+
+            <div class="faq-items">
+              <div class="faq-item">
+                <div class="faq-question">
+                  <span>Wie lange dauert eine Aufbereitung bzw. Keramikversiegelung?</span>
+                  <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  In der Regel zwischen einem Arbeitstag (kompakte Aufbereitung)
+                  und zwei bis drei Tagen (intensive Lackkorrektur &amp; Keramik).
+                  Je nach Fahrzeuggröße, Zustand und gewünschtem Paket planen
+                  wir die Zeit gemeinsam so, dass sie für dich praktikabel ist –
+                  ohne am Ergebnis zu sparen.
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <span>Was kostet eine professionelle Aufbereitung bei ShineWerk?</span>
+                  <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  Der Preis hängt von Größe, Zustand und Zielbild ab. Ein
+                  gepflegter Kompaktwagen startet deutlich niedriger als ein
+                  stark vernachlässigter SUV. Wichtig ist: Du bekommst vorab
+                  eine klare Einschätzung und keine nachträglichen
+                  Überraschungen – inklusive Empfehlung, was wirklich Sinn
+                  ergibt und was nicht.
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <span>Kann ich mein Auto direkt nach der Keramikversiegelung normal nutzen?</span>
+                  <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  Ja – allerdings solltest du in den ersten Tagen aggressive
+                  Reiniger und Waschstraßen vermeiden, damit die Versiegelung
+                  vollständig aushärten kann. Du erhältst einen klaren
+                  Pflegeplan, damit das Ergebnis langfristig auf dem gleichen
+                  Niveau bleibt.
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <span>Macht eine Aufbereitung / Keramik auch bei älteren Fahrzeugen Sinn?</span>
+                  <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  Gerade bei älteren oder viel gefahrenen Fahrzeugen ist der
+                  Unterschied extrem sichtbar. Swirls, Hologramme und stumpfe
+                  Lackoberflächen lassen sich in vielen Fällen deutlich
+                  reduzieren. Wichtig ist eine ehrliche Einschätzung, wie viel
+                  Korrektur technisch sinnvoll ist – genau das bekommst du bei
+                  ShineWerk.
+                </div>
+              </div>
+
+              <div class="faq-item">
+                <div class="faq-question">
+                  <span>Wie läuft die Terminvereinbarung ab?</span>
+                  <span class="icon">+</span>
+                </div>
+                <div class="faq-answer">
+                  Am schnellsten geht es per WhatsApp oder Telefon. Du schickst
+                  ein paar Bilder deines Fahrzeugs und eine kurze Beschreibung,
+                  was dich stört bzw. was du dir wünschst. Wir melden uns mit
+                  einer Einschätzung, möglichen Terminen und einer Empfehlung
+                  zum passenden Paket.
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- STANDORT -->
+    <section id="standort">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-eyebrow">Standort</div>
+            <h2 class="section-title">
+              ShineWerk in Wörth am Rhein – gut erreichbar aus der gesamten Region.
+            </h2>
+          </div>
+          <p class="section-description">
+            Gut erreichbar aus der gesamten Südpfalz und dem Großraum
+            Karlsruhe. Parkplatz und Anfahrt sind unkompliziert – den
+            Anspruch legen wir lieber in dein Fahrzeug.
+          </p>
+        </div>
+
+        <div class="location-grid">
+          <div class="location-card">
+            <h3>Adresse &amp; Kontakt</h3>
+            <div class="location-address">
+              In den Niederwiesen 13<br />
+              76744 Wörth am Rhein
+            </div>
+            <div class="location-meta">
+              <p>
+                <strong>Telefon:</strong>
+                <a href="tel:+4915562648989">0155 62648989</a>
+              </p>
+              <p>
+                <strong>WhatsApp:</strong>
+                <a href="https://wa.me/4915562648989" target="_blank" rel="noopener">
+                  Nachricht senden
+                </a>
+              </p>
+              <p>
+                <strong>Hinweis:</strong> Besichtigungen und Aufnahmen
+                vor Ort nach Terminvereinbarung – keine „spontanen“
+                Schnellaufbereitungen.
+              </p>
+            </div>
+          </div>
+
+          <div class="map-shell">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2652.772288168405!2d8.245!3d49.048!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDnCsDAyJzUyLjAiTiA4wrAxNCczOC4wIkU!5e0!3m2!1sde!2sde!4v1700000000000"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade"
+            ></iframe>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div>
+      © <span id="year"></span> ShineWerk – Fahrzeugaufbereitung &amp; Keramik in Wörth am Rhein.
+    </div>
+    <div class="site-footer-right">
+      <a href="mailto:info@shinewerk.de">info@shinewerk.de</a>
+      <span>•</span>
+      <a href="/impressum" target="_blank" rel="noopener">Impressum</a>
+      <span>•</span>
+      <a href="/datenschutz" target="_blank" rel="noopener">Datenschutz</a>
+    </div>
+  </footer>
+
+  <!-- WHATSAPP FAB -->
+  <div class="whatsapp-fab">
+    <a href="https://wa.me/4915562648989" target="_blank" rel="noopener" aria-label="WhatsApp Chat starten">
+      <span class="icon">💬</span>
+      <span class="label">Frage per WhatsApp stellen</span>
+    </a>
+  </div>
+</div>
+
+<script>
+document.addEventListener("DOMContentLoaded", function () {
+  const reviews = [
+    {
+      name: "M. Schneider",
+      initials: "MS",
+      rating: 5,
+      text: "Absolut beeindruckendes Ergebnis. Der Lack wirkt besser als bei der Auslieferung. Kommunikation war ehrlich und auf den Punkt.",
+      time: "vor 2 Wochen"
+    },
+    {
+      name: "S. Wagner",
+      initials: "SW",
+      rating: 5,
+      text: "Keramikversiegelung inklusive Lackkorrektur. Man sieht den Unterschied wirklich bei jedem Lichteinfall. Klare Empfehlung.",
+      time: "vor 1 Monat"
+    },
+    {
+      name: "T. Becker",
+      initials: "TB",
+      rating: 5,
+      text: "Sehr strukturierter Ablauf, faire Einschätzung und kein Upselling. Ergebnis hat die Erwartungen übertroffen.",
+      time: "vor 1 Monat"
+    },
+    {
+      name: "A. Hoffmann",
+      initials: "AH",
+      rating: 5,
+      text: "Auch nach mehreren Wochen und einigen Wäschen per Hand: der Abperleffekt ist brutal, der Glanz ist wie am ersten Tag.",
+      time: "vor 3 Wochen"
+    }
+  ];
+
+  function createCard(review) {
+    const card = document.createElement("div");
+    card.className = "review-card";
+
+    const header = document.createElement("div");
+    header.className = "review-header";
+
+    const avatar = document.createElement("div");
+    avatar.className = "review-avatar";
+    avatar.textContent = review.initials;
+
+    const meta = document.createElement("div");
+    const name = document.createElement("div");
+    name.className = "review-name";
+    name.textContent = review.name;
+
+    const time = document.createElement("div");
+    time.className = "review-meta";
+    time.textContent = review.time;
+
+    meta.appendChild(name);
+    meta.appendChild(time);
+
+    header.appendChild(avatar);
+    header.appendChild(meta);
+
+    const stars = document.createElement("div");
+    stars.className = "review-stars";
+    stars.textContent = "★★★★★";
+
+    const text = document.createElement("div");
+    text.className = "review-text";
+    text.textContent = review.text;
+
+    card.appendChild(header);
+    card.appendChild(stars);
+    card.appendChild(text);
+
+    return card;
+  }
+
+  const track = document.getElementById("reviews-track");
+  const fallback = document.getElementById("reviews-fallback");
+
+  if (track) {
+    try {
+      fallback.style.display = "none";
+      const extended = [...reviews, ...reviews, ...reviews];
+      extended.forEach(r => track.appendChild(createCard(r)));
+    } catch (e) {
+      console.error("Review-Loading failed", e);
+    }
+  }
+
+  document.getElementById("year").textContent = new Date().getFullYear();
+
+  const header = document.querySelector(".site-header");
+  const toggle = document.querySelector(".nav-toggle");
+
+  if (header && toggle) {
+    toggle.addEventListener("click", function () {
+      header.classList.toggle("is-open");
+    });
+  }
+});
+</script>
+</body>
+</html>
