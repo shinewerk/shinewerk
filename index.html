@@ -769,7 +769,7 @@
       z-index: 0;
     }
 
-    .timeline-num-bg::before {
+.timeline-num-bg::before {
   content: attr(data-num);
   position: absolute;
   top: 0;
@@ -785,22 +785,18 @@
   color: transparent;
   opacity: 0.35;
   filter: blur(10px);
-  transform: skewX(-18deg);
+  transform: translateX(0) skewX(-18deg);
   pointer-events: none;
+  animation: timeline-glide 2.4s ease-in-out infinite alternate;
 }
 
-    @keyframes timeline-glide {
+@keyframes timeline-glide {
   0% {
     transform: translateX(0) skewX(-18deg);
   }
   100% {
     transform: translateX(6px) skewX(-18deg);
   }
-}
-
-.timeline-num-bg::before {
-  /* ... aus obigem Block ... */
-  animation: timeline-glide 2.4s ease-in-out infinite alternate;
 }
 
     .timeline-title {
