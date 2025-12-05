@@ -23,6 +23,8 @@
       --accent-blue-soft: rgba(22, 43, 74, 0.06);
       --accent-gradient-from: #162b4a;
       --accent-gradient-to: #3b82f6;
+      --timeline-gradient-from: #1d4ed8;
+      --timeline-gradient-to: #60a5fa;
       --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.16);
       --radius-lg: 22px;
       --radius-pill: 999px;
@@ -609,14 +611,6 @@
       margin-bottom: 6px;
     }
 
-    .review-avatar {
-      width: 26px;
-      height: 26px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #e5e7eb, #9ca3af);
-      flex-shrink: 0;
-    }
-
     .review-name {
       font-size: 12px;
       font-weight: 500;
@@ -761,8 +755,8 @@
       font-style: italic;
       background: linear-gradient(
         120deg,
-        var(--accent-gradient-from),
-        var(--accent-gradient-to)
+        var(--timeline-gradient-from),
+        var(--timeline-gradient-to)
       );
       -webkit-background-clip: text;
       color: transparent;
@@ -854,6 +848,43 @@
       color: var(--text-soft);
       line-height: 1.7;
     }
+    
+    #faq {
+  position: relative;
+  overflow: hidden;
+}
+
+#faq::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("faq.png");
+  background-size: cover;
+  background-position: center;
+  filter: blur(10px);
+  opacity: 0.35;
+  z-index: 0;
+}
+
+#faq::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(245,245,247,0.96) 0%,
+    rgba(245,245,247,0.85) 20%,
+    rgba(245,245,247,0.85) 80%,
+    rgba(245,245,247,0.96) 100%
+  );
+  z-index: 1;
+}
+
+#faq > .container {
+  position: relative;
+  z-index: 2;
+}
+
 
     /* STANDORT */
 
@@ -1562,7 +1593,6 @@
         card.innerHTML = `
           <div>
             <div class="review-header">
-              <div class="review-avatar"></div>
               <div>
                 <div class="review-name">${review.author_name || "Kunde"}</div>
                 <div class="review-meta">${review.relative_time || "Google-Bewertung"}</div>
