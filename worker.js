@@ -1,8 +1,11 @@
 export default {
   async fetch(request, env, ctx) {
     const url = new URL(request.url);
-    const host = url.host;
+    const hostname = url.hostname; // wichtiger als host
     const pathname = url.pathname;
+
+    // Debug: einmal schauen, was wirklich ankommt
+    console.log("HOSTNAME:", hostname, "PATH:", pathname);
 
     // 1) API-Endpoint für Reviews
     if (pathname === "/reviews") {
@@ -13,7 +16,7 @@ export default {
 
     // corporate.shinewerk.de → /corporate.html
     if (
-      host === "corporate.shinewerk.de" &&
+      hostname === "corporate.shinewerk.de" &&
       (pathname === "/" || pathname === "/index.html")
     ) {
       return Response.redirect(
@@ -24,7 +27,7 @@ export default {
 
     // exclusive.shinewerk.de → /exclusive.html
     if (
-      host === "exclusive.shinewerk.de" &&
+      hostname === "exclusive.shinewerk.de" &&
       (pathname === "/" || pathname === "/index.html")
     ) {
       return Response.redirect(
@@ -37,7 +40,7 @@ export default {
     try {
       return await env.ASSETS.fetch(request);
     } catch (err) {
-      if (host === "shinewerk.de") {
+      if (hostname === "shinewerk.de") {
         return await env.ASSETS.fetch(
           new Request(new URL("/index.html", request.url), request)
         );
