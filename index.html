@@ -355,14 +355,7 @@
     .hero-panel-title {
       font-family: "Playfair Display", serif;
       font-size: 20px;
-    }
-
-    .hero-panel-title-pill {
-      color: #111827;
-      background: rgba(249, 250, 251, 0.9);
-      padding: 4px 10px;
-      border-radius: 999px;
-      display: inline-block;
+      color: #f9fafb;
     }
 
     .hero-pill {
@@ -394,8 +387,9 @@
     .hero-stat {
       padding: 12px 12px;
       border-radius: 14px;
-      background: rgba(15, 23, 42, 0.45);
-      border: 1px solid rgba(148, 163, 184, 0.35);
+      /* HIER: Opacity / Helligkeit der grauen Kästchen anpassen */
+      background: rgba(15, 23, 42, 0.30);
+      border: 1px solid rgba(148, 163, 184, 0.28);
       backdrop-filter: blur(18px);
     }
 
@@ -403,11 +397,13 @@
       color: #d1d5db;
       font-size: 11px;
       margin-bottom: 4px;
+      word-break: break-word; /* lange Labels wie „Kundenzufriedenheit“ umbrechen */
     }
 
     .hero-stat-value {
       font-size: 15px;
       font-weight: 600;
+      white-space: nowrap;
     }
 
     .hero-footer-line {
@@ -596,6 +592,7 @@
       font-size: 12px;
       color: var(--text-soft);
       box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
+      overflow: hidden;
     }
 
     .review-header {
@@ -632,6 +629,11 @@
 
     .review-text {
       line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 2;      /* genau zwei Zeilen */
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      word-break: break-word;     /* keine Überläufe */
     }
 
     .review-footer {
@@ -744,10 +746,19 @@
     .timeline-num-bg {
       position: absolute;
       top: -10px;
-      right: 8px;
+      left: 0;              /* jetzt links statt rechts */
+      right: auto;
       font-size: 72px;
       font-style: italic;
-      color: rgba(15, 23, 42, 0.06);
+      background: linear-gradient(
+        120deg,
+        var(--accent-gradient-from),
+        var(--accent-gradient-to)
+      );
+      -webkit-background-clip: text;
+      color: transparent;   /* Gradient-Text */
+      opacity: 0.25;
+      filter: blur(1px);    /* leichter Blur */
       pointer-events: none;
       user-select: none;
     }
@@ -1091,7 +1102,7 @@
             <div>
               <div class="eyebrow hero-panel-eyebrow">Aktuelle Kennzahlen</div>
               <div class="hero-panel-title">
-                <span class="hero-panel-title-pill">Wenige Aufträge. Maximale Detailtiefe.</span>
+                Wenige Aufträge. Maximale Detailtiefe.
               </div>
             </div>
             <div class="hero-pill">
