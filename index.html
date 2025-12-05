@@ -1176,141 +1176,10 @@
             </a>
           </div>
 
-          <!-- TODO: Hier echte Google-Bewertungen über API / Worker einspielen -->
+          <!-- Echte Google-Bewertungen werden per API / Worker geladen -->
           <div class="reviews-marquee-shell" aria-label="Kundenbewertungen">
-            <div class="reviews-track">
-              <article class="review-card">
-                <div>
-                  <div class="review-header">
-                    <div class="review-avatar"></div>
-                    <div>
-                      <div class="review-name">S. Weber</div>
-                      <div class="review-meta">Keramikversiegelung · Performance-Fahrzeug</div>
-                    </div>
-                  </div>
-                  <div class="review-stars">★★★★★</div>
-                  <div class="review-text">
-                    Kein Vergleich zur „normalen“ Aufbereitung. Der Lack wirkt wie neu lackiert,
-                    das Auto ist nach Wochen noch leicht zu reinigen. Kommunikation und Anspruch
-                    auf einem Niveau, das man in der Region sonst nicht findet.
-                  </div>
-                </div>
-                <div class="review-footer">
-                  <span>Verifizierter Kunde</span>
-                  <span>über Google</span>
-                </div>
-              </article>
-
-              <article class="review-card">
-                <div>
-                  <div class="review-header">
-                    <div class="review-avatar"></div>
-                    <div>
-                      <div class="review-name">M. Hoffmann</div>
-                      <div class="review-meta">Leasingrückgabe · Oberklasse</div>
-                    </div>
-                  </div>
-                  <div class="review-stars">★★★★★</div>
-                  <div class="review-text">
-                    Ziel war: Rückgabe ohne Theater. Ergebnis: Fahrzeug sah besser aus als bei
-                    der Übergabe, Protokoll ohne Beanstandungen. Der Aufpreis gegenüber
-                    Standard-Aufbereitung hat sich mehrfach gerechnet.
-                  </div>
-                </div>
-                <div class="review-footer">
-                  <span>Verifizierter Kunde</span>
-                  <span>über Google</span>
-                </div>
-              </article>
-
-              <article class="review-card">
-                <div>
-                  <div class="review-header">
-                    <div class="review-avatar"></div>
-                    <div>
-                      <div class="review-name">L. König</div>
-                      <div class="review-meta">Daily Driver · Innen &amp; Außen</div>
-                    </div>
-                  </div>
-                  <div class="review-stars">★★★★★</div>
-                  <div class="review-text">
-                    Man merkt, dass hier nicht „mitgemacht“ wird, sondern ein klarer Anspruch
-                    dahintersteckt. Innenraum, Lackbild, Details – alles aufgeräumt und stimmig.
-                    Kein Schnellprogramm, sondern ein Ergebnis, das bleibt.
-                  </div>
-                </div>
-                <div class="review-footer">
-                  <span>Verifizierter Kunde</span>
-                  <span>über Google</span>
-                </div>
-              </article>
-
-              <!-- Duplikate für Loop -->
-              <article class="review-card">
-                <div>
-                  <div class="review-header">
-                    <div class="review-avatar"></div>
-                    <div>
-                      <div class="review-name">S. Weber</div>
-                      <div class="review-meta">Keramikversiegelung · Performance-Fahrzeug</div>
-                    </div>
-                  </div>
-                  <div class="review-stars">★★★★★</div>
-                  <div class="review-text">
-                    Kein Vergleich zur „normalen“ Aufbereitung. Der Lack wirkt wie neu lackiert,
-                    das Auto ist nach Wochen noch leicht zu reinigen. Kommunikation und Anspruch
-                    auf einem Niveau, das man in der Region sonst nicht findet.
-                  </div>
-                </div>
-                <div class="review-footer">
-                  <span>Verifizierter Kunde</span>
-                  <span>über Google</span>
-                </div>
-              </article>
-
-              <article class="review-card">
-                <div>
-                  <div class="review-header">
-                    <div class="review-avatar"></div>
-                    <div>
-                      <div class="review-name">M. Hoffmann</div>
-                      <div class="review-meta">Leasingrückgabe · Oberklasse</div>
-                    </div>
-                  </div>
-                  <div class="review-stars">★★★★★</div>
-                  <div class="review-text">
-                    Ziel war: Rückgabe ohne Theater. Ergebnis: Fahrzeug sah besser aus als bei
-                    der Übergabe, Protokoll ohne Beanstandungen. Der Aufpreis gegenüber
-                    Standard-Aufbereitung hat sich mehrfach gerechnet.
-                  </div>
-                </div>
-                <div class="review-footer">
-                  <span>Verifizierter Kunde</span>
-                  <span>über Google</span>
-                </div>
-              </article>
-
-              <article class="review-card">
-                <div>
-                  <div class="review-header">
-                    <div class="review-avatar"></div>
-                    <div>
-                      <div class="review-name">L. König</div>
-                      <div class="review-meta">Daily Driver · Innen &amp; Außen</div>
-                    </div>
-                  </div>
-                  <div class="review-stars">★★★★★</div>
-                  <div class="review-text">
-                    Man merkt, dass hier nicht „mitgemacht“ wird, sondern ein klarer Anspruch
-                    dahintersteckt. Innenraum, Lackbild, Details – alles aufgeräumt und stimmig.
-                    Kein Schnellprogramm, sondern ein Ergebnis, das bleibt.
-                  </div>
-                </div>
-                <div class="review-footer">
-                  <span>Verifizierter Kunde</span>
-                  <span>über Google</span>
-                </div>
-              </article>
+            <div class="reviews-track" id="reviews-track">
+              <!-- Wird per JavaScript mit Google-Reviews gefüllt -->
             </div>
           </div>
         </div>
@@ -1648,7 +1517,63 @@
 </div>
 
 <script>
-  document.getElementById("year").textContent = new Date().getFullYear();
+  async function loadReviews() {
+    try {
+      const resp = await fetch("/reviews");
+      if (!resp.ok) return;
+
+      const data = await resp.json();
+      const track = document.getElementById("reviews-track");
+      if (!track) return;
+
+      const reviews = Array.isArray(data.reviews) ? data.reviews.slice(0, 6) : [];
+
+      if (!reviews.length) {
+        return; // wenn Google nichts liefert, lassen wir einfach leer
+      }
+
+      function createCard(review) {
+        const card = document.createElement("article");
+        card.className = "review-card";
+
+        const stars = "★★★★★".slice(0, Math.round(review.rating || 5));
+
+        card.innerHTML = `
+          <div>
+            <div class="review-header">
+              <div class="review-avatar"></div>
+              <div>
+                <div class="review-name">${review.author_name || "Kunde"}</div>
+                <div class="review-meta">${review.relative_time || "Google-Bewertung"}</div>
+              </div>
+            </div>
+            <div class="review-stars">${stars}</div>
+            <div class="review-text">
+              ${review.text ? review.text : ""}
+            </div>
+          </div>
+          <div class="review-footer">
+            <span>Verifizierter Kunde</span>
+            <span>über Google</span>
+          </div>
+        `;
+        return card;
+      }
+
+      // Einmal normale Liste
+      reviews.forEach(r => track.appendChild(createCard(r)));
+      // Nochmal dupliziert für den Loop
+      reviews.forEach(r => track.appendChild(createCard(r)));
+    } catch (e) {
+      // Im Fehlerfall einfach nichts tun – Seite funktioniert trotzdem
+      console.error("Review-Loading failed", e);
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", function () {
+    loadReviews();
+    document.getElementById("year").textContent = new Date().getFullYear();
+  });
 </script>
 </body>
 </html>
