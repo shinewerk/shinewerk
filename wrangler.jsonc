@@ -2,7 +2,8 @@
   "name": "shinewerk",
   "main": "worker.js",
   "compatibility_date": "2025-12-05",
-"assets": {
-  "directory": "./",
-  "binding": "ASSETS"
+  "assets": {
+    "directory": "./",
+    "binding": "ASSETS"
+  }
 }
