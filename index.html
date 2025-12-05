@@ -749,33 +749,12 @@
       position: static; /* damit Zahlen sich an der ganzen Row ausrichten */
     }
 
-    .timeline-num-bg {
-      position: absolute;
-      top: -18px;
-      left: 4px;     /* hinter der „Schritt“-Spalte */
-      font-size: 80px;
-      font-style: italic;
-      background: linear-gradient(
-        120deg,
-        var(--timeline-gradient-from),
-        var(--timeline-gradient-to)
-      );
-      -webkit-background-clip: text;
-      color: transparent;
-      opacity: 0.80;
-      filter: blur(3px);
-      pointer-events: none;
-      user-select: none;
-      z-index: 0;
-    }
-
-.timeline-num-bg::before {
-  content: attr(data-num);
+.timeline-num-bg {
   position: absolute;
-  top: 0;
-  left: -24px;  /* Trail nach links rausziehen */
-  font-size: inherit;
-  font-style: inherit;
+  top: -18px;
+  left: 4px;
+  font-size: 80px;
+  font-style: italic;
   background: linear-gradient(
     120deg,
     var(--timeline-gradient-from),
@@ -783,19 +762,24 @@
   );
   -webkit-background-clip: text;
   color: transparent;
-  opacity: 0.35;
-  filter: blur(10px);
-  transform: translateX(0) skewX(-18deg);
+  opacity: 0.85;
+  filter: blur(4px);
   pointer-events: none;
-  animation: timeline-glide 2.4s ease-in-out infinite alternate;
+  user-select: none;
+  z-index: 0;
+  animation: timeline-glide 1.8s ease-in-out infinite alternate;
 }
 
 @keyframes timeline-glide {
   0% {
-    transform: translateX(0) skewX(-18deg);
+    transform: translateX(-12px) skewX(-14deg);
+    filter: blur(8px);
+    opacity: 0.55;
   }
   100% {
-    transform: translateX(6px) skewX(-18deg);
+    transform: translateX(10px) skewX(-18deg);
+    filter: blur(2px);
+    opacity: 0.9;
   }
 }
 
