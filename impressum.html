@@ -68,22 +68,49 @@
     .site-header {
       position: sticky;
       top: 0;
-      z-index: 40;
-      height: var(--nav-height);
-      backdrop-filter: blur(20px);
-      background: radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 55%),
-                  rgba(245, 245, 247, 0.92);
-      border-bottom: 1px solid rgba(148, 163, 184, 0.28);
+      z-index: 50;
+      backdrop-filter: blur(6px);
+      background: linear-gradient(
+        to bottom,
+        rgba(245, 245, 247, 0.35),
+        rgba(245, 245, 247, 0.35)
+      );
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
     }
 
-    .nav {
-      height: var(--nav-height);
+    .nav-links {
       display: flex;
       align-items: center;
-      justify-content: space-between;
-      gap: 20px;
+      gap: 26px;
+      font-size: 14px;
     }
 
+    .nav-links a {
+      position: relative;
+      color: var(--text-soft);
+      transition: color 0.2s ease;
+      padding-bottom: 4px;
+    }
+
+    /* Unterstreichung nur für Links ohne Button-Klasse */
+    .nav-links a:not(.btn)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 0;
+      height: 1px;
+      background: var(--accent-blue);
+      transition: width 0.22s ease;
+    }
+
+    .nav-links a:not(.btn):hover {
+      color: var(--text-main);
+    }
+
+    .nav-links a:not(.btn):hover::after {
+      width: 100%;
+    }
     .logo {
       display: flex;
       align-items: center;
