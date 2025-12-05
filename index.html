@@ -221,6 +221,38 @@
       transform: translateY(1px);
     }
 
+    .nav-toggle {
+  display: none; /* Desktop: versteckt */
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  padding: 6px;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+.nav-toggle-line {
+  display: block;
+  width: 18px;
+  height: 2px;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.8);
+  transition: transform 0.18s ease, opacity 0.18s ease;
+}
+
+.nav-toggle-line + .nav-toggle-line {
+  margin-top: 4px;
+}
+
+/* animierter Zustand */
+.site-header.is-open .nav-toggle-line:first-child {
+  transform: translateY(3px) rotate(45deg);
+}
+
+.site-header.is-open .nav-toggle-line:last-child {
+  transform: translateY(-3px) rotate(-45deg);
+}
+
     /* Gradient highlight */
 
     .hero-title span,
@@ -1051,36 +1083,60 @@
       }
     }
 
-    @media (max-width: 720px) {
-      .nav-links {
-        display: none;
-      }
+@media (max-width: 720px) {
+  .nav-links {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: var(--nav-height);
+    padding: 10px 20px 14px;
+    background: rgba(245, 245, 247, 0.95);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+    display: none;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 10px;
+    font-size: 14px;
+  }
 
-      .hero-grid,
-      .services-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+  /* wenn Header geöffnet: Menü anzeigen */
+  .site-header.is-open .nav-links {
+    display: flex;
+  }
 
-      .hero-title {
-        font-size: 34px;
-      }
+  .nav-toggle {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
 
-      section {
-        padding: 72px 0;
-      }
+  .hero-grid,
+  .services-grid {
+    grid-template-columns: minmax(0, 1fr);
+  }
 
-      .reviews-inner {
-        padding: 18px 14px 14px;
-      }
+  .hero-title {
+    font-size: 34px;
+  }
 
-      .map-shell iframe {
-        height: 220px;
-      }
+  section {
+    padding: 72px 0;
+  }
 
-      .whatsapp-fab a span.label {
-        display: none;
-      }
-    }
+  .reviews-inner {
+    padding: 18px 14px 14px;
+  }
+
+  .map-shell iframe {
+    height: 220px;
+  }
+
+  .whatsapp-fab a span.label {
+    display: none;
+  }
+}
   </style>
 </head>
 
