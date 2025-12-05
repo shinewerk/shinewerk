@@ -1231,8 +1231,12 @@
 </div>
 
 <script>
+  async function loadReviews() {
+    return; // auf Legal-Seiten keine Reviews laden
+  }
+
   document.addEventListener("DOMContentLoaded", function () {
-    var yearEl = document.getElementById("year");
+    const yearEl = document.getElementById("year");
     if (yearEl) {
       yearEl.textContent = new Date().getFullYear();
     }
