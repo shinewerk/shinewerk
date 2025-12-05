@@ -19,7 +19,7 @@
       --text-main: #111827;
       --text-soft: #6b7280;
       --border-subtle: rgba(15, 23, 42, 0.08);
-      --accent-blue: #162b4a;        /* ShineWerk Blau – tief, nicht neon */
+      --accent-blue: #162b4a;
       --accent-blue-soft: rgba(22, 43, 74, 0.06);
       --accent-gradient-from: #162b4a;
       --accent-gradient-to: #3b82f6;
@@ -347,9 +347,22 @@
       margin-bottom: 26px;
     }
 
+    .hero-panel-eyebrow {
+      color: #9ca3af !important;
+      margin-bottom: 4px;
+    }
+
     .hero-panel-title {
       font-family: "Playfair Display", serif;
       font-size: 20px;
+    }
+
+    .hero-panel-title-pill {
+      color: #111827;
+      background: rgba(249, 250, 251, 0.9);
+      padding: 4px 10px;
+      border-radius: 999px;
+      display: inline-block;
     }
 
     .hero-pill {
@@ -381,13 +394,13 @@
     .hero-stat {
       padding: 12px 12px;
       border-radius: 14px;
-      background: rgba(15, 23, 42, 0.6);
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.45);
+      border: 1px solid rgba(148, 163, 184, 0.35);
       backdrop-filter: blur(18px);
     }
 
     .hero-stat-label {
-      color: #9ca3af;
+      color: #d1d5db;
       font-size: 11px;
       margin-bottom: 4px;
     }
@@ -400,13 +413,13 @@
     .hero-footer-line {
       margin-top: 22px;
       font-size: 11px;
-      color: #e6eef7;
+      color: #9ca3af;
     }
 
     /* MINI BANNER – Südpfalz Times */
 
     .mini-banner {
-      padding: 12px 0 8px;
+      padding: 16px 0 12px;
       background: linear-gradient(
         to bottom,
         rgba(15, 23, 42, 0.02),
@@ -418,11 +431,11 @@
       border-radius: 999px;
       border: 1px solid rgba(15, 23, 42, 0.06);
       background: #ffffff;
-      padding: 8px 16px;
+      padding: 10px 20px;
       display: flex;
       align-items: center;
       justify-content: center;
-      gap: 12px;
+      gap: 22px;
       box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
     }
 
@@ -434,7 +447,7 @@
     }
 
     .mini-banner-logo {
-      height: 22px;
+      height: 33px;
       width: auto;
       display: block;
     }
@@ -721,37 +734,38 @@
       text-transform: uppercase;
       letter-spacing: 0.18em;
       color: var(--text-soft);
-      margin-bottom: 4px;
+      margin-top: 2px;
     }
 
-    .timeline-badge {
-      width: 36px;
-      height: 36px;
-      border-radius: 999px;
-      background: radial-gradient(
-        circle at 30% 0,
-        var(--accent-gradient-to),
-        var(--accent-gradient-from)
-      );
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #f9fafb;
-      font-size: 14px;
-      font-weight: 600;
-      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.35);
+    .timeline-content {
+      position: relative;
+    }
+
+    .timeline-num-bg {
+      position: absolute;
+      top: -10px;
+      right: 8px;
+      font-size: 72px;
+      font-style: italic;
+      color: rgba(15, 23, 42, 0.06);
+      pointer-events: none;
+      user-select: none;
     }
 
     .timeline-title {
       font-size: 15px;
       font-weight: 600;
       margin-bottom: 4px;
+      position: relative;
+      z-index: 1;
     }
 
     .timeline-text {
       font-size: 13px;
       color: var(--text-soft);
       line-height: 1.7;
+      position: relative;
+      z-index: 1;
     }
 
     /* FAQ */
@@ -1031,8 +1045,8 @@
         <a href="https://shinewerk.de">Home</a>
         <a href="https://exclusive.shinewerk.de">Exclusive</a>
         <a href="https://corporate.shinewerk.de">Corporate</a>
-        <a href="#leistungen" class="btn btn-outline">
-          Leistungen ansehen
+        <a href="https://wa.me/4915562648989" class="btn btn-outline" target="_blank" rel="noopener">
+          Kontakt via WhatsApp
         </a>
       </nav>
     </div>
@@ -1057,7 +1071,7 @@
 
           <div class="hero-actions">
             <a href="https://wa.me/4915562648989" class="btn btn-primary" target="_blank" rel="noopener">
-              Direktanfrage via WhatsApp
+              Termin buchen
               <span class="btn-icon">↗</span>
             </a>
             <a href="#leistungen" class="btn btn-outline">
@@ -1075,23 +1089,25 @@
         <aside class="hero-panel" aria-label="ShineWerk Kennzahlen">
           <div class="hero-panel-header">
             <div>
-              <div class="eyebrow" style="color:#d1d5db; margin-bottom:4px;">Aktuelle Kennzahlen</div>
-              <div class="hero-panel-title">Wenige Aufträge. Maximale Detailtiefe.</div>
+              <div class="eyebrow hero-panel-eyebrow">Aktuelle Kennzahlen</div>
+              <div class="hero-panel-title">
+                <span class="hero-panel-title-pill">Wenige Aufträge. Maximale Detailtiefe.</span>
+              </div>
             </div>
             <div class="hero-pill">
               <span class="hero-pill-dot"></span>
-              Limitierte Plätze pro Woche
+              Limitierte Termine
             </div>
           </div>
 
           <div class="hero-stats">
             <div class="hero-stat">
-              <div class="hero-stat-label">Ø Projektvolumen</div>
-              <div class="hero-stat-value">800–2.500&nbsp;€</div>
+              <div class="hero-stat-label">Durchschnittliche Wartezeit bis Termin</div>
+              <div class="hero-stat-value">3–4 Tage</div>
             </div>
             <div class="hero-stat">
-              <div class="hero-stat-label">Stammkundenanteil</div>
-              <div class="hero-stat-value">&gt; 70&nbsp;%</div>
+              <div class="hero-stat-label">Kundenzufriedenheit</div>
+              <div class="hero-stat-value">100&nbsp;%</div>
             </div>
             <div class="hero-stat">
               <div class="hero-stat-label">Ø Google-Bewertung</div>
@@ -1160,10 +1176,9 @@
             </a>
           </div>
 
-          <!-- Hier könnt ihr später Google My Business / Places-API direkt einhängen -->
+          <!-- TODO: Hier echte Google-Bewertungen über API / Worker einspielen -->
           <div class="reviews-marquee-shell" aria-label="Kundenbewertungen">
             <div class="reviews-track">
-              <!-- Beispiel-Reviews – ersetzen / ergänzen durch echte Zitate -->
               <article class="review-card">
                 <div>
                   <div class="review-header">
@@ -1358,7 +1373,7 @@
             <ul class="service-list">
               <li>Hochwertige Keramiksysteme mit starkem Beading und spürbarer Glättung</li>
               <li>Auf Wunsch Ergänzung um Glas- und Felgenversiegelung</li>
-              <li>Deutlich reduziertem Pflegeaufwand und stabiler Optik über Jahre</li>
+              <li>Deutlich reduzierte Pflegezeit bei stabiler Optik über Jahre</li>
             </ul>
           </article>
         </div>
@@ -1384,11 +1399,11 @@
 
         <div class="timeline">
           <div class="timeline-row">
-            <div>
+            <div class="timeline-step-col">
               <div class="timeline-step-label">Schritt 1</div>
-              <div class="timeline-badge">1</div>
             </div>
-            <div>
+            <div class="timeline-content">
+              <div class="timeline-num-bg">1</div>
               <div class="timeline-title">Kurzcheck &amp; Einschätzung.</div>
               <p class="timeline-text">
                 Du meldest dich per WhatsApp oder Telefon, idealerweise mit ein
@@ -1401,11 +1416,11 @@
           </div>
 
           <div class="timeline-row">
-            <div>
+            <div class="timeline-step-col">
               <div class="timeline-step-label">Schritt 2</div>
-              <div class="timeline-badge">2</div>
             </div>
-            <div>
+            <div class="timeline-content">
+              <div class="timeline-num-bg">2</div>
               <div class="timeline-title">Fahrzeugabgabe bei ShineWerk.</div>
               <p class="timeline-text">
                 Du bringst dein Fahrzeug nach Wörth. Vor Ort gehen wir das
@@ -1418,11 +1433,11 @@
           </div>
 
           <div class="timeline-row">
-            <div>
+            <div class="timeline-step-col">
               <div class="timeline-step-label">Schritt 3</div>
-              <div class="timeline-badge">3</div>
             </div>
-            <div>
+            <div class="timeline-content">
+              <div class="timeline-num-bg">3</div>
               <div class="timeline-title">Übergabe &amp; Pflegeplan.</div>
               <p class="timeline-text">
                 Bei der Abholung schauen wir das Fahrzeug gemeinsam durch. Du
@@ -1634,7 +1649,6 @@
 </div>
 
 <script>
-  // Jahr im Footer
   document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 </body>
