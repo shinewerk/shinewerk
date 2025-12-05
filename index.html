@@ -3,43 +3,48 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShineWerk – High-End Fahrzeugaufbereitung & Keramikversiegelung</title>
+  <meta name="description" content="ShineWerk ist die Adresse für High-End Fahrzeugaufbereitung, Lackkorrektur und Keramikversiegelung im Raum Wörth am Rhein / Karlsruhe. Limitierte Slots, kompromissloser Anspruch, sichtbar mehr als Standard-Aufbereitung." />
 
-  <title>ShineWerk – Fahrzeugaufbereitung & Keramikversiegelung Südpfalz</title>
-  <meta name="description" content="Premium Fahrzeugaufbereitung, Lackkorrektur und Keramikversiegelung in Kapellen-Drusweiler. Perfekter Glanz, maximaler Werterhalt – für Daily Driver, Sportwagen & Leasingfahrzeuge." />
-  <link rel="canonical" href="https://shinewerk.de/" />
-
-  <!-- Fonts -->
+  <!-- Serif font for headings -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
 
   <style>
     :root {
-      --color-bg: #050814;
-      --color-bg-soft: #080c1a;
-      --color-bg-elevated: #0d1324;
-      --color-primary: #188bf6; /* ShineWerk Blau */
-      --color-primary-soft: rgba(24, 139, 246, 0.15);
-      --color-accent: #37ca37;
-      --color-border: rgba(255, 255, 255, 0.08);
-      --color-text: #f9fafb;
-      --color-text-muted: #9ca3af;
-      --color-text-soft: #6b7280;
-      --radius-xl: 16px;
-      --radius-2xl: 24px;
-      --shadow-soft: 0 26px 80px rgba(0, 0, 0, 0.65);
-      --container-max: 1120px;
+      --bg: #f5f5f7;
+      --bg-elevated: #ffffff;
+      --bg-soft: #e5e7eb;
+      --text-main: #111827;
+      --text-soft: #6b7280;
+      --border-subtle: rgba(15, 23, 42, 0.08);
+      --accent-blue: #162b4a;        /* ShineWerk Blau – tief, nicht neon */
+      --accent-blue-soft: rgba(22, 43, 74, 0.06);
+      --accent-gradient-from: #162b4a;
+      --accent-gradient-to: #3b82f6;
+      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.16);
+      --radius-lg: 22px;
+      --radius-pill: 999px;
+      --nav-height: 76px;
+      --hero-image-opacity: 0.45;
     }
 
     * {
       box-sizing: border-box;
+      margin: 0;
+      padding: 0;
     }
 
+    html,
     body {
-      margin: 0;
-      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
-      background: radial-gradient(circle at top, #101936 0, #050814 55%, #020409 100%);
-      color: var(--color-text);
+      scroll-behavior: smooth;
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui,
+        -apple-system, sans-serif;
       -webkit-font-smoothing: antialiased;
+      line-height: 1.6;
     }
 
     img {
@@ -48,8 +53,8 @@
     }
 
     a {
-      color: inherit;
       text-decoration: none;
+      color: inherit;
     }
 
     .page {
@@ -60,481 +65,443 @@
 
     .container {
       width: 100%;
-      max-width: var(--container-max);
+      max-width: 1120px;
       margin: 0 auto;
       padding: 0 20px;
     }
 
-    /* Header */
+    /* HEADER */
 
-    header {
+    .site-header {
       position: sticky;
       top: 0;
       z-index: 50;
-      backdrop-filter: blur(18px);
-      background: linear-gradient(to bottom, rgba(5, 8, 20, 0.96), rgba(5, 8, 20, 0.82), transparent);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+      backdrop-filter: blur(6px);
+      background: linear-gradient(
+        to bottom,
+        rgba(245, 245, 247, 0.9),
+        rgba(245, 245, 247, 0.9)
+      );
+      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
     }
 
-    .header-inner {
+    .nav {
+      height: var(--nav-height);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      padding: 18px 0;
-      gap: 24px;
-    }
-
-    .logo-wrap {
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
 
     .logo {
-      width: 40px;
-      height: 40px;
-      border-radius: 999px;
-      overflow: hidden;
-      background: radial-gradient(circle at 20% 0, #2ea5ff 0, #188bf6 40%, #020617 100%);
-      box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.08);
+      display: flex;
+      align-items: center;
+      gap: 12px;
     }
 
-    .logo img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
+    .logo-img {
+      width: 40px;
+      height: 40px;
+      border-radius: 14px;
+      object-fit: contain;
+      background: radial-gradient(circle at 10% 0%, #fefefe, #d1d5db);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
+      padding: 4px;
     }
 
     .logo-text {
       display: flex;
       flex-direction: column;
-      line-height: 1.1;
+      gap: 2px;
     }
 
-    .logo-text-main {
-      font-weight: 600;
-      font-size: 17px;
-      letter-spacing: 0.02em;
+    .logo-text span:first-child {
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      letter-spacing: 0.03em;
     }
 
-    .logo-text-sub {
-      font-size: 12px;
-      color: var(--color-text-muted);
+    .logo-text span:last-child {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
     }
 
-    nav {
+    .nav-links {
       display: flex;
       align-items: center;
-      gap: 22px;
+      gap: 26px;
       font-size: 14px;
-      color: var(--color-text-soft);
     }
 
-    nav a {
+    .nav-links a {
       position: relative;
-      padding: 4px 0;
-      transition: color 0.18s ease;
+      color: var(--text-soft);
+      transition: color 0.2s ease;
+      padding-bottom: 4px;
     }
 
-    nav a::after {
+    .nav-links a::after {
       content: "";
       position: absolute;
       left: 0;
-      bottom: -4px;
+      bottom: 0;
       width: 0;
-      height: 2px;
-      border-radius: 999px;
-      background: linear-gradient(90deg, #2ea5ff, #188bf6);
-      transition: width 0.18s ease;
+      height: 1px;
+      background: var(--accent-blue);
+      transition: width 0.22s ease;
     }
 
-    nav a:hover {
-      color: var(--color-text);
+    .nav-links a:hover {
+      color: var(--text-main);
     }
 
-    nav a:hover::after {
+    .nav-links a:hover::after {
       width: 100%;
-    }
-
-    .header-cta {
-      display: flex;
-      align-items: center;
-      gap: 10px;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      gap: 8px;
-      padding: 8px 16px;
-      border-radius: 999px;
+      border-radius: var(--radius-pill);
       border: 1px solid transparent;
-      font-size: 13px;
+      padding: 10px 20px;
+      font-size: 14px;
       font-weight: 500;
       cursor: pointer;
+      transition: all 0.2s ease;
       background: transparent;
-      color: var(--color-text);
-      transition: all 0.18s ease;
-      white-space: nowrap;
+      color: var(--text-main);
+      gap: 8px;
+      letter-spacing: 0.03em;
     }
 
     .btn-primary {
-      background: radial-gradient(circle at 0 0, #3ac4ff 0, #188bf6 35%, #0d4fa3 100%);
-      box-shadow: 0 14px 40px rgba(24, 139, 246, 0.45);
+      background: radial-gradient(
+        circle at 0% 0%,
+        var(--accent-gradient-to),
+        var(--accent-gradient-from)
+      );
+      color: #f9fafb;
+      border-color: rgba(255, 255, 255, 0.3);
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.35);
     }
 
     .btn-primary:hover {
       transform: translateY(-1px);
-      box-shadow: 0 18px 55px rgba(24, 139, 246, 0.6);
+      box-shadow: 0 14px 38px rgba(15, 23, 42, 0.5);
     }
 
-    .btn-ghost {
-      border-color: rgba(148, 163, 184, 0.4);
-      color: var(--color-text-soft);
-      background: linear-gradient(to bottom right, rgba(15, 23, 42, 0.2), rgba(15, 23, 42, 0.6));
+    .btn-outline {
+      border-color: rgba(15, 23, 42, 0.14);
+      background: rgba(255, 255, 255, 0.7);
     }
 
-    .btn-ghost:hover {
-      border-color: rgba(148, 163, 184, 0.7);
-      color: var(--color-text);
-      background: linear-gradient(to bottom right, rgba(15, 23, 42, 0.4), rgba(15, 23, 42, 0.9));
+    .btn-outline:hover {
+      background: #ffffff;
+      border-color: rgba(15, 23, 42, 0.24);
+      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.16);
     }
 
     .btn-icon {
       font-size: 16px;
+      transform: translateY(1px);
     }
 
-    .header-mobile-toggle {
-      display: none;
+    /* Gradient highlight */
+
+    .hero-title span,
+    .highlight {
+      background: linear-gradient(
+        120deg,
+        var(--accent-gradient-from),
+        var(--accent-gradient-to)
+      );
+      -webkit-background-clip: text;
+      color: transparent;
     }
 
-    /* Hero */
+    /* HERO */
 
     .hero {
       position: relative;
-      padding: 56px 0 64px;
+      padding: 140px 0 90px;
+      background-color: var(--bg);
+      overflow: hidden;
     }
 
     .hero::before {
       content: "";
       position: absolute;
       inset: 0;
-      background:
-        radial-gradient(circle at top left, rgba(56, 189, 248, 0.28), transparent 60%),
-        radial-gradient(circle at top right, rgba(37, 99, 235, 0.28), transparent 55%);
-      opacity: 0.7;
+      background-image: url("hero.png");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      opacity: var(--hero-image-opacity);
       pointer-events: none;
-      z-index: -2;
+      z-index: 0;
     }
 
-    .hero-inner {
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(
+        to top,
+        rgba(245, 245, 247, 1) 0%,
+        rgba(245, 245, 247, 0.9) 35%,
+        rgba(245, 245, 247, 0.65) 65%,
+        rgba(245, 245, 247, 0) 100%
+      );
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    .hero > .container {
+      position: relative;
+      z-index: 2;
+    }
+
+    .hero-grid {
       display: grid;
-      grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 42px;
+      grid-template-columns: minmax(0, 1.45fr) minmax(0, 1fr);
+      gap: 72px;
       align-items: center;
-    }
-
-    .hero-copy {
-      max-width: 560px;
     }
 
     .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 8px;
-      padding: 4px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background: linear-gradient(90deg, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.2));
-      color: var(--color-text-soft);
-      font-size: 11px;
-      letter-spacing: 0.08em;
+      font-size: 12px;
       text-transform: uppercase;
-      margin-bottom: 16px;
-    }
-
-    .eyebrow-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #a7f3d0 0, #22c55e 40%, #14532d 100%);
-      box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.25);
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      margin-bottom: 20px;
     }
 
     .hero-title {
-      font-size: clamp(32px, 4vw, 40px);
-      line-height: 1.05;
-      margin: 0 0 16px;
-      letter-spacing: -0.03em;
-    }
-
-    .hero-title span.highlight {
-      background: linear-gradient(90deg, #38bdf8, #188bf6, #60a5fa);
-      -webkit-background-clip: text;
-      color: transparent;
-    }
-
-    .hero-subtitle {
-      margin: 0 0 24px;
-      color: var(--color-text-muted);
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .hero-badges {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
+      font-family: "Playfair Display", serif;
+      font-size: 42px;
+      line-height: 1.15;
       margin-bottom: 26px;
     }
 
-    .hero-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 6px;
-      padding: 6px 10px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      background: radial-gradient(circle at 0 0, rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.2));
-      font-size: 11px;
-      color: var(--color-text-soft);
+    .hero-subtitle {
+      font-size: 16px;
+      color: var(--text-soft);
+      max-width: 520px;
+      margin-bottom: 32px;
     }
 
-    .hero-cta {
+    .hero-actions {
       display: flex;
       flex-wrap: wrap;
-      gap: 12px;
-      align-items: center;
-      margin-bottom: 18px;
+      gap: 16px;
+      margin-bottom: 26px;
     }
 
     .hero-note {
       font-size: 12px;
-      color: var(--color-text-soft);
+      color: var(--text-soft);
+      max-width: 520px;
     }
 
-    .hero-metrics {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      margin-top: 20px;
-      font-size: 12px;
-      color: var(--color-text-soft);
-    }
-
-    .hero-metric {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .hero-metric strong {
-      font-size: 16px;
-      color: var(--color-text);
-    }
-
-    .hero-visual {
-      position: relative;
-    }
-
-    .hero-card {
-      position: relative;
-      border-radius: var(--radius-2xl);
-      background:
-        linear-gradient(145deg, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.4)),
-        url("hero.png") center/cover no-repeat;
-      border: 1px solid rgba(148, 163, 184, 0.35);
-      box-shadow: var(--shadow-soft);
-      padding: 20px;
-      min-height: 260px;
-      overflow: hidden;
-    }
-
-    .hero-card-gradient {
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at top right, rgba(56, 189, 248, 0.35), transparent 55%);
-      opacity: 0.8;
-      pointer-events: none;
-    }
-
-    .hero-car-overlay {
-      position: absolute;
-      inset: 0;
-      background: url("hero.png") center/cover no-repeat;
-      mix-blend-mode: screen;
-      opacity: 0.75;
-      pointer-events: none;
-    }
-
-    .hero-card-inner {
-      position: relative;
-      z-index: 1;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-    }
-
-    .hero-tagline {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.2em;
-      color: rgba(209, 213, 219, 0.9);
-      margin-bottom: 6px;
-    }
-
-    .hero-card-title {
-      font-size: 18px;
+    .hero-note strong {
+      color: var(--accent-blue);
       font-weight: 600;
-      margin-bottom: 6px;
     }
 
-    .hero-card-sub {
-      font-size: 13px;
-      color: var(--color-text-muted);
-      max-width: 260px;
+    .hero-panel {
+      background: radial-gradient(
+        circle at 10% 0%,
+        rgba(22, 43, 74, 0.35),
+        #111827
+      );
+      border-radius: 32px;
+      padding: 32px 30px;
+      box-shadow: var(--shadow-soft);
+      color: #f9fafb;
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(6px);
+      background-image: url("process.png");
+      background-position: center;
+      background-size: cover;
+      background-repeat: no-repeat;
     }
 
-    .hero-chip-row {
+    .hero-panel::after {
+      content: "";
+      position: absolute;
+      inset: 1px;
+      border-radius: 30px;
+      border: 1px solid rgba(148, 163, 184, 0.2);
+      pointer-events: none;
+    }
+
+    .hero-panel-header {
       display: flex;
-      flex-wrap: wrap;
-      gap: 8px;
-      margin-bottom: 14px;
-      font-size: 11px;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 26px;
     }
 
-    .hero-chip {
-      padding: 4px 10px;
+    .hero-panel-title {
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+    }
+
+    .hero-pill {
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.84);
-      border: 1px solid rgba(148, 163, 184, 0.45);
-      color: var(--color-text-soft);
-      backdrop-filter: blur(10px);
-    }
-
-    .hero-stats-card {
-      align-self: flex-end;
-      padding: 10px 12px;
-      border-radius: 14px;
-      background: rgba(15, 23, 42, 0.92);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      display: flex;
-      flex-direction: column;
-      gap: 6px;
+      padding: 4px 12px;
       font-size: 11px;
-      max-width: 220px;
-      backdrop-filter: blur(14px);
-    }
-
-    .hero-stats-badge {
+      background: rgba(15, 23, 42, 0.5);
+      border: 1px solid rgba(148, 163, 184, 0.5);
       display: inline-flex;
       align-items: center;
       gap: 6px;
+    }
+
+    .hero-pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #22c55e;
+      box-shadow: 0 0 16px rgba(34, 197, 94, 0.8);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      font-size: 12px;
+    }
+
+    .hero-stat {
+      padding: 12px 12px;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.6);
+      border: 1px solid rgba(148, 163, 184, 0.5);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-stat-label {
+      color: #9ca3af;
       font-size: 11px;
-      color: var(--color-text-soft);
+      margin-bottom: 4px;
     }
 
-    .hero-stats-stars {
-      color: #fbbf24;
-      letter-spacing: 0.1em;
+    .hero-stat-value {
+      font-size: 15px;
+      font-weight: 600;
     }
 
-    .hero-stats-main {
+    .hero-footer-line {
+      margin-top: 22px;
+      font-size: 11px;
+      color: #e6eef7;
+    }
+
+    /* MINI BANNER – Südpfalz Times */
+
+    .mini-banner {
+      padding: 12px 0 8px;
+      background: linear-gradient(
+        to bottom,
+        rgba(15, 23, 42, 0.02),
+        transparent
+      );
+    }
+
+    .mini-banner-inner {
+      border-radius: 999px;
+      border: 1px solid rgba(15, 23, 42, 0.06);
+      background: #ffffff;
+      padding: 8px 16px;
       display: flex;
-      justify-content: space-between;
-      align-items: baseline;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      box-shadow: 0 10px 26px rgba(15, 23, 42, 0.08);
     }
 
-    .hero-stats-main strong {
-      font-size: 18px;
+    .mini-banner-label {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--text-soft);
     }
 
-    .hero-stats-footer {
-      display: flex;
-      justify-content: space-between;
-      gap: 8px;
-      color: var(--color-text-soft);
+    .mini-banner-logo {
+      height: 22px;
+      width: auto;
+      display: block;
     }
 
-    /* Section base */
+    /* SECTION BASE */
 
     section {
-      padding: 40px 0;
-    }
-
-    section + section {
-      border-top: 1px solid rgba(15, 23, 42, 0.9);
+      padding: 110px 0;
     }
 
     .section-header {
       display: flex;
       justify-content: space-between;
-      gap: 18px;
       align-items: flex-end;
-      margin-bottom: 24px;
-    }
-
-    .section-title-group {
-      max-width: 520px;
-    }
-
-    .section-eyebrow {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.12em;
-      color: var(--color-text-soft);
-      margin-bottom: 6px;
+      gap: 32px;
+      margin-bottom: 44px;
     }
 
     .section-title {
-      font-size: 20px;
-      margin: 0 0 6px;
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      line-height: 1.25;
     }
 
-    .section-subtitle {
-      margin: 0;
+    .section-description {
       font-size: 14px;
-      color: var(--color-text-muted);
+      color: var(--text-soft);
+      max-width: 440px;
+      line-height: 1.8;
     }
 
-    .section-tag {
+    .section-eyebrow {
       font-size: 12px;
-      color: var(--color-text-soft);
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      margin-bottom: 10px;
     }
 
-    /* Google Reviews */
+    /* REVIEWS */
 
     .reviews {
       position: relative;
     }
 
     .reviews-inner {
-      border-radius: var(--radius-2xl);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      background:
-        radial-gradient(circle at 0 0, rgba(24, 139, 246, 0.16), transparent 55%),
-        linear-gradient(to bottom right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.7)),
-        url("reviews.png") center/cover no-repeat;
-      padding: 18px 18px 14px;
-      overflow: hidden;
+      border-radius: 26px;
+      padding: 24px 22px 22px;
+      background: url("reviews.png") center/cover no-repeat,
+        radial-gradient(circle at 0% 0%, rgba(22, 43, 74, 0.04), #ffffff);
+      border: 1px solid var(--border-subtle);
       box-shadow: var(--shadow-soft);
+      overflow: hidden;
     }
 
     .reviews-header-row {
       display: flex;
       justify-content: space-between;
-      gap: 16px;
       align-items: center;
-      margin-bottom: 18px;
-      font-size: 13px;
+      gap: 18px;
+      margin-bottom: 22px;
     }
 
     .reviews-rating {
       display: flex;
       align-items: center;
-      gap: 10px;
+      gap: 14px;
     }
 
     .reviews-score-main {
@@ -544,30 +511,36 @@
     }
 
     .reviews-score-main strong {
-      font-size: 20px;
+      font-size: 22px;
     }
 
     .reviews-stars {
-      color: #facc15;
+      color: #f59e0b;
       letter-spacing: 0.16em;
       font-size: 13px;
+    }
+
+    .reviews-score-text {
+      font-size: 13px;
+      color: var(--text-soft);
     }
 
     .reviews-google-badge {
       display: inline-flex;
       align-items: center;
-      gap: 6px;
-      padding: 4px 10px;
+      gap: 8px;
+      padding: 6px 12px;
       border-radius: 999px;
-      background: rgba(15, 23, 42, 0.86);
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      font-size: 11px;
-      color: var(--color-text-soft);
+      background: rgba(255, 255, 255, 0.9);
+      border: 1px solid rgba(15, 23, 42, 0.08);
+      font-size: 12px;
+      color: var(--text-soft);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.08);
     }
 
     .reviews-google-logo {
-      width: 16px;
-      height: 16px;
+      width: 18px;
+      height: 18px;
       border-radius: 4px;
       background: conic-gradient(
         from 45deg,
@@ -581,14 +554,20 @@
     .reviews-marquee-shell {
       position: relative;
       overflow: hidden;
-      mask-image: linear-gradient(to right, transparent 0, black 10%, black 90%, transparent 100%);
+      mask-image: linear-gradient(
+        to right,
+        transparent 0,
+        black 10%,
+        black 90%,
+        transparent 100%
+      );
     }
 
     .reviews-track {
       display: inline-flex;
       gap: 14px;
       white-space: nowrap;
-      animation: scroll-reviews 35s linear infinite;
+      animation: scroll-reviews 32s linear infinite;
     }
 
     .review-card {
@@ -598,11 +577,12 @@
       min-width: 260px;
       max-width: 320px;
       padding: 12px 14px;
-      border-radius: 14px;
-      background: rgba(15, 23, 42, 0.96);
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border-radius: 16px;
+      background: rgba(255, 255, 255, 0.94);
+      border: 1px solid rgba(15, 23, 42, 0.08);
       font-size: 12px;
-      color: var(--color-text-muted);
+      color: var(--text-soft);
+      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.08);
     }
 
     .review-header {
@@ -616,24 +596,24 @@
       width: 26px;
       height: 26px;
       border-radius: 999px;
-      background: radial-gradient(circle at 30% 0, #4ade80 0, #22c55e 40%, #14532d 100%);
+      background: radial-gradient(circle at 30% 0, #e5e7eb, #9ca3af);
       flex-shrink: 0;
     }
 
     .review-name {
       font-size: 12px;
       font-weight: 500;
-      color: var(--color-text);
+      color: var(--text-main);
     }
 
     .review-meta {
       font-size: 11px;
-      color: var(--color-text-soft);
+      color: var(--text-soft);
     }
 
     .review-stars {
       font-size: 12px;
-      color: #facc15;
+      color: #f59e0b;
       margin-bottom: 4px;
     }
 
@@ -646,16 +626,11 @@
       justify-content: space-between;
       margin-top: 8px;
       font-size: 11px;
-      color: var(--color-text-soft);
+      color: var(--text-soft);
     }
 
     .reviews-inner:hover .reviews-track {
       animation-play-state: paused;
-    }
-
-    /* Hinweis: Hier kann ein Google-Places- / My-Business-Script andocken */
-    #google-reviews-widget {
-      display: none;
     }
 
     @keyframes scroll-reviews {
@@ -667,53 +642,55 @@
       }
     }
 
-    /* Leistungen */
+    /* LEISTUNGEN */
 
     .services-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
+      gap: 22px;
     }
 
     .service-card {
-      border-radius: var(--radius-xl);
-      background: linear-gradient(to bottom right, rgba(15, 23, 42, 0.9), rgba(15, 23, 42, 0.7));
-      border: 1px solid var(--color-border);
-      padding: 16px 16px 18px;
+      padding: 22px 22px 24px;
+      border-radius: var(--radius-lg);
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
       display: flex;
       flex-direction: column;
       gap: 10px;
     }
 
     .service-label {
-      font-size: 12px;
-      letter-spacing: 0.14em;
+      font-size: 11px;
       text-transform: uppercase;
-      color: var(--color-text-soft);
+      letter-spacing: 0.18em;
+      color: var(--text-soft);
+      margin-bottom: 4px;
     }
 
     .service-title {
-      font-size: 16px;
-      margin: 0;
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+      margin-bottom: 8px;
     }
 
-    .service-body {
-      font-size: 13px;
-      color: var(--color-text-muted);
-      line-height: 1.6;
+    .service-text {
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.7;
     }
 
     .service-list {
       list-style: none;
-      padding: 0;
-      margin: 8px 0 0;
+      margin-top: 8px;
       font-size: 13px;
-      color: var(--color-text-soft);
+      color: var(--text-soft);
     }
 
     .service-list li {
       position: relative;
-      padding-left: 16px;
+      padding-left: 14px;
       margin-bottom: 4px;
     }
 
@@ -722,28 +699,28 @@
       position: absolute;
       left: 4px;
       top: 0;
-      color: var(--color-primary);
+      color: var(--accent-blue);
     }
 
-    /* Ablauf */
+    /* ABLAUF */
 
     .timeline {
       display: grid;
-      gap: 16px;
+      gap: 18px;
     }
 
     .timeline-row {
       display: grid;
-      grid-template-columns: 80px minmax(0, 1fr);
-      gap: 12px;
+      grid-template-columns: 82px minmax(0, 1fr);
+      gap: 14px;
       align-items: flex-start;
     }
 
-    .timeline-step {
+    .timeline-step-label {
       font-size: 11px;
       text-transform: uppercase;
       letter-spacing: 0.18em;
-      color: var(--color-text-soft);
+      color: var(--text-soft);
       margin-bottom: 4px;
     }
 
@@ -751,23 +728,30 @@
       width: 36px;
       height: 36px;
       border-radius: 999px;
-      background: radial-gradient(circle at 20% 0, #3b82f6 0, #188bf6 40%, #020617 100%);
+      background: radial-gradient(
+        circle at 30% 0,
+        var(--accent-gradient-to),
+        var(--accent-gradient-from)
+      );
       display: flex;
       align-items: center;
       justify-content: center;
+      color: #f9fafb;
       font-size: 14px;
       font-weight: 600;
-      box-shadow: 0 14px 40px rgba(24, 139, 246, 0.4);
+      box-shadow: 0 14px 36px rgba(15, 23, 42, 0.35);
     }
 
-    .timeline-content-title {
+    .timeline-title {
       font-size: 15px;
-      margin: 0 0 4px;
+      font-weight: 600;
+      margin-bottom: 4px;
     }
 
-    .timeline-content-text {
+    .timeline-text {
       font-size: 13px;
-      color: var(--color-text-muted);
+      color: var(--text-soft);
+      line-height: 1.7;
     }
 
     /* FAQ */
@@ -775,13 +759,17 @@
     .faq-grid {
       display: grid;
       grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
-      gap: 24px;
+      gap: 40px;
       align-items: flex-start;
     }
 
     .faq-intro {
       font-size: 14px;
-      color: var(--color-text-muted);
+      color: var(--text-soft);
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+      line-height: 1.8;
     }
 
     .faq-items {
@@ -791,11 +779,12 @@
     }
 
     details.faq-item {
-      border-radius: var(--radius-xl);
-      background: linear-gradient(to bottom right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.7));
-      border: 1px solid rgba(148, 163, 184, 0.4);
+      border-radius: 18px;
+      background: #ffffff;
+      border: 1px solid rgba(15, 23, 42, 0.08);
       padding: 10px 12px;
       font-size: 13px;
+      box-shadow: 0 8px 22px rgba(15, 23, 42, 0.06);
     }
 
     details.faq-item summary {
@@ -806,7 +795,7 @@
       align-items: center;
       justify-content: space-between;
       gap: 10px;
-      color: var(--color-text);
+      color: var(--text-main);
     }
 
     details.faq-item summary::-webkit-details-marker {
@@ -814,8 +803,11 @@
     }
 
     .faq-toggle {
-      font-size: 14px;
-      color: var(--color-text-soft);
+      font-size: 18px;
+      color: var(--text-soft);
+      line-height: 1;
+      transform-origin: center;
+      transition: transform 0.16s ease;
     }
 
     details.faq-item[open] .faq-toggle {
@@ -824,58 +816,60 @@
 
     details.faq-item p {
       margin: 8px 0 0;
-      color: var(--color-text-muted);
-      line-height: 1.6;
+      color: var(--text-soft);
+      line-height: 1.7;
     }
 
-    /* Standort / Maps */
+    /* STANDORT */
 
     .location-grid {
       display: grid;
-      grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.1fr);
-      gap: 20px;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 32px;
       align-items: stretch;
     }
 
     .location-card {
-      border-radius: var(--radius-xl);
-      background: linear-gradient(to bottom right, rgba(15, 23, 42, 0.95), rgba(15, 23, 42, 0.7));
-      border: 1px solid rgba(148, 163, 184, 0.4);
-      padding: 16px 16px 18px;
+      border-radius: 24px;
+      padding: 22px 22px 24px;
+      background: var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
       display: flex;
       flex-direction: column;
       gap: 10px;
+      font-size: 14px;
+      color: var(--text-soft);
     }
 
     .location-card h3 {
-      margin: 0 0 4px;
-      font-size: 16px;
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+      margin-bottom: 6px;
+      color: var(--text-main);
     }
 
     .location-address {
-      font-size: 13px;
-      color: var(--color-text-muted);
-      line-height: 1.5;
+      line-height: 1.7;
     }
 
     .location-meta {
-      font-size: 12px;
-      color: var(--color-text-soft);
+      font-size: 13px;
     }
 
     .location-actions {
-      margin-top: 8px;
+      margin-top: 12px;
       display: flex;
       flex-wrap: wrap;
       gap: 10px;
     }
 
     .map-shell {
-      border-radius: var(--radius-2xl);
+      border-radius: 24px;
       overflow: hidden;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      box-shadow: var(--shadow-soft);
-      background: #020617;
+      border: 1px solid rgba(15, 23, 42, 0.1);
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.2);
+      background: #000;
     }
 
     .map-shell iframe {
@@ -885,63 +879,40 @@
       border: 0;
     }
 
-    /* Footer */
+    /* FOOTER */
 
     footer {
-      border-top: 1px solid rgba(15, 23, 42, 0.9);
-      margin-top: 40px;
-      padding: 18px 0 22px;
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
+      padding: 22px 0 30px;
+      background: linear-gradient(
+        to top,
+        rgba(15, 23, 42, 0.06),
+        transparent
+      );
       font-size: 12px;
-      color: var(--color-text-soft);
+      color: var(--text-soft);
+      margin-top: 40px;
     }
 
     .footer-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
-      gap: 12px;
+      justify-content: space-between;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
     .footer-links {
       display: flex;
-      gap: 12px;
+      gap: 16px;
       flex-wrap: wrap;
     }
 
-    .footer-links a {
-      color: var(--color-text-soft);
-    }
-
     .footer-links a:hover {
-      color: var(--color-text);
+      color: var(--text-main);
     }
 
-    .footer-social {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-    }
-
-    .social-pill {
-      width: 28px;
-      height: 28px;
-      border-radius: 999px;
-      border: 1px solid rgba(148, 163, 184, 0.5);
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 14px;
-      color: var(--color-text-soft);
-      background: rgba(15, 23, 42, 0.7);
-    }
-
-    .social-pill:hover {
-      color: var(--color-text);
-      border-color: rgba(148, 163, 184, 0.9);
-    }
-
-    /* WhatsApp Floating Button */
+    /* WhatsApp FAB */
 
     .whatsapp-fab {
       position: fixed;
@@ -957,7 +928,7 @@
       gap: 8px;
       padding: 10px 16px;
       border-radius: 999px;
-      background: radial-gradient(circle at 0 0, #4ade80 0, #22c55e 40%, #15803d 100%);
+      background: radial-gradient(circle at 0 0, #4ade80, #16a34a);
       color: #ecfdf3;
       font-size: 13px;
       font-weight: 600;
@@ -982,62 +953,61 @@
       font-size: 15px;
     }
 
-    /* Responsive */
-
     @media (max-width: 960px) {
-      .hero-inner {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .hero {
-        padding-top: 34px;
-      }
-      .hero-visual {
-        order: -1;
-      }
-      .services-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
-      .faq-grid {
-        grid-template-columns: minmax(0, 1fr);
-      }
+      .hero-grid,
+      .faq-grid,
       .location-grid {
         grid-template-columns: minmax(0, 1fr);
       }
-      header {
-        backdrop-filter: blur(16px);
+
+      .hero {
+        padding-top: 90px;
       }
-      nav {
-        display: none;
+
+      .hero-panel {
+        margin-top: 40px;
       }
-      .header-mobile-toggle {
-        display: inline-flex;
-        border-radius: 999px;
-        border: 1px solid rgba(148, 163, 184, 0.4);
-        padding: 6px 9px;
-        font-size: 11px;
-        color: var(--color-text-soft);
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .services-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .site-header {
+        position: sticky;
       }
     }
 
-    @media (max-width: 640px) {
-      .hero-card {
-        min-height: 220px;
+    @media (max-width: 720px) {
+      .nav-links {
+        display: none;
       }
-      .hero-metrics {
-        gap: 12px;
+
+      .hero-grid,
+      .services-grid {
+        grid-template-columns: minmax(0, 1fr);
       }
-      .header-inner {
-        padding: 14px 0;
+
+      .hero-title {
+        font-size: 34px;
       }
+
       section {
-        padding: 32px 0;
+        padding: 72px 0;
       }
+
       .reviews-inner {
-        padding: 14px 12px 10px;
+        padding: 18px 14px 14px;
       }
+
       .map-shell iframe {
         height: 220px;
       }
+
       .whatsapp-fab a span.label {
         display: none;
       }
@@ -1046,627 +1016,366 @@
 </head>
 
 <body>
-  <div class="page">
-    <!-- Header -->
-    <header>
-      <div class="container">
-        <div class="header-inner">
-          <div class="logo-wrap">
-            <div class="logo">
-              <!-- Optional: eigenes Logo-Bild -->
-              <!-- <img src="logo.png" alt="ShineWerk Logo" /> -->
-            </div>
-            <div class="logo-text">
-              <span class="logo-text-main">ShineWerk</span>
-              <span class="logo-text-sub">Fahrzeugaufbereitung &amp; Versiegelung</span>
-            </div>
-          </div>
+<div class="page">
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav">
+      <div class="logo">
+        <img src="logo.png" alt="ShineWerk Logo" class="logo-img" />
+        <div class="logo-text">
+          <span>ShineWerk</span>
+          <span>Fahrzeugaufbereitung &amp; Versiegelung</span>
+        </div>
+      </div>
+      <nav class="nav-links">
+        <a href="https://shinewerk.de">Home</a>
+        <a href="https://exclusive.shinewerk.de">Exclusive</a>
+        <a href="https://corporate.shinewerk.de">Corporate</a>
+        <a href="#leistungen" class="btn btn-outline">
+          Leistungen ansehen
+        </a>
+      </nav>
+    </div>
+  </header>
 
-          <nav aria-label="Hauptnavigation">
-            <a href="https://shinewerk.de">Home</a>
-            <a href="https://exclusive.shinewerk.de">Exclusive</a>
-            <a href="https://corporate.shinewerk.de">Corporate</a>
-          </nav>
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <div class="eyebrow">High-End Fahrzeugaufbereitung in der Südpfalz</div>
+          <h1 class="hero-title">
+            Fahrzeugaufbereitung für Menschen,<br />
+            die <span>keine Kompromisse fahren.</span>
+          </h1>
+          <p class="hero-subtitle">
+            ShineWerk ist die Adresse für High-End Detailing, Lackkorrektur
+            und Keramikversiegelung im Raum Wörth am Rhein / Karlsruhe – mit
+            bewusst begrenzten Slots und Fokus auf Fahrzeuge, bei denen das
+            Ergebnis wichtiger ist als der Preis pro Stunde.
+          </p>
 
-          <div class="header-cta">
-            <a href="https://wa.me/4915562648989" class="btn btn-ghost" target="_blank" rel="noopener">
-              <span class="btn-icon">💬</span>
-              WhatsApp
+          <div class="hero-actions">
+            <a href="https://wa.me/4915562648989" class="btn btn-primary" target="_blank" rel="noopener">
+              Direktanfrage via WhatsApp
+              <span class="btn-icon">↗</span>
             </a>
-            <button class="header-mobile-toggle" type="button">
-              Menu
-            </button>
+            <a href="#leistungen" class="btn btn-outline">
+              Leistungen &amp; Ablauf ansehen
+            </a>
           </div>
+
+          <p class="hero-note">
+            <strong>Keine „schnell mal sauber“-Pakete.</strong><br />
+            Jedes Fahrzeug wird so behandelt, als würde es anschließend auf einem
+            Showfloor stehen – egal ob Daily, Performance-Fahrzeug oder Leasingrückgabe.
+          </p>
         </div>
+
+        <aside class="hero-panel" aria-label="ShineWerk Kennzahlen">
+          <div class="hero-panel-header">
+            <div>
+              <div class="eyebrow" style="color:#d1d5db; margin-bottom:4px;">Aktuelle Kennzahlen</div>
+              <div class="hero-panel-title">Wenige Aufträge. Maximale Detailtiefe.</div>
+            </div>
+            <div class="hero-pill">
+              <span class="hero-pill-dot"></span>
+              Limitierte Plätze pro Woche
+            </div>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-label">Ø Projektvolumen</div>
+              <div class="hero-stat-value">800–2.500&nbsp;€</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-label">Stammkundenanteil</div>
+              <div class="hero-stat-value">&gt; 70&nbsp;%</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-label">Ø Google-Bewertung</div>
+              <div class="hero-stat-value">5,0 ★</div>
+            </div>
+          </div>
+
+          <p class="hero-footer-line">
+            Wir planen jede Aufbereitung so, dass du dein Fahrzeug nicht „irgendwie besser“,
+            sondern sichtbar auf einem anderen Level zurückbekommst.
+          </p>
+        </aside>
       </div>
-    </header>
+    </section>
 
-    <main>
-      <!-- Hero -->
-      <section class="hero">
-        <div class="container">
-          <div class="hero-inner">
-            <div class="hero-copy">
-              <div class="eyebrow">
-                <span class="eyebrow-dot"></span>
-                Fahrzeugaufbereitung &amp; Keramikversiegelung in der Südpfalz
-              </div>
-              <h1 class="hero-title">
-                Perfekter Glanz.
-                <span class="highlight">Maximaler Werterhalt.</span>
-              </h1>
-              <p class="hero-subtitle">
-                ShineWerk ist dein Spezialist für Aufbereitung, Lackkorrektur und Keramikversiegelung –
-                für Fahrzeuge, die besser aussehen als neu und dauerhaft geschützt sind.
-              </p>
-
-              <div class="hero-badges">
-                <div class="hero-badge">Daily Driver, Sportwagen &amp; Leasingrückgabe</div>
-                <div class="hero-badge">Kapellen-Drusweiler · Nähe Landau &amp; Karlsruhe</div>
-              </div>
-
-              <div class="hero-cta">
-                <a href="https://wa.me/4915562648989" class="btn btn-primary" target="_blank" rel="noopener">
-                  <span class="btn-icon">💬</span>
-                  Termin via WhatsApp klären
-                </a>
-                <a href="#location" class="btn btn-ghost">
-                  <span class="btn-icon">📍</span>
-                  Standort &amp; Anfahrt
-                </a>
-              </div>
-
-              <p class="hero-note">
-                Kurze Abstimmung, klare Empfehlung – danach kümmern wir uns um alles.
-              </p>
-
-              <div class="hero-metrics">
-                <div class="hero-metric">
-                  <span>Ø Kundenbewertung</span>
-                  <strong>5,0 ★</strong>
-                  <span>auf Google</span>
-                </div>
-                <div class="hero-metric">
-                  <span>Fahrzeuge / Jahr</span>
-                  <strong>200+</strong>
-                  <span>vom Daily bis zum Supercar</span>
-                </div>
-              </div>
-            </div>
-
-            <div class="hero-visual" aria-hidden="true">
-              <div class="hero-card">
-                <div class="hero-card-gradient"></div>
-                <div class="hero-car-overlay"></div>
-                <div class="hero-card-inner">
-                  <div>
-                    <div class="hero-tagline">
-                      High-End Detailing &amp; Versiegelung
-                    </div>
-                    <div class="hero-card-title">
-                      Wenn „sauber“ nicht reicht.
-                    </div>
-                    <div class="hero-card-sub">
-                      Von der intensiven Innenreinigung bis zur mehrstufigen Lackkorrektur
-                      – jede Fläche wird in Perfektion gebracht.
-                    </div>
-                    <div class="hero-chip-row">
-                      <span class="hero-chip">Aufbereitung</span>
-                      <span class="hero-chip">Lackkorrektur</span>
-                      <span class="hero-chip">Keramikversiegelung</span>
-                    </div>
-                  </div>
-
-                  <div class="hero-stats-card">
-                    <div class="hero-stats-badge">
-                      <span class="hero-stats-stars">★★★★★</span>
-                      <span>Verifizierte ShineWerk Kunden</span>
-                    </div>
-                    <div class="hero-stats-main">
-                      <div>
-                        <strong>5,0</strong>
-                        <div>Google Bewertungen</div>
-                      </div>
-                      <div>
-                        <span>100% Empfehlung</span>
-                      </div>
-                    </div>
-                    <div class="hero-stats-footer">
-                      <span>Trockene Übergabe</span>
-                      <span>Schonende Handwäsche</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Google Reviews -->
-      <section class="reviews" id="reviews">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-title-group">
-              <div class="section-eyebrow">Vertrauen</div>
-              <h2 class="section-title">Kunden, die ShineWerk vertrauen.</h2>
-              <p class="section-subtitle">
-                Echte Fahrzeuge, echte Ergebnisse. Ein Großteil der Aufträge kommt
-                über Weiterempfehlungen und Google.
-              </p>
-            </div>
-            <div class="section-tag">
-              Anbindung an Google My Business möglich – Live-Sync der Bewertungen.
-            </div>
-          </div>
-
-          <div class="reviews-inner">
-            <div class="reviews-header-row">
-              <div class="reviews-rating">
-                <div class="reviews-score-main">
-                  <strong>5,0</strong>
-                  <span class="reviews-stars">★★★★★</span>
-                </div>
-                <div class="reviews-score-text">
-                  <div>Google Bewertungen</div>
-                  <div style="font-size: 11px; color: var(--color-text-soft);">
-                    Stand heute – alle Bewertungen mit 5 Sternen.
-                  </div>
-                </div>
-              </div>
-
-              <a href="https://www.google.com/search?q=ShineWerk+Kapellen-Drusweiler" target="_blank" rel="noopener"
-                 class="reviews-google-badge">
-                <span class="reviews-google-logo"></span>
-                <span>Auf Google ansehen</span>
-              </a>
-            </div>
-
-            <!-- Hinweis für Integration:
-                 Hier kann ein Script (Places API / MyBusiness Widget) die Live-Bewertungen einspielen
-                 und die statischen Karten ersetzen. -->
-            <div id="google-reviews-widget"></div>
-
-            <div class="reviews-marquee-shell" aria-label="Kundenstimmen">
-              <div class="reviews-track">
-                <!-- Beispiel-Reviews – können später dynamisch ersetzt werden -->
-                <article class="review-card">
-                  <div>
-                    <div class="review-header">
-                      <div class="review-avatar"></div>
-                      <div>
-                        <div class="review-name">Max M.</div>
-                        <div class="review-meta">Leasingrückgabe · 3er BMW</div>
-                      </div>
-                    </div>
-                    <div class="review-stars">★★★★★</div>
-                    <div class="review-text">
-                      Auto sah bei der Rückgabe besser aus als bei der Übergabe.
-                      Keine Nachzahlung, super Kommunikation, absolut empfehlenswert.
-                    </div>
-                  </div>
-                  <div class="review-footer">
-                    <span>Verifiziert</span>
-                    <span>über Google</span>
-                  </div>
-                </article>
-
-                <article class="review-card">
-                  <div>
-                    <div class="review-header">
-                      <div class="review-avatar"></div>
-                      <div>
-                        <div class="review-name">Sarah K.</div>
-                        <div class="review-meta">Keramikversiegelung · Tesla</div>
-                      </div>
-                    </div>
-                    <div class="review-stars">★★★★★</div>
-                    <div class="review-text">
-                      Der Lack wirkt wie Glas, Wasser perlt komplett ab.
-                      Beratung top, alles transparent erklärt. Komme definitiv wieder.
-                    </div>
-                  </div>
-                  <div class="review-footer">
-                    <span>Verifiziert</span>
-                    <span>über Google</span>
-                  </div>
-                </article>
-
-                <article class="review-card">
-                  <div>
-                    <div class="review-header">
-                      <div class="review-avatar"></div>
-                      <div>
-                        <div class="review-name">Tobias L.</div>
-                        <div class="review-meta">Aufbereitung · Daily Driver</div>
-                      </div>
-                    </div>
-                    <div class="review-stars">★★★★★</div>
-                    <div class="review-text">
-                      Innenraum wie neu, alle Hundehaare weg, Lack endlich wieder glänzend.
-                      Preis-Leistung mehr als fair.
-                    </div>
-                  </div>
-                  <div class="review-footer">
-                    <span>Verifiziert</span>
-                    <span>über Google</span>
-                  </div>
-                </article>
-
-                <!-- Dupliziert für fließenden Loop -->
-                <article class="review-card">
-                  <div>
-                    <div class="review-header">
-                      <div class="review-avatar"></div>
-                      <div>
-                        <div class="review-name">Max M.</div>
-                        <div class="review-meta">Leasingrückgabe · 3er BMW</div>
-                      </div>
-                    </div>
-                    <div class="review-stars">★★★★★</div>
-                    <div class="review-text">
-                      Auto sah bei der Rückgabe besser aus als bei der Übergabe.
-                      Keine Nachzahlung, super Kommunikation, absolut empfehlenswert.
-                    </div>
-                  </div>
-                  <div class="review-footer">
-                    <span>Verifiziert</span>
-                    <span>über Google</span>
-                  </div>
-                </article>
-
-                <article class="review-card">
-                  <div>
-                    <div class="review-header">
-                      <div class="review-avatar"></div>
-                      <div>
-                        <div class="review-name">Sarah K.</div>
-                        <div class="review-meta">Keramikversiegelung · Tesla</div>
-                      </div>
-                    </div>
-                    <div class="review-stars">★★★★★</div>
-                    <div class="review-text">
-                      Der Lack wirkt wie Glas, Wasser perlt komplett ab.
-                      Beratung top, alles transparent erklärt. Komme definitiv wieder.
-                    </div>
-                  </div>
-                  <div class="review-footer">
-                    <span>Verifiziert</span>
-                    <span>über Google</span>
-                  </div>
-                </article>
-
-                <article class="review-card">
-                  <div>
-                    <div class="review-header">
-                      <div class="review-avatar"></div>
-                      <div>
-                        <div class="review-name">Tobias L.</div>
-                        <div class="review-meta">Aufbereitung · Daily Driver</div>
-                      </div>
-                    </div>
-                    <div class="review-stars">★★★★★</div>
-                    <div class="review-text">
-                      Innenraum wie neu, alle Hundehaare weg, Lack endlich wieder glänzend.
-                      Preis-Leistung mehr als fair.
-                    </div>
-                  </div>
-                  <div class="review-footer">
-                    <span>Verifiziert</span>
-                    <span>über Google</span>
-                  </div>
-                </article>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Leistungen: Aufbereitung / Lackkorrektur / Versiegelung -->
-      <section id="leistungen">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-title-group">
-              <div class="section-eyebrow">Leistungen</div>
-              <h2 class="section-title">Die drei Bausteine für dein perfektes Ergebnis.</h2>
-              <p class="section-subtitle">
-                Kein Paket-Wirrwarr. Drei Leistungsbereiche, die wir auf dein Fahrzeug
-                und deinen Anspruch abstimmen.
-              </p>
-            </div>
-            <div class="section-tag">
-              Auf Wunsch erhältst du vorab eine klare Empfehlung inkl. Preisrahmen.
-            </div>
-          </div>
-
-          <div class="services-grid">
-            <article class="service-card">
-              <div class="service-label">01 · Aufbereitung</div>
-              <h3 class="service-title">Innen &amp; Außen – konsequent sauber.</h3>
-              <div class="service-body">
-                Ideal für Fahrzeuge, die wieder frisch aussehen und sich sauber anfühlen sollen –
-                ohne Kompromisse in den Details.
-                <ul class="service-list">
-                  <li>Intensive Innenreinigung inkl. Polster, Leder &amp; Kofferraum</li>
-                  <li>Schonende Handwäsche &amp; gründliche Vorreinigung außen</li>
-                  <li>Felgen- &amp; Reinigungsarbeiten in allen relevanten Bereichen</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="service-card">
-              <div class="service-label">02 · Lackkorrektur</div>
-              <h3 class="service-title">Kratzer raus, Tiefenglanz rein.</h3>
-              <div class="service-body">
-                Für Liebhaber und Perfektionisten – wir holen den maximalen Glanz aus deinem Lack
-                und korrigieren Defekte nachhaltig.
-                <ul class="service-list">
-                  <li>Mehrstufige Politur für tiefen, klaren Spiegelglanz</li>
-                  <li>Entfernung von Waschstraßenkratzern &amp; Hologrammen</li>
-                  <li>Vorbereitung für Langzeitversiegelung oder Keramik</li>
-                </ul>
-              </div>
-            </article>
-
-            <article class="service-card">
-              <div class="service-label">03 · Versiegelung</div>
-              <h3 class="service-title">Langzeit-Schutz für Lack &amp; Optik.</h3>
-              <div class="service-body">
-                Schutzschicht, die arbeitet, während du fährst. Weniger Pflegeaufwand,
-                längerer Werterhalt.
-                <ul class="service-list">
-                  <li>Keramikversiegelung für Lack mit starkem Beading-Effekt</li>
-                  <li>Optionale Glas- und Felgenversiegelung</li>
-                  <li>Deutlich leichteres Waschen, Schutz vor UV &amp; Umwelteinflüssen</li>
-                </ul>
-              </div>
-            </article>
-          </div>
-        </div>
-      </section>
-
-      <!-- Ablauf -->
-      <section id="ablauf">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-title-group">
-              <div class="section-eyebrow">Ablauf</div>
-              <h2 class="section-title">So läuft deine Aufbereitung bei ShineWerk.</h2>
-              <p class="section-subtitle">
-                Der Prozess ist klar strukturiert – du weißt jederzeit, was passiert und
-                wann dein Fahrzeug fertig ist.
-              </p>
-            </div>
-          </div>
-
-          <div class="timeline">
-            <div class="timeline-row">
-              <div>
-                <div class="timeline-step">Schritt 1</div>
-                <div class="timeline-badge">1</div>
-              </div>
-              <div>
-                <h3 class="timeline-content-title">Kontakt &amp; kurze Abstimmung.</h3>
-                <p class="timeline-content-text">
-                  Du meldest dich per WhatsApp oder Telefon, schickst bei Bedarf Fotos
-                  und wir klären kurz Zustand, Ziel und zeitlichen Rahmen.
-                </p>
-              </div>
-            </div>
-
-            <div class="timeline-row">
-              <div>
-                <div class="timeline-step">Schritt 2</div>
-                <div class="timeline-badge">2</div>
-              </div>
-              <div>
-                <h3 class="timeline-content-title">Fahrzeugabgabe bei ShineWerk.</h3>
-                <p class="timeline-content-text">
-                  Du bringst das Fahrzeug zu unserem Standort in Kapellen-Drusweiler.
-                  Wir gehen die vereinbarten Leistungen noch einmal gemeinsam durch.
-                </p>
-              </div>
-            </div>
-
-            <div class="timeline-row">
-              <div>
-                <div class="timeline-step">Schritt 3</div>
-                <div class="timeline-badge">3</div>
-              </div>
-              <div>
-                <h3 class="timeline-content-title">Abholung im Bestzustand.</h3>
-                <p class="timeline-content-text">
-                  Du übernimmst dein Fahrzeug im aufbereiteten Zustand –
-                  inklusive kurzer Einweisung zu Pflege &amp; Nachbehandlung
-                  deiner Versiegelung.
-                </p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- FAQ -->
-      <section id="faq">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-title-group">
-              <div class="section-eyebrow">FAQ</div>
-              <h2 class="section-title">Häufige Fragen vor der ersten Aufbereitung.</h2>
-              <p class="section-subtitle">
-                Wenn du es ganz genau wissen willst, klären wir Details gerne direkt im Gespräch –
-                hier die wichtigsten Punkte vorab.
-              </p>
-            </div>
-          </div>
-
-          <div class="faq-grid">
-            <div class="faq-intro">
-              <p>
-                Jedes Fahrzeug ist anders – Zustand, Nutzung, Lack, Größe.
-                Deswegen arbeiten wir nicht mit starren Standard-Listenpreisen,
-                sondern mit klaren Empfehlungen nach Sichtung.
-              </p>
-              <p>
-                Für eine schnelle Ersteinschätzung schickst du uns am besten
-                kurz Bilder per WhatsApp. Danach weißt du schnell, womit du planen kannst.
-              </p>
-            </div>
-
-            <div class="faq-items">
-              <details class="faq-item" open>
-                <summary>
-                  <span>Was kostet eine Aufbereitung bzw. Versiegelung?</span>
-                  <span class="faq-toggle">+</span>
-                </summary>
-                <p>
-                  Der Preis hängt von Fahrzeuggröße, Zustand und gewünschter Tiefe der
-                  Aufbereitung ab. Nach einer kurzen Einschätzung (z.B. per Fotos)
-                  nennen wir dir einen konkreten Preisrahmen – ohne Überraschungen
-                  bei der Abholung.
-                </p>
-              </details>
-
-              <details class="faq-item">
-                <summary>
-                  <span>Wie lange dauert die Aufbereitung?</span>
-                  <span class="faq-toggle">+</span>
-                </summary>
-                <p>
-                  Eine solide Innen- &amp; Außenaufbereitung dauert meist 1 Tag.
-                  Lackkorrektur und Keramikversiegelung können je nach Umfang
-                  1–3 Tage in Anspruch nehmen. Wir sprechen den Zeitplan vorab klar mit dir ab.
-                </p>
-              </details>
-
-              <details class="faq-item">
-                <summary>
-                  <span>Was bringt mir eine Keramikversiegelung wirklich?</span>
-                  <span class="faq-toggle">+</span>
-                </summary>
-                <p>
-                  Der Lack ist länger geschützt, deutlich einfacher zu reinigen
-                  und behält seinen Glanz spürbar länger. Wasser perlt ab, Schmutz haftet weniger –
-                  und du musst weniger Zeit in die Handwäsche investieren.
-                </p>
-              </details>
-
-              <details class="faq-item">
-                <summary>
-                  <span>Bereitet ihr auch Leasingfahrzeuge für die Rückgabe vor?</span>
-                  <span class="faq-toggle">+</span>
-                </summary>
-                <p>
-                  Ja. Gerade bei Leasingrückgaben lohnt sich eine professionelle Aufbereitung,
-                  um unnötige Nachzahlungen zu vermeiden. Kleine Kratzer, Nutzungsspuren
-                  und ein ungepflegter Eindruck lassen sich so vor der Rückgabe entschärfen.
-                </p>
-              </details>
-
-              <details class="faq-item">
-                <summary>
-                  <span>Kann ich bei euch vor Ort warten?</span>
-                  <span class="faq-toggle">+</span>
-                </summary>
-                <p>
-                  Für kurze Maßnahmen kannst du gerne in der Nähe bleiben.
-                  Für umfangreiche Aufbereitungen empfehlen wir, das Fahrzeug abzugeben
-                  und nach Fertigstellung wiederzukommen – alles andere ist vergeudete Zeit.
-                </p>
-              </details>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <!-- Standort & Google Maps -->
-      <section id="location">
-        <div class="container">
-          <div class="section-header">
-            <div class="section-title-group">
-              <div class="section-eyebrow">Standort</div>
-              <h2 class="section-title">ShineWerk Fahrzeugaufbereitung in Kapellen-Drusweiler.</h2>
-              <p class="section-subtitle">
-                Gut erreichbar aus Landau, Bad Bergzabern, Karlsruhe und Umgebung.
-              </p>
-            </div>
-          </div>
-
-          <div class="location-grid">
-            <div class="location-card">
-              <h3>Unser Standort</h3>
-              <div class="location-address">
-                Brückwiesenstraße 9<br />
-                76889 Kapellen-Drusweiler<br />
-                Rheinland-Pfalz · Deutschland
-              </div>
-              <div class="location-meta">
-                Parkmöglichkeiten in unmittelbarer Nähe.
-              </div>
-
-              <div class="location-actions">
-                <a
-                  href="https://www.google.com/maps/dir/?api=1&destination=Br%C3%BCckwiesenstra%C3%9Fe+9,+76889+Kapellen-Drusweiler"
-                  class="btn btn-primary"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Route planen in Google Maps
-                </a>
-                <a
-                  href="https://www.google.com/maps/search/?api=1&query=Br%C3%BCckwiesenstra%C3%9Fe+9,+76889+Kapellen-Drusweiler"
-                  class="btn btn-ghost"
-                  target="_blank"
-                  rel="noopener"
-                >
-                  Standort in Maps ansehen
-                </a>
-              </div>
-
-              <div style="font-size: 12px; color: var(--color-text-soft); margin-top: 8px;">
-                Für Terminabsprachen bitte vorab kurz melden – wir arbeiten an den Fahrzeugen,
-                nicht im Callcenter.
-              </div>
-            </div>
-
-            <div class="map-shell" aria-label="Google Maps">
-              <!-- Original Google Maps Embed -->
-              <iframe
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5224.277966091485!2d8.014671377526657!3d49.10300008346008!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47965866107026f5%3A0x1485271eb8397e79!2sBr%C3%BCckwiesenstra%C3%9Fe%209%2C%2076889%20Kapellen-Drusweiler!5e0!3m2!1sde!2sde!4v1729789082029!5m2!1sde!2sde"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </section>
-    </main>
-
-    <!-- Footer -->
-    <footer>
+    <!-- MINI BANNER – SÜDPFALZ TIMES -->
+    <section class="mini-banner" aria-label="Bekannt aus">
       <div class="container">
-        <div class="footer-inner">
-          <div>© ShineWerk. Alle Rechte vorbehalten.</div>
-          <div class="footer-links">
-            <a href="/impressum">Impressum</a>
-            <a href="/datenschutz">Datenschutz</a>
-            <a href="/agb">AGB</a>
+        <a href="https://suedpfalztimes.de" target="_blank" rel="noopener" class="mini-banner-inner">
+          <span class="mini-banner-label">Bekannt aus</span>
+          <img src="logo-st.png" alt="Südpfalz Times" class="mini-banner-logo" />
+        </a>
+      </div>
+    </section>
+
+    <!-- REVIEWS -->
+    <section class="reviews" id="reviews">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-eyebrow">Kundenstimmen</div>
+            <h2 class="section-title">
+              Menschen, die ihr Auto niemand anderem anvertrauen.
+            </h2>
           </div>
-          <div class="footer-social">
-            <a href="https://instagram.com/shinewerk" target="_blank" rel="noopener" class="social-pill">IG</a>
-            <a href="https://tiktok.com/@shinewerk.de" target="_blank" rel="noopener" class="social-pill">TT</a>
+          <p class="section-description">
+            Ein Großteil der Aufträge kommt über Weiterempfehlungen
+            und Google. Die folgenden Stimmen sind ein Auszug – live
+            einsehbar im Google-Profil von ShineWerk.
+          </p>
+        </div>
+
+        <div class="reviews-inner">
+          <div class="reviews-header-row">
+            <div class="reviews-rating">
+              <div class="reviews-score-main">
+                <strong>5,0</strong>
+                <span class="reviews-stars">★★★★★</span>
+              </div>
+              <div class="reviews-score-text">
+                <div>Google Bewertungen</div>
+                <div style="font-size:11px;">
+                  Stand aktuell – alle Bewertungen im 5-Sterne-Bereich.
+                </div>
+              </div>
+            </div>
+
+            <a
+              href="https://www.google.com/search?q=ShineWerk+Fahrzeugpflege+%26+Versiegelung+W%C3%B6rth+am+Rhein"
+              target="_blank"
+              rel="noopener"
+              class="reviews-google-badge"
+            >
+              <span class="reviews-google-logo"></span>
+              <span>Bewertungen auf Google ansehen</span>
+            </a>
+          </div>
+
+          <!-- Hier könnt ihr später Google My Business / Places-API direkt einhängen -->
+          <div class="reviews-marquee-shell" aria-label="Kundenbewertungen">
+            <div class="reviews-track">
+              <!-- Beispiel-Reviews – ersetzen / ergänzen durch echte Zitate -->
+              <article class="review-card">
+                <div>
+                  <div class="review-header">
+                    <div class="review-avatar"></div>
+                    <div>
+                      <div class="review-name">S. Weber</div>
+                      <div class="review-meta">Keramikversiegelung · Performance-Fahrzeug</div>
+                    </div>
+                  </div>
+                  <div class="review-stars">★★★★★</div>
+                  <div class="review-text">
+                    Kein Vergleich zur „normalen“ Aufbereitung. Der Lack wirkt wie neu lackiert,
+                    das Auto ist nach Wochen noch leicht zu reinigen. Kommunikation und Anspruch
+                    auf einem Niveau, das man in der Region sonst nicht findet.
+                  </div>
+                </div>
+                <div class="review-footer">
+                  <span>Verifizierter Kunde</span>
+                  <span>über Google</span>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <div>
+                  <div class="review-header">
+                    <div class="review-avatar"></div>
+                    <div>
+                      <div class="review-name">M. Hoffmann</div>
+                      <div class="review-meta">Leasingrückgabe · Oberklasse</div>
+                    </div>
+                  </div>
+                  <div class="review-stars">★★★★★</div>
+                  <div class="review-text">
+                    Ziel war: Rückgabe ohne Theater. Ergebnis: Fahrzeug sah besser aus als bei
+                    der Übergabe, Protokoll ohne Beanstandungen. Der Aufpreis gegenüber
+                    Standard-Aufbereitung hat sich mehrfach gerechnet.
+                  </div>
+                </div>
+                <div class="review-footer">
+                  <span>Verifizierter Kunde</span>
+                  <span>über Google</span>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <div>
+                  <div class="review-header">
+                    <div class="review-avatar"></div>
+                    <div>
+                      <div class="review-name">L. König</div>
+                      <div class="review-meta">Daily Driver · Innen &amp; Außen</div>
+                    </div>
+                  </div>
+                  <div class="review-stars">★★★★★</div>
+                  <div class="review-text">
+                    Man merkt, dass hier nicht „mitgemacht“ wird, sondern ein klarer Anspruch
+                    dahintersteckt. Innenraum, Lackbild, Details – alles aufgeräumt und stimmig.
+                    Kein Schnellprogramm, sondern ein Ergebnis, das bleibt.
+                  </div>
+                </div>
+                <div class="review-footer">
+                  <span>Verifizierter Kunde</span>
+                  <span>über Google</span>
+                </div>
+              </article>
+
+              <!-- Duplikate für Loop -->
+              <article class="review-card">
+                <div>
+                  <div class="review-header">
+                    <div class="review-avatar"></div>
+                    <div>
+                      <div class="review-name">S. Weber</div>
+                      <div class="review-meta">Keramikversiegelung · Performance-Fahrzeug</div>
+                    </div>
+                  </div>
+                  <div class="review-stars">★★★★★</div>
+                  <div class="review-text">
+                    Kein Vergleich zur „normalen“ Aufbereitung. Der Lack wirkt wie neu lackiert,
+                    das Auto ist nach Wochen noch leicht zu reinigen. Kommunikation und Anspruch
+                    auf einem Niveau, das man in der Region sonst nicht findet.
+                  </div>
+                </div>
+                <div class="review-footer">
+                  <span>Verifizierter Kunde</span>
+                  <span>über Google</span>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <div>
+                  <div class="review-header">
+                    <div class="review-avatar"></div>
+                    <div>
+                      <div class="review-name">M. Hoffmann</div>
+                      <div class="review-meta">Leasingrückgabe · Oberklasse</div>
+                    </div>
+                  </div>
+                  <div class="review-stars">★★★★★</div>
+                  <div class="review-text">
+                    Ziel war: Rückgabe ohne Theater. Ergebnis: Fahrzeug sah besser aus als bei
+                    der Übergabe, Protokoll ohne Beanstandungen. Der Aufpreis gegenüber
+                    Standard-Aufbereitung hat sich mehrfach gerechnet.
+                  </div>
+                </div>
+                <div class="review-footer">
+                  <span>Verifizierter Kunde</span>
+                  <span>über Google</span>
+                </div>
+              </article>
+
+              <article class="review-card">
+                <div>
+                  <div class="review-header">
+                    <div class="review-avatar"></div>
+                    <div>
+                      <div class="review-name">L. König</div>
+                      <div class="review-meta">Daily Driver · Innen &amp; Außen</div>
+                    </div>
+                  </div>
+                  <div class="review-stars">★★★★★</div>
+                  <div class="review-text">
+                    Man merkt, dass hier nicht „mitgemacht“ wird, sondern ein klarer Anspruch
+                    dahintersteckt. Innenraum, Lackbild, Details – alles aufgeräumt und stimmig.
+                    Kein Schnellprogramm, sondern ein Ergebnis, das bleibt.
+                  </div>
+                </div>
+                <div class="review-footer">
+                  <span>Verifizierter Kunde</span>
+                  <span>über Google</span>
+                </div>
+              </article>
+            </div>
           </div>
         </div>
       </div>
-    </footer>
-  </div>
+    </section>
 
-  <!-- WhatsApp Floating Button -->
-  <div class="whatsapp-fab">
-    <a href="https://wa.me/4915562648989" target="_blank" rel="noopener" aria-label="WhatsApp Chat mit ShineWerk starten">
-      <span class="whatsapp-icon">🟢</span>
-      <span class="label">WhatsApp</span>
-    </a>
-  </div>
-</body>
-</html>
+    <!-- LEISTUNGEN -->
+    <section id="leistungen">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-eyebrow">Leistungen</div>
+            <h2 class="section-title">
+              Drei Bausteine. Ein Ziel: sichtbarer Unterschied zu Standard-Aufbereitung.
+            </h2>
+          </div>
+          <p class="section-description">
+            Keine verwirrenden Paketlisten. ShineWerk denkt in
+            Ergebnissen – Aufbereitung, Lackkorrektur und Keramikversiegelung
+            werden so kombiniert, wie es für dein Fahrzeug und deinen Anspruch Sinn ergibt.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-label">01 · Aufbereitung</div>
+            <h3 class="service-title">Innen &amp; Außen auf ShineWerk-Niveau.</h3>
+            <p class="service-text">
+              Für Fahrzeuge, die sich wieder wie „neu“ anfühlen sollen – ohne Schnellprogramm,
+              sondern mit Fokus auf Haptik, Optik und Details.
+            </p>
+            <ul class="service-list">
+              <li>Konsequente Innenraumaufbereitung inkl. Sitze, Oberflächen &amp; Kofferraum</li>
+              <li>Strukturiertes Außen-Finish mit Fokus auf Gesamtwirkung statt Checklisten</li>
+              <li>Ideal als Basis vor Lackkorrektur oder Versiegelung</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-label">02 · Lackkorrektur</div>
+            <h3 class="service-title">Defekte raus, Klarheit rein.</h3>
+            <p class="service-text">
+              Für Fahrzeuge, bei denen das Lackbild mehr kann als „okay“. Wir holen die
+              maximale Tiefe aus dem Klarlack – abgestimmt auf Risiken und Material.
+            </p>
+            <ul class="service-list">
+              <li>Analyse des Lackzustands und sinnvolles Korrektur-Level statt „Politur um jeden Preis“</li>
+              <li>Mehrstufige Maschinenarbeit für spiegelklaren Glanz, ohne unnötigen Materialabbau</li>
+              <li>Perfekte Vorbereitung für hochwertige Keramiksysteme</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-label">03 · Keramikversiegelung</div>
+            <h3 class="service-title">Langzeit-Schutz für Fahrzeuge, die bleiben.</h3>
+            <p class="service-text">
+              Für Besitzer, die ihr Fahrzeug langfristig fahren oder werthaltig halten wollen –
+              mit klar messbarem Effekt auf Pflegeaufwand und Optik.
+            </p>
+            <ul class="service-list">
+              <li>Hochwertige Keramiksysteme mit starkem Beading und spürbarer Glättung</li>
+              <li>Auf Wunsch Ergänzung um Glas- und Felgenversiegelung</li>
+              <li>Deutlich reduziertem Pflegeaufwand und stabiler Optik über Jahre</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABLAUF -->
+    <section id="ablauf">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-eyebrow">Ablauf</div>
+            <h2 class="section-title">
+              Klarer Prozess statt Bauchgefühl – von der Anfrage bis zur Übergabe.
+            </h2>
+          </div>
+          <p class="section-description">
+            Du sollst genau wissen, was passiert, wie lange es dauert und was
+            das Ergebnis ist. Der Ablauf ist bewusst schlank gehalten – ohne
+            unnötige Schleifen, aber mit genug Zeit für Pe
