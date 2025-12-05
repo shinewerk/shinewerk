@@ -762,12 +762,46 @@
       );
       -webkit-background-clip: text;
       color: transparent;
-      opacity: 0.70;
-      filter: blur(5px);
+      opacity: 0.80;
+      filter: blur(3px);
       pointer-events: none;
       user-select: none;
       z-index: 0;
     }
+
+    .timeline-num-bg::before {
+  content: attr(data-num);
+  position: absolute;
+  top: 0;
+  left: -24px;  /* Trail nach links rausziehen */
+  font-size: inherit;
+  font-style: inherit;
+  background: linear-gradient(
+    120deg,
+    var(--timeline-gradient-from),
+    var(--timeline-gradient-to)
+  );
+  -webkit-background-clip: text;
+  color: transparent;
+  opacity: 0.35;
+  filter: blur(10px);
+  transform: skewX(-18deg);
+  pointer-events: none;
+}
+
+    @keyframes timeline-glide {
+  0% {
+    transform: translateX(0) skewX(-18deg);
+  }
+  100% {
+    transform: translateX(6px) skewX(-18deg);
+  }
+}
+
+.timeline-num-bg::before {
+  /* ... aus obigem Block ... */
+  animation: timeline-glide 2.4s ease-in-out infinite alternate;
+}
 
     .timeline-title {
       font-size: 15px;
@@ -1327,7 +1361,7 @@
               <div class="timeline-step-label">Schritt 1</div>
             </div>
             <div class="timeline-content">
-              <div class="timeline-num-bg">1</div>
+              <div class="timeline-num-bg" data-num="1">1</div>
               <div class="timeline-title">Kurzcheck &amp; Einschätzung.</div>
               <p class="timeline-text">
                 Du meldest dich per WhatsApp oder Telefon, idealerweise mit ein
@@ -1344,7 +1378,7 @@
               <div class="timeline-step-label">Schritt 2</div>
             </div>
             <div class="timeline-content">
-              <div class="timeline-num-bg">2</div>
+              <div class="timeline-num-bg" data-num="2">2</div>
               <div class="timeline-title">Fahrzeugabgabe bei ShineWerk.</div>
               <p class="timeline-text">
                 Du bringst dein Fahrzeug nach Wörth. Vor Ort gehen wir das
@@ -1361,7 +1395,7 @@
               <div class="timeline-step-label">Schritt 3</div>
             </div>
             <div class="timeline-content">
-              <div class="timeline-num-bg">3</div>
+              <div class="timeline-num-bg" data-num="3">3</div>
               <div class="timeline-title">Übergabe &amp; Pflegeplan.</div>
               <p class="timeline-text">
                 Bei der Abholung schauen wir das Fahrzeug gemeinsam durch. Du
