@@ -383,31 +383,32 @@
 <body>
 <div class="page">
   <!-- HEADER -->
-  <header class="site-header">
-    <div class="container nav">
-      <div class="logo">
-        <img src="logo.png" alt="ShineWerk Logo" class="logo-img" />
-        <div class="logo-text">
-          <span>ShineWerk</span>
-          <span>Fahrzeugpflege &amp; Versiegelung</span>
-        </div>
+<header class="site-header">
+  <div class="container nav">
+    <div class="logo">
+      <img src="logo.png" alt="ShineWerk Logo" class="logo-img" />
+      <div class="logo-text">
+        <span>ShineWerk</span>
+        <span>Fahrzeugpflege &amp; Versiegelung</span>
       </div>
-
-      <button class="nav-toggle" aria-label="Menü öffnen oder schließen">
-        <span class="nav-toggle-line"></span>
-        <span class="nav-toggle-line"></span>
-      </button>
-
-      <nav class="nav-links">
-        <a href="https://shinewerk.de">Home</a>
-        <a href="https://exclusive.shinewerk.de">Exclusive</a>
-        <a href="https://corporate.shinewerk.de">Corporate</a>
-        <a href="https://wa.me/4915562648989" class="btn btn-outline" target="_blank" rel="noopener">
-          Kontakt via WhatsApp
-        </a>
-      </nav>
     </div>
-  </header>
+
+    <!-- Mobile Toggle -->
+    <button class="nav-toggle" aria-label="Menü öffnen oder schließen">
+      <span class="nav-toggle-line"></span>
+      <span class="nav-toggle-line"></span>
+    </button>
+    
+    <nav class="nav-links">
+      <a href="https://shinewerk.de">Home</a>
+      <a href="https://exclusive.shinewerk.de">Exclusive</a>
+      <a href="https://corporate.shinewerk.de">Corporate</a>
+      <a href="https://wa.me/4915562648989" class="btn btn-outline" target="_blank" rel="noopener">
+        Kontakt via WhatsApp
+      </a>
+    </nav>
+  </div>
+</header>
 
   <main>
     <section class="legal-section">
@@ -452,16 +453,16 @@
     </section>
   </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <div>© <span id="year"></span> ShineWerk. Alle Rechte vorbehalten.</div>
-      <div class="footer-links">
-        <a href="/impressum">Impressum</a>
-        <a href="/datenschutz">Datenschutz</a>
-        <a href="/agb">AGB</a>
-      </div>
+<footer>
+  <div class="container footer-inner">
+    <div>© <span id="year"></span> ShineWerk. Alle Rechte vorbehalten.</div>
+    <div class="footer-links">
+      <a href="/impressum">Impressum</a>
+      <a href="/datenschutz">Datenschutz</a>
+      <a href="/agb">AGB</a>
     </div>
-  </footer>
+  </div>
+</footer>
 </div>
 
 <div class="whatsapp-fab">
@@ -473,7 +474,7 @@
 
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    var yearEl = document.getElementById("year");
+    const yearEl = document.getElementById("year");
     if (yearEl) {
       yearEl.textContent = new Date().getFullYear();
     }
