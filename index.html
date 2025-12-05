@@ -100,13 +100,13 @@
 
     .logo-img {
       width: 40px;
-      height: 40px;
-      border-radius: 14px;
+      height: auto;
+      border-radius: 0;
       object-fit: contain;
-      background: radial-gradient(circle at 10% 0%, #fefefe, #d1d5db);
-      border: 1px solid rgba(15, 23, 42, 0.08);
-      box-shadow: 0 10px 24px rgba(15, 23, 42, 0.18);
-      padding: 4px;
+      background: none;
+      border: none;
+      box-shadow: none;
+      padding: 0;
     }
 
     .logo-text {
@@ -142,7 +142,8 @@
       padding-bottom: 4px;
     }
 
-    .nav-links a::after {
+    /* Unterstreichung nur für Links ohne Button-Klasse */
+    .nav-links a:not(.btn)::after {
       content: "";
       position: absolute;
       left: 0;
@@ -153,11 +154,11 @@
       transition: width 0.22s ease;
     }
 
-    .nav-links a:hover {
+    .nav-links a:not(.btn):hover {
       color: var(--text-main);
     }
 
-    .nav-links a:hover::after {
+    .nav-links a:not(.btn):hover::after {
       width: 100%;
     }
 
@@ -176,6 +177,13 @@
       color: var(--text-main);
       gap: 8px;
       letter-spacing: 0.03em;
+      line-height: 1.1;
+    }
+
+    /* Nav-spezifische Button-Padding für bessere Vertikal-Zentrierung */
+    .nav-links .btn {
+      padding-top: 8px;
+      padding-bottom: 9px;
     }
 
     .btn-primary {
@@ -315,8 +323,8 @@
     .hero-panel {
       background: radial-gradient(
         circle at 10% 0%,
-        rgba(22, 43, 74, 0.35),
-        #111827
+        rgba(22, 43, 74, 0.45),
+        #020617
       );
       border-radius: 32px;
       padding: 32px 30px;
@@ -348,31 +356,26 @@
     }
 
     .hero-panel-eyebrow {
-      color: #9ca3af !important;
+      color: #6b7280 !important;
       margin-bottom: 4px;
     }
 
     .hero-panel-title {
       font-family: "Playfair Display", serif;
       font-size: 20px;
-  background: linear-gradient(
-    120deg,
-    #f9fafb,
-    #e5e7eb
-  );
-  -webkit-background-clip: text;
-  color: transparent;
+      color: #111827; /* schwarz wie gewünscht */
     }
 
     .hero-pill {
       border-radius: 999px;
       padding: 4px 12px;
       font-size: 11px;
-      background: rgba(15, 23, 42, 0.5);
-      border: 1px solid rgba(148, 163, 184, 0.5);
+      background: rgba(15, 23, 42, 0.45);      /* wie Stats-Kästchen */
+      border: 1px solid rgba(148, 163, 184, 0.4);
       display: inline-flex;
       align-items: center;
       gap: 6px;
+      color: #e5e7eb;
     }
 
     .hero-pill-dot {
@@ -393,17 +396,17 @@
     .hero-stat {
       padding: 12px 12px;
       border-radius: 14px;
-      /* HIER: Opacity / Helligkeit der grauen Kästchen anpassen */
-      background: rgba(15, 23, 42, 0.30);
-      border: 1px solid rgba(148, 163, 184, 0.28);
+      /* dunkleres, sattes Grau */
+      background: rgba(15, 23, 42, 0.50);
+      border: 1px solid rgba(148, 163, 184, 0.45);
       backdrop-filter: blur(18px);
     }
 
     .hero-stat-label {
-      color: #d1d5db;
+      color: #e5e7eb;
       font-size: 11px;
       margin-bottom: 4px;
-      word-break: break-word; /* lange Labels wie „Kundenzufriedenheit“ umbrechen */
+      word-break: break-word;
     }
 
     .hero-stat-value {
@@ -422,11 +425,7 @@
 
     .mini-banner {
       padding: 16px 0 12px;
-      background: linear-gradient(
-        to bottom,
-        rgba(15, 23, 42, 0.02),
-        transparent
-      );
+      background-color: var(--bg); /* glatter Übergang vom Hero */
     }
 
     .mini-banner-inner {
@@ -458,6 +457,7 @@
 
     section {
       padding: 110px 0;
+      background-color: var(--bg);
     }
 
     .section-header {
@@ -636,10 +636,10 @@
     .review-text {
       line-height: 1.5;
       display: -webkit-box;
-      -webkit-line-clamp: 2;      /* genau zwei Zeilen */
+      -webkit-line-clamp: 3;      /* bis zu 3 Zeilen sichtbar */
       -webkit-box-orient: vertical;
       overflow: hidden;
-      word-break: break-word;     /* keine Überläufe */
+      word-break: break-word;
     }
 
     .review-footer {
@@ -735,6 +735,7 @@
       grid-template-columns: 82px minmax(0, 1fr);
       gap: 14px;
       align-items: flex-start;
+      position: relative; /* für absolute Zahlen-Hintergrund */
     }
 
     .timeline-step-label {
@@ -743,26 +744,32 @@
       letter-spacing: 0.18em;
       color: var(--text-soft);
       margin-top: 2px;
+      position: relative;
+      z-index: 1;
     }
 
     .timeline-content {
-      position: relative;
+      position: static; /* damit Zahlen sich an der ganzen Row ausrichten */
     }
 
     .timeline-num-bg {
       position: absolute;
-      top: -10px;
-      left: 0;              /* jetzt links statt rechts */
-      right: auto;
-      font-size: 72px;
+      top: -24px;
+      left: 4px;     /* hinter der „Schritt“-Spalte */
+      font-size: 80px;
       font-style: italic;
-  background: linear-gradient(120deg, #162b4a, #60a5fa);
+      background: linear-gradient(
+        120deg,
+        var(--accent-gradient-from),
+        var(--accent-gradient-to)
+      );
       -webkit-background-clip: text;
-      color: transparent;   /* Gradient-Text */
-      opacity: 0.25;
-      filter: blur(5px);    /* leichter Blur */
+      color: transparent;
+      opacity: 0.30;
+      filter: blur(0.8px);
       pointer-events: none;
       user-select: none;
+      z-index: 0;
     }
 
     .timeline-title {
@@ -896,7 +903,7 @@
       overflow: hidden;
       border: 1px solid rgba(15, 23, 42, 0.1);
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.2);
-      background: #000;
+      background: var(--bg); /* kein schwarzer Rand mehr */
     }
 
     .map-shell iframe {
@@ -1051,7 +1058,7 @@
         <img src="logo.png" alt="ShineWerk Logo" class="logo-img" />
         <div class="logo-text">
           <span>ShineWerk</span>
-          <span>Fahrzeugaufpflege &amp; Versiegelung</span>
+          <span>Fahrzeugaufbereitung &amp; Versiegelung</span>
         </div>
       </div>
       <nav class="nav-links">
@@ -1448,7 +1455,7 @@
           <div>
             <div class="section-eyebrow">Standort</div>
             <h2 class="section-title">
-              ShineWerk Fahrzeugpflege in Wörth am Rhein.
+              ShineWerk Fahrzeugaufbereitung in Wörth am Rhein.
             </h2>
           </div>
           <p class="section-description">
@@ -1542,7 +1549,7 @@
       const reviews = Array.isArray(data.reviews) ? data.reviews.slice(0, 6) : [];
 
       if (!reviews.length) {
-        return; // wenn Google nichts liefert, lassen wir einfach leer
+        return;
       }
 
       function createCard(review) {
@@ -1573,12 +1580,9 @@
         return card;
       }
 
-      // Einmal normale Liste
       reviews.forEach(r => track.appendChild(createCard(r)));
-      // Nochmal dupliziert für den Loop
       reviews.forEach(r => track.appendChild(createCard(r)));
     } catch (e) {
-      // Im Fehlerfall einfach nichts tun – Seite funktioniert trotzdem
       console.error("Review-Loading failed", e);
     }
   }
