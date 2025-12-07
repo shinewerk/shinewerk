@@ -754,6 +754,47 @@
       color: var(--accent-blue);
     }
 
+    /* LEISTUNGEN – Background mit Fade */
+#leistungen {
+  position: relative;
+  overflow: hidden;
+}
+
+#leistungen::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("faq.png"); 
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  filter: blur(3px);
+  opacity: 0.7; /* ggf. anpassen */
+  z-index: 0;
+}
+
+#leistungen::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(245,245,247,1) 0%,
+    rgba(245,245,247,0.95) 12%,
+    rgba(245,245,247,0.70) 35%,
+    rgba(245,245,247,0.70) 65%,
+    rgba(245,245,247,0.95) 88%,
+    rgba(245,245,247,1) 100%
+  );
+  z-index: 1;
+}
+
+/* Inhalt über das BG legen */
+#leistungen > .container {
+  position: relative;
+  z-index: 2;
+}
+
     /* ABLAUF */
 
     .timeline {
