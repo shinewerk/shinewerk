@@ -703,12 +703,14 @@
     .service-card {
       padding: 22px 22px 24px;
       border-radius: var(--radius-lg);
-      background: var(--bg-elevated);
+      background: rgba(245, 245, 247, 0.4);
       border: 1px solid var(--border-subtle);
       box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
       display: flex;
       flex-direction: column;
       gap: 10px;
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
     }
 
     .service-label {
@@ -1471,7 +1473,7 @@
           </div>
 
           <div class="faq-items">
-            <details class="faq-item" open>
+            <details class="faq-item">
               <summary>
                 <span>Was kostet eine Aufbereitung bzw. Versiegelung bei euch?</span>
                 <span class="faq-toggle">+</span>
@@ -1696,6 +1698,23 @@ document.addEventListener("DOMContentLoaded", function () {
       header.classList.toggle("is-open");
     });
   }
+
+  // FAQ Accordion: immer nur ein Eintrag offen
+  const faqItems = document.querySelectorAll("details.faq-item");
+  faqItems.forEach((item) => {
+    // sicherstellen, dass alles initial zu ist
+    item.open = false;
+
+    item.addEventListener("toggle", () => {
+      if (item.open) {
+        faqItems.forEach((other) => {
+          if (other !== item) {
+            other.open = false;
+          }
+        });
+      }
+    });
+  });
 });
 </script>
 </body>
