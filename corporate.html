@@ -1,1 +1,1535 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ShineWerk Corporate – Fahrzeugaufbereitung für Händler & Firmen</title>
+  <meta name="description" content="Mehr Umsatz für Händler, zufriedene Kunden & Mitarbeiter: Premium-Fahrzeugaufbereitung für Flotten & Verkaufsfahrzeuge – vor Ort möglich." />
+  <meta name="keywords" content="Fahrzeugaufbereitung für Händler, Firmenflotten, Autohäuser, Verkaufsfahrzeuge, Corporate Detailing, Fuhrparkpflege, Fahrzeugpflege für Unternehmen, Fahrzeugaufbereitung Südpfalz, Mobilservice vor Ort, Premium-Fahrzeugpflege für Geschäftskunden" />
 
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    :root {
+      --bg: #f5f5f7;
+      --bg-elevated: #ffffff;
+      --text-main: #0f172a;
+      --text-soft: #6b7280;
+      --accent: #2563eb;               /* ShineWerk Blau */
+      --accent-soft: rgba(37, 99, 235, 0.12);
+      --accent-strong: #1d4ed8;
+      --border-subtle: rgba(15, 23, 42, 0.08);
+      --nav-height: 70px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.16);
+      --card-radius: 24px;
+      --review-accent: rgba(15, 23, 42, 0.04);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      background:
+        radial-gradient(circle at top, #e5edff 0, #f5f5f7 32%, #f5f5f7 100%);
+      color: var(--text-main);
+      -webkit-font-smoothing: antialiased;
+    }
+
+    body {
+      min-height: 100vh;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    a:hover {
+      color: var(--accent);
+    }
+
+    .page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 20px;
+    }
+
+    /* HEADER / NAV identisch zum Stil der Hauptseite */
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      height: var(--nav-height);
+      backdrop-filter: blur(20px);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.14), transparent 55%),
+        rgba(245, 245, 247, 0.9);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.26);
+    }
+
+    .nav {
+      height: var(--nav-height);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .logo-img {
+      width: 34px;
+      height: 34px;
+      border-radius: 999px;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.25);
+    }
+
+    .logo-text span:first-child {
+      font-weight: 600;
+      letter-spacing: 0.04em;
+      font-size: 13px;
+      text-transform: uppercase;
+    }
+
+    .logo-text span:last-child {
+      font-size: 11px;
+      color: var(--text-soft);
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 18px;
+      font-size: 13px;
+    }
+
+    .nav-links a {
+      opacity: 0.9;
+      position: relative;
+    }
+
+    .nav-links a:hover {
+      opacity: 1;
+    }
+
+    .nav-links a:not(.btn)::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: -4px;
+      height: 1px;
+      border-radius: 999px;
+      background: linear-gradient(90deg, transparent, rgba(37, 99, 235, 0.7), transparent);
+      opacity: 0;
+      transform: translateY(2px);
+      transition: opacity 0.18s ease-out, transform 0.18s ease-out;
+    }
+
+    .nav-links a:not(.btn):hover::after {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 9px 16px;
+      border-radius: 999px;
+      font-size: 12px;
+      font-weight: 500;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.15s ease-out;
+      white-space: nowrap;
+      gap: 6px;
+    }
+
+    .btn-primary {
+      border-color: rgba(37, 99, 235, 0.8);
+      background: radial-gradient(circle at 0 0, #60a5fa, #1d4ed8);
+      color: #f9fafb;
+      box-shadow: 0 18px 45px rgba(37, 99, 235, 0.65);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 55px rgba(37, 99, 235, 0.8);
+    }
+
+    .btn-outline {
+      border-color: rgba(148, 163, 184, 0.6);
+      background: radial-gradient(circle at 0 0, rgba(255, 255, 255, 0.96), rgba(248, 250, 252, 0.85));
+      color: var(--text-main);
+    }
+
+    .btn-outline:hover {
+      border-color: rgba(37, 99, 235, 0.5);
+      box-shadow: 0 14px 32px rgba(15, 23, 42, 0.18);
+      transform: translateY(-1px);
+    }
+
+    .btn-icon {
+      font-size: 13px;
+      opacity: 0.9;
+      margin-left: 2px;
+    }
+
+    .nav-toggle {
+      display: none;
+      width: 32px;
+      height: 32px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      background: rgba(248, 250, 252, 0.92);
+      padding: 0;
+      cursor: pointer;
+      gap: 5px;
+    }
+
+    .nav-toggle-line {
+      width: 16px;
+      height: 1.5px;
+      border-radius: 999px;
+      background: #111827;
+      display: block;
+    }
+
+    main {
+      flex: 1;
+    }
+
+    section {
+      padding: 80px 0;
+    }
+
+    /* HERO – Corporate */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(to bottom, rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.8)),
+        radial-gradient(circle at top, rgba(59, 130, 246, 0.32), transparent 55%),
+        #020617;
+      color: #e5e7eb;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background-image: url("hero-corp.png");
+      background-size: cover;
+      background-position: center;
+      opacity: 0.2;
+      mix-blend-mode: screen;
+      filter: blur(2px);
+      pointer-events: none;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 220px;
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0), #f5f5f7);
+      pointer-events: none;
+    }
+
+    .hero > .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.4fr) minmax(0, 1fr);
+      gap: 42px;
+      align-items: center;
+    }
+
+    .hero-eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: #bfdbfe;
+      font-weight: 600;
+      margin-bottom: 8px;
+    }
+
+    .hero-title {
+      font-family: "Playfair Display", serif;
+      font-size: 40px;
+      line-height: 1.1;
+      letter-spacing: 0.01em;
+      margin: 0 0 12px;
+      background: linear-gradient(120deg, #e5e7eb, #93c5fd);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-title span {
+      display: block;
+      background: linear-gradient(120deg, #bfdbfe, #60a5fa);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .hero-subtitle {
+      font-size: 14px;
+      color: #cbd5f5;
+      max-width: 480px;
+      margin: 0 0 22px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 18px;
+    }
+
+    .hero-note {
+      font-size: 12px;
+      color: #9ca3af;
+      max-width: 480px;
+      margin: 0;
+    }
+
+    .hero-note strong {
+      color: #e5e7eb;
+    }
+
+    .hero-panel {
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top left, rgba(148, 163, 184, 0.28), transparent 70%),
+        rgba(15, 23, 42, 0.84);
+      border: 1px solid rgba(148, 163, 184, 0.34);
+      padding: 20px 20px 18px;
+      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.7);
+      font-size: 12px;
+    }
+
+    .hero-panel-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+
+    .hero-panel-eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: #bfdbfe;
+      margin-bottom: 4px;
+    }
+
+    .hero-panel-title {
+      font-size: 14px;
+      font-weight: 600;
+      color: #e5e7eb;
+    }
+
+    .hero-pill {
+      border-radius: 999px;
+      padding: 4px 12px;
+      font-size: 11px;
+      background: rgba(15, 23, 42, 0.45);
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      color: #e5e7eb;
+    }
+
+    .hero-pill-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: #2563eb;
+      backdrop-filter: blur(18px);
+      box-shadow: 0 0 16px rgba(37, 99, 235, 0.8);
+    }
+
+    .hero-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+      font-size: 12px;
+      margin-bottom: 10px;
+    }
+
+    .hero-stat {
+      padding: 9px 10px;
+      border-radius: 14px;
+      background: rgba(15, 23, 42, 0.55);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      backdrop-filter: blur(18px);
+    }
+
+    .hero-stat-label {
+      color: #e5e7eb;
+      opacity: 0.8;
+      margin-bottom: 4px;
+    }
+
+    .hero-stat-value {
+      font-weight: 600;
+      color: #f9fafb;
+    }
+
+    .hero-footer-line {
+      font-size: 11px;
+      color: #9ca3af;
+      margin: 4px 0 0;
+    }
+
+    /* INFO BAND */
+
+    .info-band {
+      padding: 26px 0 32px;
+      background: linear-gradient(to bottom, #f5f5f7, #f9fafb);
+      border-bottom: 1px solid rgba(148, 163, 184, 0.2);
+    }
+
+    .info-band-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .info-band-highlight {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--accent-strong);
+      font-weight: 600;
+    }
+
+    .info-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 0 0, #93c5fd, #1d4ed8);
+      box-shadow: 0 0 12px rgba(37, 99, 235, 0.65);
+    }
+
+    .info-band-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+    }
+
+    .info-tag {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.02);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      color: var(--text-soft);
+    }
+
+    /* SECTIONS GENERIC */
+
+    .section-eyebrow {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--accent);
+      font-weight: 600;
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: 30px;
+      line-height: 1.15;
+      letter-spacing: 0.01em;
+      margin: 0 0 10px;
+      background: linear-gradient(120deg, #0f172a, #1d4ed8);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .section-intro {
+      font-size: 14px;
+      color: var(--text-soft);
+      max-width: 520px;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 22px;
+      align-items: flex-start;
+      margin-bottom: 28px;
+      flex-wrap: wrap;
+    }
+
+    .triple-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .dual-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    .card {
+      border-radius: var(--card-radius);
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 70%),
+        var(--bg-elevated);
+      border: 1px solid var(--border-subtle);
+      box-shadow: var(--shadow-soft);
+      padding: 22px 20px 20px;
+      font-size: 14px;
+      color: var(--text-soft);
+    }
+
+    .card h3 {
+      margin: 0 0 10px;
+      font-size: 16px;
+      font-weight: 600;
+      color: var(--text-main);
+    }
+
+    .card ul {
+      margin: 0;
+      padding-left: 18px;
+      list-style: disc;
+    }
+
+    .card li + li {
+      margin-top: 6px;
+    }
+
+    /* FÜR WEN SECTION */
+
+    .for-whom {
+      background: linear-gradient(to bottom, #f5f5f7, #ffffff);
+    }
+
+    .for-whom .card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .for-whom .card::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at top right, rgba(37, 99, 235, 0.10), transparent 60%);
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    .for-whom .card > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    /* ABLAUF SECTION */
+
+    .flow-section {
+      background:
+        radial-gradient(circle at top, rgba(37, 99, 235, 0.08), transparent 55%),
+        #f5f5f7;
+    }
+
+    .flow-step {
+      position: relative;
+      padding-left: 32px;
+    }
+
+    .flow-step + .flow-step {
+      margin-top: 22px;
+      border-top: 1px dashed rgba(148, 163, 184, 0.4);
+      padding-top: 20px;
+    }
+
+    .flow-step-label {
+      font-size: 12px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--accent-strong);
+      margin-bottom: 4px;
+    }
+
+    .flow-step-title {
+      font-size: 16px;
+      font-weight: 600;
+      margin: 0 0 6px;
+      color: var(--text-main);
+    }
+
+    .flow-step-text {
+      font-size: 14px;
+      color: var(--text-soft);
+      margin: 0;
+      line-height: 1.7;
+    }
+
+    .flow-number {
+      position: absolute;
+      left: -4px;
+      top: -14px;
+      font-family: "Playfair Display", serif;
+      font-size: 46px;
+      font-style: italic;
+      line-height: 1;
+      letter-spacing: 0.04em;
+      background: linear-gradient(120deg, rgba(37, 99, 235, 0.18), rgba(37, 99, 235, 0.5));
+      -webkit-background-clip: text;
+      color: transparent;
+      opacity: 0.4;
+      filter: blur(0.8px);
+      pointer-events: none;
+    }
+
+    /* BENEFITS SECTION */
+
+    .benefits-section {
+      background: #ffffff;
+    }
+
+    .benefits-list {
+      display: grid;
+      grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+      gap: 28px;
+      align-items: flex-start;
+    }
+
+    .benefits-list ul {
+      margin: 0;
+      padding-left: 18px;
+      font-size: 14px;
+      color: var(--text-soft);
+      line-height: 1.7;
+    }
+
+    .benefit-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: rgba(15, 23, 42, 0.02);
+      border: 1px solid rgba(148, 163, 184, 0.35);
+      color: var(--text-soft);
+      margin-bottom: 10px;
+    }
+
+    .benefit-tag-dot {
+      width: 6px;
+      height: 6px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 0 0, #bbf7d0, #16a34a);
+    }
+
+    .benefits-side-card {
+      border-radius: 20px;
+      padding: 18px 18px 16px;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.08), transparent 70%),
+        #f9fafb;
+      border: 1px dashed rgba(148, 163, 184, 0.7);
+      font-size: 13px;
+      color: var(--text-soft);
+    }
+
+    .benefits-side-card strong {
+      color: var(--text-main);
+    }
+
+    /* REVIEWS – identisch Logik wie auf Startseite */
+
+    .reviews {
+      background: #f5f5f7;
+      padding-top: 40px;
+    }
+
+    .reviews-inner {
+      border-radius: 24px;
+      background:
+        radial-gradient(circle at top left, rgba(37, 99, 235, 0.12), transparent 70%),
+        #0f172a;
+      color: #e5e7eb;
+      padding: 20px 20px 18px;
+      box-shadow: 0 22px 55px rgba(15, 23, 42, 0.7);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .reviews-inner::after {
+      content: "";
+      position: absolute;
+      inset: auto -40px -40px -40px;
+      height: 120px;
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0), #f5f5f7);
+      pointer-events: none;
+    }
+
+    .reviews-header {
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      align-items: flex-start;
+      margin-bottom: 18px;
+    }
+
+    .reviews-title {
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+      margin: 0 0 4px;
+      background: linear-gradient(120deg, #f9fafb, #bfdbfe);
+      -webkit-background-clip: text;
+      color: transparent;
+    }
+
+    .reviews-subtitle {
+      font-size: 12px;
+      color: #cbd5f5;
+      margin: 0;
+      max-width: 360px;
+    }
+
+    .reviews-badge {
+      font-size: 11px;
+      padding: 6px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.55);
+      background: rgba(15, 23, 42, 0.6);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      white-space: nowrap;
+    }
+
+    .reviews-badge span.dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 0 0, #bbf7d0, #16a34a);
+      box-shadow: 0 0 12px rgba(22, 163, 74, 0.9);
+    }
+
+    .reviews-marquee-shell {
+      position: relative;
+      overflow: hidden;
+      margin: 0 -8px;
+    }
+
+    .reviews-track {
+      display: flex;
+      gap: 12px;
+      padding-bottom: 10px;
+      animation: reviews-scroll 48s linear infinite;
+    }
+
+    .review-card {
+      flex: 0 0 260px;
+      border-radius: 18px;
+      background: rgba(15, 23, 42, 0.85);
+      border: 1px solid rgba(148, 163, 184, 0.45);
+      padding: 14px 14px 12px;
+      font-size: 12px;
+      color: #e5e7eb;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      min-height: 170px;
+    }
+
+    .review-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+
+    .review-name {
+      font-weight: 500;
+      font-size: 12px;
+    }
+
+    .review-meta {
+      font-size: 11px;
+      color: #9ca3af;
+    }
+
+    .review-stars {
+      font-size: 12px;
+      margin-bottom: 6px;
+      color: #facc15;
+    }
+
+    .review-text {
+      font-size: 12px;
+      color: #e5e7eb;
+      line-height: 1.5;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      margin-bottom: 8px;
+    }
+
+    .review-footer {
+      margin-top: auto;
+      padding-top: 6px;
+      border-top: 1px dashed rgba(148, 163, 184, 0.55);
+      display: flex;
+      justify-content: space-between;
+      font-size: 10px;
+      color: #9ca3af;
+    }
+
+    @keyframes reviews-scroll {
+      from {
+        transform: translateX(0);
+      }
+      to {
+        transform: translateX(-50%);
+      }
+    }
+
+    /* MAP / LOCATION */
+
+    .location-section {
+      background:
+        radial-gradient(circle at top, rgba(37, 99, 235, 0.12), transparent 60%),
+        #f9fafb;
+    }
+
+    .map-shell {
+      border-radius: 24px;
+      overflow: hidden;
+      border: 1px solid rgba(148, 163, 184, 0.4);
+      box-shadow: 0 18px 45px rgba(15, 23, 42, 0.16);
+      background: #020617;
+      position: relative;
+    }
+
+    .map-shell iframe {
+      display: block;
+      width: 100%;
+      height: 320px;
+      border: 0;
+    }
+
+    .map-shell::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0 0;
+      height: 24px;
+      background: linear-gradient(to bottom, rgba(15, 23, 42, 0), #020617);
+      opacity: 0.8;
+      pointer-events: none;
+    }
+
+    .map-meta {
+      margin-top: 16px;
+      font-size: 13px;
+      color: var(--text-soft);
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+
+    .map-meta strong {
+      color: var(--text-main);
+    }
+
+    .map-actions {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    /* FOOTER */
+
+    footer {
+      border-top: 1px solid rgba(15, 23, 42, 0.08);
+      padding: 22px 0 30px;
+      background: linear-gradient(to top, rgba(15, 23, 42, 0.06), transparent);
+      font-size: 12px;
+      color: var(--text-soft);
+      margin-top: 30px;
+    }
+
+    .footer-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .footer-links a:hover {
+      color: var(--text-main);
+    }
+
+    /* WHATSAPP FAB */
+
+    .whatsapp-fab {
+      position: fixed;
+      right: 18px;
+      bottom: 18px;
+      z-index: 60;
+    }
+
+    .whatsapp-fab a {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      padding: 10px 16px;
+      border-radius: 999px;
+      background: radial-gradient(circle at 0 0, #4ade80, #16a34a);
+      color: #ecfdf3;
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 18px 55px rgba(22, 163, 74, 0.5);
+      border: 1px solid rgba(187, 247, 208, 0.6);
+    }
+
+    .whatsapp-fab a:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 22px 65px rgba(22, 163, 74, 0.65);
+    }
+
+    .whatsapp-icon {
+      width: 18px;
+      height: 18px;
+      border-radius: 999px;
+      background: #ecfdf3;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #16a34a;
+      font-size: 15px;
+    }
+
+    /* RESPONSIVE */
+
+    @media (max-width: 960px) {
+      .hero-grid,
+      .triple-grid,
+      .dual-grid,
+      .benefits-list {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero {
+        padding-top: 72px;
+      }
+
+      .hero-title {
+        font-size: 32px;
+      }
+
+      .hero-panel {
+        margin-top: 10px;
+      }
+
+      section {
+        padding: 64px 0;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .nav-links {
+        position: absolute;
+        left: 0;
+        right: 0;
+        top: var(--nav-height);
+        padding: 10px 20px 14px;
+        background: rgba(245, 245, 247, 0.96);
+        backdrop-filter: blur(18px);
+        border-bottom: 1px solid rgba(15, 23, 42, 0.06);
+        display: none;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+        font-size: 14px;
+      }
+
+      .site-header.is-open .nav-links {
+        display: flex;
+      }
+
+      .nav-toggle {
+        display: inline-flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+      }
+
+      .section-title {
+        font-size: 26px;
+      }
+
+      .reviews-inner {
+        padding: 18px 14px 14px;
+      }
+
+      .map-shell iframe {
+        height: 240px;
+      }
+
+      .whatsapp-fab a span.label {
+        display: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+<div class="page">
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container nav">
+      <div class="logo">
+        <img src="logo.png" alt="ShineWerk Logo" class="logo-img" />
+        <div class="logo-text">
+          <span>ShineWerk</span>
+          <span>Fahrzeugpflege &amp; Versiegelung</span>
+        </div>
+      </div>
+
+      <!-- Mobile Toggle -->
+      <button class="nav-toggle" aria-label="Menü öffnen oder schließen">
+        <span class="nav-toggle-line"></span>
+        <span class="nav-toggle-line"></span>
+      </button>
+
+      <nav class="nav-links">
+        <a href="https://shinewerk.de">Home</a>
+        <a href="/exclusive">Exclusive</a>
+        <a href="/corporate">Corporate</a>
+        <a href="https://wa.me/4915562648989" class="btn btn-outline" target="_blank" rel="noopener">
+          Kontakt via WhatsApp
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- HERO CORPORATE -->
+    <section class="hero" id="top">
+      <div class="container hero-grid">
+        <div>
+          <div class="hero-eyebrow">Fahrzeughändler &amp; Firmen mit Flotte</div>
+          <h1 class="hero-title">
+            Fahrzeugaufbereitung,<br />
+            <span>die sich auszahlt.</span>
+          </h1>
+          <p class="hero-subtitle">
+            Mehr Umsatz mit Verkaufsfahrzeugen, ein sichtbar gepflegter Fuhrpark und Mitarbeiter,
+            die gerne in ihre Fahrzeuge einsteigen – mit einem Partner, der Premium-Anspruch denkt,
+            nicht „sauber genug“.
+          </p>
+
+          <div class="hero-actions">
+            <a href="https://wa.me/4915562648989" class="btn btn-primary" target="_blank" rel="noopener">
+              Corporate-Gespräch anfragen
+              <span class="btn-icon">↗</span>
+            </a>
+            <a href="#fuer-wen" class="btn btn-outline">
+              Für wen eignet sich ShineWerk Corporate?
+            </a>
+          </div>
+
+          <p class="hero-note">
+            <strong>Steigern Sie den Wert jedes Fahrzeugs, bevor es den Hof verlässt.</strong><br />
+            ShineWerk Corporate verbindet High-End Detailing mit klaren Prozessen – für Händler,
+            Unternehmen und Vermietungen, die ihr Fahrzeugbild nicht dem Zufall überlassen.
+          </p>
+        </div>
+
+        <aside class="hero-panel" aria-label="Kennzahlen & Setup">
+          <div class="hero-panel-header">
+            <div>
+              <div class="hero-panel-eyebrow">Kennzahlen ShineWerk</div>
+              <div class="hero-panel-title">
+                Exklusive Partner. Klare Ergebnisse.
+              </div>
+            </div>
+            <div class="hero-pill">
+              <span class="hero-pill-dot"></span>
+              Limitierte Corporate-Partner
+            </div>
+          </div>
+
+          <div class="hero-stats">
+            <div class="hero-stat">
+              <div class="hero-stat-label">Durchschnittl. Wartezeit bis Start</div>
+              <div class="hero-stat-value">3–4 Tage</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-label">Kundenzufriedenheit</div>
+              <div class="hero-stat-value">100&nbsp;%</div>
+            </div>
+            <div class="hero-stat">
+              <div class="hero-stat-label">Ø Google-Bewertung</div>
+              <div class="hero-stat-value">5,0 ★</div>
+            </div>
+          </div>
+
+          <p class="hero-footer-line">
+            Wir planen Corporate-Aufträge so, dass sich Aufbereitung in messbare Resultate übersetzt –
+            von höherem Verkaufspreis bis besserem Ersteindruck bei Kunden &amp; Mitarbeitern.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- INFO-BAND -->
+    <section class="info-band">
+      <div class="container info-band-inner">
+        <div>
+          <div class="info-band-highlight">
+            <span class="info-dot"></span>
+            ShineWerk Corporate
+          </div>
+          <div style="font-size:13px;color:var(--text-soft);">
+            Premium-Fahrzeugaufbereitung für Autohäuser, Firmenflotten &amp; Vermietungen im Raum Südpfalz / Karlsruhe.
+          </div>
+        </div>
+        <div class="info-band-tags">
+          <div class="info-tag">Verkaufsfahrzeuge &amp; Vorführwagen</div>
+          <div class="info-tag">Dienstwagen &amp; Firmenflotten</div>
+          <div class="info-tag">Miet- &amp; Sharingfahrzeuge</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FÜR WEN SECTION -->
+    <section class="for-whom" id="fuer-wen">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-eyebrow">Für wen ist ShineWerk Corporate?</div>
+            <h2 class="section-title">Aufbereitung, die zu Ihrem Geschäftsmodell passt.</h2>
+          </div>
+          <p class="section-intro">
+            Unterschiedliche Anforderungen, gleicher Nenner: Fahrzeuge müssen aussehen, als
+            wären sie ihr Geld wert. Wir denken in klaren Use-Cases – und richten unsere
+            Prozesse daran aus.
+          </p>
+        </div>
+
+        <div class="triple-grid">
+          <article class="card">
+            <h3>Händler</h3>
+            <ul>
+              <li>
+                <strong>Schneller Verkaufsabschluss</strong>:<br />
+                Professionelle Aufbereitung steigert den optischen Zustand und den Wert Ihrer Fahrzeuge.
+              </li>
+              <li>
+                <strong>Neuwagen-Feeling</strong>:<br />
+                Perfekt gepflegte Fahrzeuge wirken wie neu und hinterlassen einen überzeugenden ersten Eindruck.
+              </li>
+              <li>
+                <strong>Flexibilität</strong>:<br />
+                Ob vor Ort oder an unserem Standort – wir passen uns Ihrem Verkaufszyklus an.
+              </li>
+              <li>
+                <strong>Zeiteinsparung</strong>:<br />
+                Ihr Team konzentriert sich auf Verkauf &amp; Beratung, wir übernehmen die gesamte Aufbereitung.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Firmen mit eigener Flotte</h3>
+            <ul>
+              <li>
+                <strong>Perfekter Eindruck</strong>:<br />
+                Gepflegte Firmenfahrzeuge transportieren Ihr Markenbild – noch bevor jemand aussteigt.
+              </li>
+              <li>
+                <strong>Mitarbeiterzufriedenheit</strong>:<br />
+                Wer in einem sauberen, hochwertigen Fahrzeug unterwegs ist, fühlt sich wertgeschätzt.
+              </li>
+              <li>
+                <strong>Langlebigkeit</strong>:<br />
+                Werterhalt durch konsequente Pflege statt Reparatur und „Feuerwehr-Einsätze“.
+              </li>
+              <li>
+                <strong>Individuelle Pakete</strong>:<br />
+                Wir definieren mit Ihnen Intervalle &amp; Leistungsumfang genau passend zu Ihrem Fuhrpark.
+              </li>
+            </ul>
+          </article>
+
+          <article class="card">
+            <h3>Vermietungen &amp; Mobility-Dienstleister</h3>
+            <ul>
+              <li>
+                <strong>Höhere Kundenzufriedenheit</strong>:<br />
+                Gepflegte Fahrzeuge sorgen für bessere Bewertungen und mehr Weiterempfehlungen.
+              </li>
+              <li>
+                <strong>Wiederkehrende Buchungen</strong>:<br />
+                Ein konstanter Qualitätsstandard macht den Unterschied zwischen „okay“ und „wieder buchen“.
+              </li>
+              <li>
+                <strong>Effiziente Prozesse</strong>:<br />
+                Klare Checklisten und definierte Aufbereitungsstufen für schnelle Durchlaufzeiten.
+              </li>
+              <li>
+                <strong>Skalierbarer Partner</strong>:<br />
+                Wir wachsen mit Ihrem Bestand – statt ihn auszubremsen.
+              </li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ABLAUF SECTION -->
+    <section class="flow-section" id="ablauf">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-eyebrow">Ablauf</div>
+            <h2 class="section-title">So läuft ShineWerk Corporate in der Praxis.</h2>
+          </div>
+          <p class="section-intro">
+            Kein unübersichtliches „Wir schauen mal“ – sondern ein klar definierter Rahmen:
+            von der ersten Abstimmung über eine Pilotphase bis zum laufenden Corporate-Setup.
+          </p>
+        </div>
+
+        <div class="dual-grid">
+          <div>
+            <div class="flow-step">
+              <div class="flow-number">1</div>
+              <div class="flow-step-label">Start &amp; Bestandsaufnahme</div>
+              <h3 class="flow-step-title">Erstgespräch &amp; Analyse Ihres Fahrzeugbestands.</h3>
+              <p class="flow-step-text">
+                Wir klären gemeinsam, welche Fahrzeugtypen, Stückzahlen und Standorte relevant sind,
+                und definieren klare Ziele: schnellerer Verkauf, besserer Ersteindruck, mehr
+                Mitarbeiterzufriedenheit – oder alles zusammen.
+              </p>
+            </div>
+
+            <div class="flow-step">
+              <div class="flow-number">2</div>
+              <div class="flow-step-label">Pilotphase</div>
+              <h3 class="flow-step-title">Testlauf mit ausgewählten Fahrzeugen.</h3>
+              <p class="flow-step-text">
+                Wir starten mit einem definierten Kontingent: ausgewählte Verkaufsfahrzeuge,
+                ein Teil Ihrer Flotte oder eine spezifische Kategorie. Sie sehen den Unterschied
+                im Alltag – und in den Reaktionen Ihrer Zielgruppe.
+              </p>
+            </div>
+
+            <div class="flow-step">
+              <div class="flow-number">3</div>
+              <div class="flow-step-label">Rollout &amp; Betreuung</div>
+              <h3 class="flow-step-title">Fester Partner für Ihren Fuhrpark.</h3>
+              <p class="flow-step-text">
+                Nach der Pilotphase legen wir fixe Abläufe und Intervalle fest – inklusive
+                Ansprechpartner, Reaktionszeiten und Priorisierung. So wird Fahrzeugpflege
+                vom „Störfaktor“ zu einem Baustein Ihrer Unternehmenswahrnehmung.
+              </p>
+            </div>
+          </div>
+
+          <aside class="benefits-side-card">
+            <div class="benefit-tag">
+              <span class="benefit-tag-dot"></span>
+              Fokus: messbare Effekte
+            </div>
+            <p>
+              <strong>ShineWerk Corporate ist bewusst kein Massenprogramm.</strong><br />
+              Wir arbeiten mit ausgewählten Partnern, für die Fahrzeugzustand direkt Einfluss
+              auf Umsatz, Außenwirkung oder Mitarbeiterbindung hat.
+            </p>
+            <p>
+              Ob Sie 5, 25 oder 100+ Fahrzeuge im Bestand haben – entscheidend ist, dass Sie
+              den Anspruch teilen, dass die Optik Ihrer Fahrzeuge nicht „nebensächlich“ ist.
+            </p>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- BENEFITS / VALUE SECTION -->
+    <section class="benefits-section">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-eyebrow">Nutzen</div>
+            <h2 class="section-title">Was ShineWerk Corporate Ihnen konkret abnimmt.</h2>
+          </div>
+          <p class="section-intro">
+            Alles, was Sie von „Wir müssten mal wieder Fahrzeuge aufbereiten“ abhält,
+            wird von uns strukturiert: Planung, Durchführung und Qualitätskontrolle –
+            für Ergebnisse, die sich intern und extern auswirken.
+          </p>
+        </div>
+
+        <div class="benefits-list">
+          <div>
+            <ul>
+              <li>
+                <strong>Fuhrparkpflege statt Feuerwehr-Einsätzen:</strong>
+                planbare Pflegeintervalle statt unregelmäßiger Ad-hoc-Aufträge.
+              </li>
+              <li>
+                <strong>Wertsteigerung &amp; Werterhalt:</strong>
+                makelloser Lack, gepflegter Innenraum und Schutz durch gezielte Versiegelungen.
+              </li>
+              <li>
+                <strong>Besseres Unternehmensimage:</strong>
+                Fahrzeuge als mobile Visitenkarte – einheitlich auf einem hohen Niveau.
+              </li>
+              <li>
+                <strong>Entlastung Ihres Teams:</strong>
+                klare Zuständigkeiten und feste Abläufe, damit intern keine Zeit verbrannt wird.
+              </li>
+              <li>
+                <strong>Vor-Ort-Service möglich:</strong>
+                je nach Setup kommen wir zu Ihnen – oder kombinieren On-Site-Service mit
+                Aufbereitung an unserem Standort.
+              </li>
+            </ul>
+          </div>
+
+          <div>
+            <aside class="benefits-side-card">
+              <p>
+                <strong>Sie entscheiden, wie intensiv wir einsteigen.</strong><br />
+                Vom selektiven Premium-Finish für Verkaufsfahrzeuge bis zur konsequent
+                gepflegten Firmenflotte – wir skalieren unser Setup passend zu Ihrem Bedarf.
+              </p>
+              <p>
+                Im Fokus steht immer eine Frage: <strong>Lohnt sich der Zustand der Fahrzeuge
+                für das, wofür Sie sie einsetzen?</strong> Wenn die Antwort „Ja“ sein soll,
+                setzen wir genau dort an.
+              </p>
+            </aside>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- REVIEWS (Google /reviews Endpoint) -->
+    <section class="reviews">
+      <div class="container">
+        <div class="reviews-inner">
+          <div class="reviews-header">
+            <div>
+              <h2 class="reviews-title">Feedback von Unternehmen &amp; Fahrern.</h2>
+              <p class="reviews-subtitle">
+                Die meisten Kunden kommen zu uns, weil sie irgendwo ein Fahrzeug gesehen haben,
+                das „anders“ aussah. Ein Auszug aus den Google-Bewertungen.
+              </p>
+            </div>
+            <div class="reviews-badge">
+              <span class="dot"></span>
+              Live aus Google · 5,0 ★
+            </div>
+          </div>
+
+          <div class="reviews-marquee-shell" aria-label="Kundenbewertungen">
+            <div class="reviews-track" id="reviews-track">
+              <!-- wird per JS /reviews dynamisch gefüllt -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- LOCATION / MAP -->
+    <section class="location-section" id="standort">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-eyebrow">Standort</div>
+            <h2 class="section-title">Zentral in der Südpfalz, erreichbar für die Region.</h2>
+          </div>
+          <p class="section-intro">
+            ShineWerk sitzt in Wörth am Rhein – ideal für Händler, Firmen und Flotten zwischen
+            Karlsruhe, Landau und der Südpfalz. Auf Wunsch prüfen wir gemeinsam, welche Setups
+            vor Ort bei Ihnen möglich sind.
+          </p>
+        </div>
+
+        <div class="map-shell">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2670.590776904146!2d8.2593204!3d49.0450897!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4796bf5be9cfa4d9%3A0xYOURPLACEID!2sShineWerk!5e0!3m2!1sde!2sde!4v0000000000000"
+            loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"
+          ></iframe>
+        </div>
+
+        <div class="map-meta">
+          <div>
+            <strong>ShineWerk – DM Management</strong><br />
+            Krautgärten 12<br />
+            76744 Wörth am Rhein
+          </div>
+          <div class="map-actions">
+            <a
+              href="https://www.google.com/maps/dir/?api=1&destination=ShineWerk%20Krautg%C3%A4rten%2012%2076744%20W%C3%B6rth%20am%20Rhein"
+              class="btn btn-outline"
+              target="_blank"
+              rel="noopener"
+            >
+              Route planen
+            </a>
+            <a href="https://wa.me/4915562648989" class="btn btn-primary" target="_blank" rel="noopener">
+              Corporate-Anfrage per WhatsApp
+              <span class="btn-icon">↗</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER identisch -->
+  <footer>
+    <div class="container footer-inner">
+      <div>© <span id="year"></span> ShineWerk. Alle Rechte vorbehalten.</div>
+      <div class="footer-links">
+        <a href="/impressum">Impressum</a>
+        <a href="/datenschutz">Datenschutz</a>
+        <a href="/agb">AGB</a>
+      </div>
+    </div>
+  </footer>
+</div>
+
+<!-- WhatsApp Floating Button -->
+<div class="whatsapp-fab">
+  <a href="https://wa.me/4915562648989" target="_blank" rel="noopener" aria-label="WhatsApp Chat mit ShineWerk starten">
+    <span class="whatsapp-icon">🟢</span>
+    <span class="label">WhatsApp</span>
+  </a>
+</div>
+
+<script>
+  // Jahr im Footer
+  document.addEventListener("DOMContentLoaded", function () {
+    var yearEl = document.getElementById("year");
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    const header = document.querySelector(".site-header");
+    const toggle = document.querySelector(".nav-toggle");
+
+    if (header && toggle) {
+      toggle.addEventListener("click", function () {
+        header.classList.toggle("is-open");
+      });
+    }
+
+    // Google Reviews laden (gleicher /reviews-Endpunkt wie auf Startseite)
+    loadReviews();
+  });
+
+  async function loadReviews() {
+    try {
+      const resp = await fetch("/reviews");
+      if (!resp.ok) return;
+
+      const data = await resp.json();
+      const track = document.getElementById("reviews-track");
+      if (!track) return;
+
+      const reviews = Array.isArray(data.reviews) ? data.reviews.slice(0, 6) : [];
+      if (!reviews.length) return;
+
+      function createCard(review) {
+        const card = document.createElement("article");
+        card.className = "review-card";
+
+        const stars = "★★★★★".slice(0, Math.round(review.rating || 5));
+        const text = review.text || "";
+
+        card.innerHTML = `
+          <div>
+            <div class="review-header">
+              <div>
+                <div class="review-name">${review.author_name || "Kunde"}</div>
+                <div class="review-meta">${review.relative_time || "Google-Bewertung"}</div>
+              </div>
+            </div>
+            <div class="review-stars">${stars}</div>
+            <div class="review-text">${text}</div>
+          </div>
+          <div class="review-footer">
+            <span>Verifizierter Kunde</span>
+            <span>über Google</span>
+          </div>
+        `;
+        return card;
+      }
+
+      reviews.forEach(r => track.appendChild(createCard(r)));
+      reviews.forEach(r => track.appendChild(createCard(r)));
+    } catch (e) {
+      console.error("Review-Loading failed", e);
+    }
+  }
+</script>
+</body>
+</html>
