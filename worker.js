@@ -21,12 +21,14 @@ async function handleReviews(env) {
       }
     );
   }
-
-  const apiUrl = `https://maps.googleapis.com/maps/api/place/details/json` +
-    `?place_id=${encodeURIComponent(placeId)}` +
-    `&fields=rating,user_ratings_total,reviews` +
-    `&reviews_sort=newest` +
-    `&key=${encodeURIComponent(apiKey)}`;
+  
+const apiUrl = `https://maps.googleapis.com/maps/api/place/details/json`
+  + `?place_id=${encodeURIComponent(placeId)}`
+  + `&fields=rating,user_ratings_total,reviews`
+  + `&reviews_sort=newest`
+  + `&language=de`
+  + `&reviews_no_translations=true`
+  + `&key=${encodeURIComponent(apiKey)}`;
 
   try {
     const resp = await fetch(apiUrl);
