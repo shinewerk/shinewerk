@@ -442,7 +442,7 @@
     .hero-stat-value {
       font-size: 15px;
       font-weight: 600;
-      white-space: nowrap;
+      /* kein nowrap mehr, damit "Daily bis Sammler" im Kasten bleibt */
     }
 
     .hero-footer-line {
@@ -686,7 +686,7 @@
       }
     }
 
-    /* LEISTUNGEN */
+    /* LEISTUNGEN / EXCLUSIVE-PAKETE */
 
     .services-grid {
       display: grid;
@@ -744,6 +744,10 @@
       left: 4px;
       top: 0;
       color: var(--accent-blue);
+    }
+
+    .service-actions {
+      margin-top: 12px;
     }
 
     /* ABLAUF */
@@ -1135,7 +1139,7 @@
 
 <body>
 <div class="page">
-  <!-- HEADER (UNVERÄNDERT) -->
+  <!-- HEADER -->
   <header class="site-header">
     <div class="container nav">
       <div class="logo">
@@ -1146,7 +1150,6 @@
         </div>
       </div>
 
-      <!-- Mobile Toggle -->
       <button class="nav-toggle" aria-label="Menü öffnen oder schließen">
         <span class="nav-toggle-line"></span>
         <span class="nav-toggle-line"></span>
@@ -1164,7 +1167,7 @@
   </header>
 
   <main>
-    <!-- HERO (EXCLUSIVE-COPY, GLEICHES LAYOUT) -->
+    <!-- HERO -->
     <section class="hero" id="top">
       <div class="container hero-grid">
         <div>
@@ -1239,7 +1242,7 @@
       </div>
     </section>
 
-    <!-- MINI BANNER – SÜDPFALZ TIMES (UNVERÄNDERT) -->
+    <!-- MINI BANNER – SÜDPFALZ TIMES -->
     <section class="mini-banner" aria-label="Bekannt aus">
       <div class="container">
         <a href="https://suedpfalztimes.de/shinewerk-suedpfalz-modernste-fahrzeugaufbereitung/" target="_blank" rel="noopener" class="mini-banner-inner">
@@ -1249,7 +1252,7 @@
       </div>
     </section>
 
-    <!-- REVIEWS (UNVERÄNDERT) -->
+    <!-- REVIEWS -->
     <section class="reviews" id="reviews">
       <div class="container">
         <div class="section-header">
@@ -1301,80 +1304,7 @@
       </div>
     </section>
 
-    <!-- LEISTUNGEN / EXCLUSIVE-PAKETE -->
-    <section id="leistungen">
-      <div class="container">
-        <div class="section-header">
-          <div>
-            <div class="section-eyebrow">Exclusive Pakete</div>
-            <h2 class="section-title">
-              Drei Pakete für Lackkorrektur & Keramik – alles dahinter ist Feintuning.
-            </h2>
-          </div>
-          <p class="section-description">
-            Keine 20 Unterkategorien, keine Marketingnamen. Drei klar definierte
-            Linien, die wir auf dein Fahrzeug und deinen Anspruch zuschneiden.
-            Typische Projekte liegen – je nach Fahrzeug und Zustand – im oberen
-            dreistelligen bis klar vierstelligen Bereich.
-          </p>
-        </div>
-
-        <div class="services-grid">
-          <article class="service-card">
-            <div class="service-label">01 · Correction Base</div>
-            <h3 class="service-title">Einstufige Korrektur & Keramik für gepflegte Fahrzeuge.</h3>
-            <p class="service-text">
-              Für Fahrzeuge, die bereits ordentlich behandelt wurden, aber unter
-              Waschanlagen-Spuren, leichten Swirls und fehlendem Tiefenglanz
-              leiden. Ziel: das Fahrzeug wieder auf ein sauberes, klares
-              Level zu heben – ohne unnötig Material zu opfern.
-            </p>
-            <ul class="service-list">
-              <li>Intensive Vorwäsche, chemische &amp; mechanische Dekontamination</li>
-              <li>Einstufige Lackkorrektur mit Fokus auf Klarheit statt „Showcar um jeden Preis“</li>
-              <li>Hochwertige Keramikversiegelung auf allen lackierten Außenflächen</li>
-              <li>Typisch für: neue Performance-Modelle, gut gepflegte Daily Driver</li>
-            </ul>
-          </article>
-
-          <article class="service-card">
-            <div class="service-label">02 · Correction Pro</div>
-            <h3 class="service-title">Mehrstufige Korrektur für sichtbaren Vorher-Nachher-Effekt.</h3>
-            <p class="service-text">
-              Für Fahrzeuge mit deutlich sichtbaren Defekten: Swirls,
-              Hologramme, falsche Politurversuche oder Jahre Waschstraße.
-              Hier geht es um einen klar erkennbaren Sprung – auch in der
-              Sonne und unter harten Lichtbedingungen.
-            </p>
-            <ul class="service-list">
-              <li>Mehrstufige Politur mit Testspot &amp; dokumentierter Korrekturtiefe</li>
-              <li>Gezielte Bearbeitung von Problemzonen (Einstiege, Ladekanten, Griffbereiche)</li>
-              <li>Keramiksystem mit höherer Schichtstärke &amp; starkem Beading / Sheeting</li>
-              <li>Typisch für: ältere Performance-Fahrzeuge, Oberklasse, Leasingrückgabe mit Anspruch</li>
-            </ul>
-          </article>
-
-          <article class="service-card">
-            <div class="service-label">03 · Signature Coating</div>
-            <h3 class="service-title">Komplettpaket für Fahrzeuge, die bleiben sollen.</h3>
-            <p class="service-text">
-              Für Sammlerfahrzeuge, Fahrzeuge mit hoher emotionaler Bindung
-              oder Projekte, die bewusst auf „fertig und richtig“ gestellt
-              werden sollen. Mehrtägige Arbeit, volle Konzentration, maximal
-              durchdachtes Setup.
-            </p>
-            <ul class="service-list">
-              <li>Umfassende mehrstufige Lackkorrektur inkl. sensibler Bauteile</li>
-              <li>Mehrlagige Keramikversiegelung auf Lack, Felgen (auf Wunsch auch Betten) &amp; Glas</li>
-              <li>Detailarbeiten an Exterieur-Kunststoffen, Inlets und stark beanspruchten Bereichen</li>
-              <li>Typisch für: Sammler, „Keep forever“-Autos, bewusst aufgebaute Performance-Fahrzeuge</li>
-            </ul>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <!-- ABLAUF (Exclusive-orientiert, gleiches Layout) -->
+    <!-- ABLAUF (JETZT VOR DEN PAKETEN) -->
     <section id="ablauf">
       <div class="container">
         <div class="section-header">
@@ -1448,7 +1378,95 @@
       </div>
     </section>
 
-    <!-- FAQ (EXCLUSIVE-COPY, GLEICHES LAYOUT & BACKGROUND) -->
+    <!-- LEISTUNGEN / EXCLUSIVE-PAKETE (JETZT NACH ABLAUF) -->
+    <section id="leistungen">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <div class="section-eyebrow">Exclusive Pakete</div>
+            <h2 class="section-title">
+              Drei Pakete für Lackkorrektur & Keramik – alles dahinter ist Feintuning.
+            </h2>
+          </div>
+          <p class="section-description">
+            Keine 20 Unterkategorien, keine Marketingnamen. Drei klar definierte
+            Linien, die wir auf dein Fahrzeug und deinen Anspruch zuschneiden.
+            Typische Projekte liegen – je nach Fahrzeug und Zustand – im oberen
+            dreistelligen bis klar vierstelligen Bereich.
+          </p>
+        </div>
+
+        <div class="services-grid">
+          <article class="service-card">
+            <div class="service-label">01 · Correction Base</div>
+            <h3 class="service-title">Einstufige Korrektur & Keramik für gepflegte Fahrzeuge.</h3>
+            <p class="service-text">
+              Für Fahrzeuge, die bereits ordentlich behandelt wurden, aber unter
+              Waschanlagen-Spuren, leichten Swirls und fehlendem Tiefenglanz
+              leiden. Ziel: das Fahrzeug wieder auf ein sauberes, klares
+              Level zu heben – ohne unnötig Material zu opfern.
+            </p>
+            <ul class="service-list">
+              <li>Intensive Vorwäsche, chemische &amp; mechanische Dekontamination</li>
+              <li>Einstufige Lackkorrektur mit Fokus auf Klarheit statt „Showcar um jeden Preis“</li>
+              <li>Hochwertige Keramikversiegelung auf allen lackierten Außenflächen</li>
+              <li>Typisch für: neue Performance-Modelle, gut gepflegte Daily Driver</li>
+            </ul>
+            <div class="service-actions">
+              <a href="https://wa.me/4915562648989" class="btn btn-primary" target="_blank" rel="noopener">
+                Correction Base anfragen
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-label">02 · Correction Pro</div>
+            <h3 class="service-title">Mehrstufige Korrektur für sichtbaren Vorher-Nachher-Effekt.</h3>
+            <p class="service-text">
+              Für Fahrzeuge mit deutlich sichtbaren Defekten: Swirls,
+              Hologramme, falsche Politurversuche oder Jahre Waschstraße.
+              Hier geht es um einen klar erkennbaren Sprung – auch in der
+              Sonne und unter harten Lichtbedingungen.
+            </p>
+            <ul class="service-list">
+              <li>Mehrstufige Politur mit Testspot &amp; dokumentierter Korrekturtiefe</li>
+              <li>Gezielte Bearbeitung von Problemzonen (Einstiege, Ladekanten, Griffbereiche)</li>
+              <li>Keramiksystem mit höherer Schichtstärke &amp; starkem Beading / Sheeting</li>
+              <li>Typisch für: ältere Performance-Fahrzeuge, Oberklasse, Leasingrückgabe mit Anspruch</li>
+            </ul>
+            <div class="service-actions">
+              <a href="https://wa.me/4915562648989" class="btn btn-primary" target="_blank" rel="noopener">
+                Correction Pro anfragen
+              </a>
+            </div>
+          </article>
+
+          <article class="service-card">
+            <div class="service-label">03 · Signature Coating</div>
+            <h3 class="service-title">Komplettpaket für Fahrzeuge, die bleiben sollen.</h3>
+            <p class="service-text">
+              Für Sammlerfahrzeuge, Fahrzeuge mit hoher emotionaler Bindung
+              oder Projekte, die bewusst auf „fertig und richtig“ gestellt
+              werden sollen. Mehrtägige Arbeit, volle Konzentration, maximal
+              durchdachtes Setup.
+            </p>
+            <ul class="service-list">
+              <li>Umfassende mehrstufige Lackkorrektur inkl. sensibler Bauteile</li>
+              <li>Mehrlagige Keramikversiegelung auf Lack, Felgen (auf Wunsch auch Betten) &amp; Glas</li>
+              <li>Detailarbeiten an Exterieur-Kunststoffen, Inlets und stark beanspruchten Bereichen</li>
+              <li>Typisch für: Sammler, „Keep forever“-Autos, bewusst aufgebaute Performance-Fahrzeuge</li>
+            </ul>
+            <div class="service-actions">
+              <a href="https://wa.me/4915562648989" class="btn btn-primary" target="_blank" rel="noopener">
+                Signature Coating anfragen
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ -->
     <section id="faq">
       <div class="container">
         <div class="section-header">
@@ -1559,7 +1577,7 @@
       </div>
     </section>
 
-    <!-- STANDORT (UNVERÄNDERT) -->
+    <!-- STANDORT -->
     <section id="standort">
       <div class="container">
         <div class="section-header">
@@ -1626,7 +1644,7 @@
     </section>
   </main>
 
-  <!-- FOOTER (UNVERÄNDERT) -->
+  <!-- FOOTER -->
   <footer>
     <div class="container footer-inner">
       <div>© <span id="year"></span> ShineWerk. Alle Rechte vorbehalten.</div>
@@ -1639,7 +1657,7 @@
   </footer>
 </div>
 
-<!-- WhatsApp FAB (UNVERÄNDERT) -->
+<!-- WhatsApp FAB -->
 <div class="whatsapp-fab">
   <a href="https://wa.me/4915562648989" target="_blank" rel="noopener" aria-label="WhatsApp Chat mit ShineWerk starten">
     <span class="whatsapp-icon">🟢</span>
