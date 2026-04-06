@@ -165,10 +165,10 @@
 
     <section class="addons-section">
       <div class="container">
-        <div class="section-header-centered">
-          <h2 class="section-title">Einzelleistungen</h2>
-          <p class="section-description">Spezifische Veredelungen, einzeln oder als Ergänzung zu den Paketen buchbar.</p>
-        </div>
+<div class="section-header-centered">
+  <h2 class="section-title">Ergänzende Veredelungen</h2>
+  <p class="section-description">Spezifische Veredelungen, einzeln oder als Ergänzung zu den Paketen buchbar.</p>
+</div>
 
         <div class="addons-grid">
           <div class="glass-card addon-card">
@@ -264,15 +264,60 @@
 </div>
 
 <style>
-  .services-hero {
-    padding: 200px 0 140px;
-    text-align: center;
-    position: relative;
-    background: linear-gradient(to bottom, var(--bg-elevated), var(--bg));
-  }
-  .services-hero .container {
-    max-width: 800px;
-  }
+.services-hero {
+  padding: 240px 0 140px;
+  text-align: center;
+  position: relative;
+  background-color: #111827;
+  overflow: hidden;
+}
+
+.services-hero::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  background-image: url("/img/signature1.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.65;
+  filter: blur(2px);
+  z-index: 0;
+}
+
+.services-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, transparent 35%, var(--bg) 100%);
+  z-index: 1;
+}
+.services-hero .section-eyebrow {
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.15em;
+  color: #93c5fd;
+  margin-bottom: 16px;
+  font-weight: 500;
+}
+
+.services-hero .hero-title {
+  font-family: "Playfair Display", serif;
+  font-size: 56px;
+  line-height: 1.15;
+  margin-bottom: 24px;
+  color: #ffffff;
+  text-shadow: 0 4px 30px rgba(0,0,0,0.6);
+}
+
+.services-hero .hero-subtitle {
+  font-size: 18px;
+  color: #e5e7eb;
+}
+.services-hero .container {
+  max-width: 800px;
+  position: relative;
+  z-index: 2;
+}
   .section-eyebrow {
     font-size: 13px;
     text-transform: uppercase;
@@ -313,14 +358,21 @@
     max-width: 900px;
     margin: 0 auto;
   }
-  .glass-card {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-card);
-  }
+.glass-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15);
+  transform: translateY(-4px);
+}
   .package-card {
     padding: 40px;
     display: flex;
@@ -393,16 +445,17 @@
     background-color: var(--bg);
     overflow: hidden;
   }
-  .addons-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("/img/single.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.15;
-    z-index: 0;
-  }
+.addons-section::before {
+  content: "";
+  position: absolute;
+  inset: -10px;
+  background-image: url("/img/single.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.15;
+  filter: blur(4px);
+  z-index: 0;
+}
   .addons-section::after {
     content: "";
     position: absolute;
