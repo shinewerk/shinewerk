@@ -342,14 +342,14 @@
 </div>
 
 <style>
-  .glass-card {
-    background: rgba(255, 255, 255, 0.6);
-    backdrop-filter: blur(20px);
-    -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: var(--radius-lg);
-    box-shadow: var(--shadow-card);
-  }
+.glass-card {
+  background: rgba(255, 255, 255, 0.35);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-card);
+}
 
   section {
     padding: 100px 0;
@@ -449,13 +449,13 @@
     margin-top: 80px;
     padding-bottom: 20px;
   }
-  .hero-section .main-stats-card {
-    background: rgba(255, 255, 255, 0.25);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
-  }
+.hero-section .main-stats-card {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+}
 
   .stats-section {
     padding: 0 0 100px;
@@ -605,16 +605,15 @@
     overflow: hidden;
     background: #ffffff;
   }
-  .reviews-marquee-shell {
-    position: relative;
-    width: 100vw;
-    left: 50%;
-    transform: translateX(-50%);
-    padding: 10px 0;
-    overflow: hidden; 
-    mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-    -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  }
+.reviews-marquee-shell {
+  position: relative;
+  width: 100vw;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 30px 0;
+  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+}
   .reviews-track {
     display: flex;
     flex-wrap: nowrap;
@@ -646,23 +645,23 @@
     background-color: var(--bg);
     overflow: hidden;
   }
-  .process-section::before {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background-image: url("/img/ablauf1.jpg");
-    background-size: cover;
-    background-position: center;
-    opacity: 0.3;
-    z-index: 0;
-  }
-  .process-section::after {
-    content: "";
-    position: absolute;
-    inset: 0;
-    background: linear-gradient(to bottom, var(--bg) 0%, var(--bg) 15%, rgba(245,245,247,0) 40%, rgba(245,245,247,0) 60%, var(--bg) 85%, var(--bg) 100%);
-    z-index: 1;
-  }
+.process-section::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background-image: url("/img/ablauf1.jpg");
+  background-size: cover;
+  background-position: center;
+  opacity: 0.4;
+  z-index: 0;
+}
+.process-section::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to bottom, var(--bg) 0%, transparent 15%, transparent 85%, var(--bg) 100%);
+  z-index: 1;
+}
   .process-section .container { position: relative; z-index: 2; }
   .timeline-container {
     max-width: 800px;
@@ -671,12 +670,12 @@
     flex-direction: column;
     gap: 30px;
   }
-  .timeline-item.glass-card {
-    background: rgba(255, 255, 255, 0.4);
-    backdrop-filter: blur(24px);
-    -webkit-backdrop-filter: blur(24px);
-    border: 1px solid rgba(255, 255, 255, 0.5);
-  }
+.timeline-item.glass-card {
+  background: rgba(255, 255, 255, 0.25);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.5);
+}
   .timeline-number {
     font-family: "Playfair Display", serif;
     font-size: 56px;
