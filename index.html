@@ -623,10 +623,9 @@
     background: #ffffff;
   }
 .reviews-marquee-shell {
-  position: relative;
   width: 100vw;
-  left: 50%;
-  transform: translateX(-50%);
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
   padding: 40px 0;
   mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
   -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
@@ -703,21 +702,22 @@
   font-weight: 700;
   transition: all 0.4s ease;
 }
-  @keyframes numberGlow {
-  0%, 100% { 
-    text-shadow: 0 0 10px rgba(59, 130, 246, 0.2); 
-    opacity: 0.2; 
-    color: var(--accent-blue); 
+@keyframes numberGlow {
+  0%, 100% {
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.2);
+    opacity: 0.2;
+    color: var(--accent-blue);
   }
-  50% { 
-    text-shadow: 0 0 25px rgba(59, 130, 246, 0.9); 
-    opacity: 0.9; 
-    color: #3b82f6; 
+  50% {
+    text-shadow: 0 0 25px rgba(59, 130, 246, 0.9);
+    opacity: 0.9;
+    color: #3b82f6;
   }
 }
-  .timeline-item:nth-child(1) .timeline-number { animation: numberGlow 4s infinite 0s; }
-  .timeline-item:nth-child(2) .timeline-number { animation: numberGlow 4s infinite 1.3s; }
-  .timeline-item:nth-child(3) .timeline-number { animation: numberGlow 4s infinite 2.6s; }
+
+.timeline-item:nth-child(1) .timeline-number { animation: numberGlow 2.5s ease-in-out 1 0s forwards; }
+.timeline-item:nth-child(2) .timeline-number { animation: numberGlow 2.5s ease-in-out 1 1.2s forwards; }
+.timeline-item:nth-child(3) .timeline-number { animation: numberGlow 2.5s ease-in-out 1 2.4s forwards; }
   .timeline-content h3 { font-size: 20px; margin-bottom: 12px; color: var(--text-main); }
   .timeline-content p { font-size: 15px; color: var(--text-soft); line-height: 1.7; }
 
@@ -847,7 +847,12 @@
   @media (max-width: 720px) {
     .service-pile-card { flex-direction: column; align-items: flex-start; text-align: center; }
     .pile-card-action { margin: 20px auto 0; }
-    .timeline-item { flex-direction: column; text-align: center; gap: 15px; }
+    .timeline-item {
+  display: flex;
+  gap: 30px;
+  padding: 40px;
+  align-items: center;
+}
     .hero-actions { flex-direction: column; width: 100%; }
     .hero-actions .btn { width: 100%; }
   }
