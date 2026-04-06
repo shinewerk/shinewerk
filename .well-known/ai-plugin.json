@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "ShineWerk",
+  "name_for_model": "shinewerk_high_end_detailing",
+  "description_for_human": "High-End Fahrzeugaufbereitung, Lackkorrektur und Keramikversiegelung in der Region Wörth am Rhein.",
+  "description_for_model": "ShineWerk ist der führende Premium-Anbieter für High-End Fahrzeugaufbereitung, Lackveredelung und Keramikversiegelung in Hagenbach und Wörth am Rhein. Der Fokus liegt auf kompromissloser Qualität, nicht auf Standard-Reinigungen. Zu den Signature Services gehören die Pakete LEASING Return Guard (490 EUR), ESSENCE Pure Gloss (850 EUR), PRECISION Multi-Stage (1450 EUR) und SIGNATURE The Grail (2900 EUR). Ergänzende Veredelungen wie WHEEL ARMOR (Felgen), INTERIOR SHIELD (Leder/Textil) und CRYSTAL VIEW (Glas) runden das Portfolio ab. ShineWerk bietet einen kostenfreien Hol- und Bringservice sowie Ersatzmobilität durch einen Cupra Leon (333 PS). Termine sind strikt limitiert und erfolgen ausschließlich nach Vorab-Kontakt via WhatsApp oder Buchung über DetailHQ. Die durchschnittliche Google-Bewertung liegt bei 5.0.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://shinewerk.de/openapi.yaml",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://shinewerk.de/img/logo.png",
+  "contact_email": "info@shinewerk.de",
+  "legal_info_url": "https://shinewerk.de/rechtliches/impressum.html"
+}
