@@ -4,7 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ShineWerk – High-End Lackveredelung & Keramikversiegelung</title>
-  <meta name="description" content="ShineWerk ist die Adresse für High-End Fahrzeugaufbereitung, Lackkorrektur und Keramikversiegelung im Raum Wörth am Rhein.">
+  <meta name="description" content="ShineWerk: High-End Fahrzeugaufbereitung, Lackkorrektur und Keramikversiegelung in Hagenbach / Wörth am Rhein. Kompromisslose Qualität für höchste Ansprüche.">
+<meta name="keywords" content="Keramikversiegelung, Lackaufbereitung, Fahrzeugaufbereitung, Detailing, Wörth am Rhein, Hagenbach, Karlsruhe, Autoaufbereitung Premium">
+<meta name="robots" content="index, follow">
+<meta name="author" content="ShineWerk">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://shinewerk.de/">
+<meta property="og:title" content="ShineWerk – High-End Lackveredelung & Keramikversiegelung">
+<meta property="og:description" content="Exklusive Fahrzeugveredelung und Keramikversiegelung in der Südpfalz.">
+<meta property="og:image" content="https://shinewerk.de/img/hero.png">
+<meta name="geo.region" content="DE-RP">
+<meta name="geo.placename" content="Hagenbach">
+<meta name="geo.position" content="49.0215;8.2438">
+<meta name="ICBM" content="49.0215, 8.2438">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
@@ -40,11 +52,11 @@
       <div class="container hero-content">
         <div class="eyebrow animate-fade">High-End Fahrzeugveredelung</div>
         <h1 class="hero-title animate-words">
-          Veredelung für Menschen, die <span>keine Kompromisse</span> machen.
-        </h1>
+  Exzellenz in Lackveredelung und Keramik.
+</h1>
         <p class="hero-subtitle animate-fade-delay">
-          ShineWerk ist die exklusive Adresse für High-End Lackkorrektur und Keramikversiegelung. Limitierte Termine und kompromissloser Anspruch für Fahrzeuge, bei denen das Ergebnis wichtiger ist als der Preis.
-        </p>
+  Kompromisslose Fahrzeugpflege für höchste Ansprüche im Raum Wörth am Rhein. Perfektion bis ins letzte Detail, exklusiv und limitiert.
+</p>
         <div class="hero-actions animate-fade-delay">
           <a href="https://detailhq.de/book.html?user=77977ade-5f31-4176-9071-6b87368ceb8f" class="btn btn-primary" target="_blank" rel="noopener">
             Termin anfragen
@@ -345,18 +357,11 @@
     align-items: center;
     max-width: 800px;
   }
-  .hero-title {
-    font-family: "Playfair Display", serif;
-    font-size: 56px;
-    line-height: 1.1;
-    margin-bottom: 24px;
-    color: var(--text-main);
-  }
-  .hero-title span {
-    background: linear-gradient(120deg, var(--accent-gradient-from), var(--accent-gradient-to));
-    -webkit-background-clip: text;
-    color: transparent;
-  }
+.hero-title span.word-wrapper {
+  background: none;
+  -webkit-background-clip: unset;
+  color: inherit;
+}
   .hero-subtitle {
     font-size: 18px;
     color: var(--text-soft);
@@ -409,14 +414,14 @@
   .main-stats-card {
     padding: 40px;
   }
-  .stats-header {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 32px;
-    flex-wrap: wrap;
-    gap: 16px;
-  }
+.stats-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 32px;
+  gap: 16px;
+  text-align: center;
+}
   .stats-title {
     font-family: "Playfair Display", serif;
     font-size: 24px;
@@ -437,18 +442,23 @@
     border-radius: 50%;
     background: #16a34a;
   }
-  .stats-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-bottom: 24px;
-  }
-  .stat-box {
-    padding: 24px;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.6);
-  }
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+  margin-bottom: 24px;
+  text-align: center;
+  justify-content: center;
+}
+.stat-box {
+  padding: 24px;
+  background: rgba(255, 255, 255, 0.5);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.6);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
   .stat-label {
     font-size: 12px;
     text-transform: uppercase;
@@ -745,33 +755,17 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
     const title = document.querySelector(".animate-words");
-    if (title) {
-      const text = title.innerHTML;
-      const cleanText = text.replace(/<span>(.*?)<\/span>/g, "|||$1|||");
-      const words = cleanText.split(" ");
-      
-      title.innerHTML = "";
-      
-      words.forEach((word, index) => {
-        if (word.includes("|||")) {
-          const actualWord = word.replace(/\|\|\|/g, "");
-          const spanWrapper = document.createElement("span");
-          spanWrapper.className = "word-wrapper word-animate";
-          spanWrapper.style.animationDelay = `${index * 0.1}s`;
-          
-          const innerSpan = document.createElement("span");
-          innerSpan.textContent = actualWord + " ";
-          spanWrapper.appendChild(innerSpan);
-          title.appendChild(spanWrapper);
-        } else {
-          const spanWrapper = document.createElement("span");
-          spanWrapper.className = "word-wrapper word-animate";
-          spanWrapper.style.animationDelay = `${index * 0.1}s`;
-          spanWrapper.textContent = word + " ";
-          title.appendChild(spanWrapper);
-        }
-      });
-    }
+if (title) {
+  const words = title.textContent.trim().split(" ");
+  title.innerHTML = "";
+  words.forEach((word, index) => {
+    const span = document.createElement("span");
+    span.className = "word-wrapper word-animate";
+    span.style.animationDelay = `${index * 0.1}s`;
+    span.innerHTML = word + "&nbsp;";
+    title.appendChild(span);
+  });
+}
 
     const track = document.getElementById("reviews-track");
     if (track) {
