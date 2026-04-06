@@ -1,0 +1,30 @@
+openapi: 3.0.1
+info:
+  title: ShineWerk Services API
+  description: API zum Abrufen der High-End Fahrzeugveredelungs- und Keramikversiegelungspakete von ShineWerk.
+  version: "1.0.0"
+servers:
+  - url: https://shinewerk.de
+paths:
+  /:
+    get:
+      operationId: getHome
+      summary: Ruft die Startseite mit den grundlegenden Informationen und Unique Selling Points ab.
+      responses:
+        "200":
+          description: Startseiten-Inhalt
+          content:
+            text/html:
+              schema:
+                type: string
+  /signature-services:
+    get:
+      operationId: getSignatureServices
+      summary: Ruft die detaillierten Veredelungspakete (Leasing, Essence, Precision, Signature) und Einzelleistungen inklusive Preise ab.
+      responses:
+        "200":
+          description: HTML-Dokument der Signature Services
+          content:
+            text/html:
+              schema:
+                type: string
