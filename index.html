@@ -343,12 +343,18 @@
 
 <style>
 .glass-card {
-  background: rgba(255, 255, 255, 0.35);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.6);
+  border: 1px solid rgba(255, 255, 255, 0.3);
   border-radius: var(--radius-lg);
   box-shadow: var(--shadow-card);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease, transform 0.4s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 10px 40px rgba(59, 130, 246, 0.15);
 }
 
   section {
@@ -450,11 +456,17 @@
     padding-bottom: 20px;
   }
 .hero-section .main-stats-card {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.05);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.3);
+  border: 1px solid rgba(255, 255, 255, 0.2);
   box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.hero-section .main-stats-card:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  box-shadow: 0 25px 60px rgba(59, 130, 246, 0.2);
 }
 
   .stats-section {
@@ -503,15 +515,17 @@
     margin-bottom: 30px;
     text-align: center;
   }
-  .stat-box {
-    padding: 30px;
-    background: rgba(255, 255, 255, 0.4);
-    border-radius: 16px;
-    border: 1px solid rgba(255, 255, 255, 0.5);
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
+.stat-box {
+  padding: 30px;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
   .stat-label {
     font-size: 12px;
     text-transform: uppercase;
@@ -545,25 +559,28 @@
     margin: 0 auto;
     position: relative;
   }
-  .service-pile-card {
-    position: sticky;
-    top: 110px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px;
-    background: rgba(255, 255, 255, 0.8);
-    backdrop-filter: blur(20px);
-    border: 1px solid #ffffff;
-    border-radius: var(--radius-lg);
-    box-shadow: 0 15px 35px rgba(15, 23, 42, 0.05);
-    margin-bottom: 24px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-  }
-  .service-pile-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 30px 60px rgba(15, 23, 42, 0.1);
-  }
+.service-pile-card {
+  position: sticky;
+  top: 110px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 40px;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 15px 35px rgba(15, 23, 42, 0.05);
+  margin-bottom: 24px;
+  transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.service-pile-card:hover {
+  transform: translateY(-5px);
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
+}
   .card-1 { top: 120px; z-index: 10; }
   .card-2 { top: 140px; z-index: 11; }
   .card-3 { top: 160px; z-index: 12; }
@@ -610,9 +627,9 @@
   width: 100vw;
   left: 50%;
   transform: translateX(-50%);
-  padding: 30px 0;
-  mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 10%, black 90%, transparent);
+  padding: 40px 0;
+  mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to right, transparent 0%, black 15%, black 85%, transparent 100%);
 }
   .reviews-track {
     display: flex;
@@ -655,11 +672,12 @@
   opacity: 0.4;
   z-index: 0;
 }
+
 .process-section::after {
   content: "";
   position: absolute;
   inset: 0;
-  background: linear-gradient(to bottom, var(--bg) 0%, transparent 15%, transparent 85%, var(--bg) 100%);
+  background: linear-gradient(to bottom, var(--bg) 0%, transparent 10%, transparent 90%, var(--bg) 100%);
   z-index: 1;
 }
   .process-section .container { position: relative; z-index: 2; }
@@ -671,19 +689,35 @@
     gap: 30px;
   }
 .timeline-item.glass-card {
-  background: rgba(255, 255, 255, 0.25);
+  background: rgba(255, 255, 255, 0.15);
   backdrop-filter: blur(18px);
   -webkit-backdrop-filter: blur(18px);
-  border: 1px solid rgba(255, 255, 255, 0.5);
+  border: 1px solid rgba(255, 255, 255, 0.3);
 }
-  .timeline-number {
-    font-family: "Playfair Display", serif;
-    font-size: 56px;
-    line-height: 1;
-    color: var(--accent-blue);
-    opacity: 0.2;
-    font-weight: 700;
+.timeline-number {
+  font-family: "Playfair Display", serif;
+  font-size: 56px;
+  line-height: 1;
+  color: var(--accent-blue);
+  opacity: 0.2;
+  font-weight: 700;
+  transition: all 0.4s ease;
+}
+  @keyframes numberGlow {
+  0%, 100% { 
+    text-shadow: 0 0 10px rgba(59, 130, 246, 0.2); 
+    opacity: 0.2; 
+    color: var(--accent-blue); 
   }
+  50% { 
+    text-shadow: 0 0 25px rgba(59, 130, 246, 0.9); 
+    opacity: 0.9; 
+    color: #3b82f6; 
+  }
+}
+  .timeline-item:nth-child(1) .timeline-number { animation: numberGlow 4s infinite 0s; }
+  .timeline-item:nth-child(2) .timeline-number { animation: numberGlow 4s infinite 1.3s; }
+  .timeline-item:nth-child(3) .timeline-number { animation: numberGlow 4s infinite 2.6s; }
   .timeline-content h3 { font-size: 20px; margin-bottom: 12px; color: var(--text-main); }
   .timeline-content p { font-size: 15px; color: var(--text-soft); line-height: 1.7; }
 
@@ -694,16 +728,21 @@
     flex-direction: column;
     gap: 16px;
   }
-  .faq-glass-item {
-    background: rgba(255, 255, 255, 0.7);
-    backdrop-filter: blur(15px);
-    border: 1px solid rgba(255, 255, 255, 0.8);
-    border-radius: 16px;
-    padding: 24px;
-    cursor: pointer;
-    transition: box-shadow 0.3s ease;
-  }
-  .faq-glass-item:hover { box-shadow: 0 10px 25px rgba(15, 23, 42, 0.03); }
+.faq-glass-item {
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: 16px;
+  padding: 24px;
+  cursor: pointer;
+  transition: box-shadow 0.4s ease, border-color 0.4s ease;
+}
+
+.faq-glass-item:hover { 
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15); 
+}
   .faq-glass-item summary {
     list-style: none;
     display: flex;
