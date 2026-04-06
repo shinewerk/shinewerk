@@ -720,14 +720,21 @@
 }
 
 @keyframes numberGlow {
-  0% { text-shadow: none; opacity: 0.2; color: var(--accent-blue); }
-  50% { text-shadow: 0 0 25px rgba(59, 130, 246, 0.9); opacity: 1; color: #3b82f6; }
-  100% { text-shadow: none; opacity: 0.2; color: var(--accent-blue); }
+  0% {
+    text-shadow: none;
+    opacity: 0.2;
+    color: var(--accent-blue);
+  }
+  100% {
+    text-shadow: 0 0 25px rgba(59, 130, 246, 0.9);
+    opacity: 1;
+    color: #3b82f6;
+  }
 }
 
-.timeline-item:nth-child(1) .timeline-number { animation: numberGlow 2.5s ease-in-out 1 0.5s forwards; }
-.timeline-item:nth-child(2) .timeline-number { animation: numberGlow 2.5s ease-in-out 1 2s forwards; }
-.timeline-item:nth-child(3) .timeline-number { animation: numberGlow 2.5s ease-in-out 1 3.5s forwards; }
+.timeline-item:nth-child(1) .timeline-number { animation: numberGlow 1.5s ease-in-out 1 0.5s forwards; }
+.timeline-item:nth-child(2) .timeline-number { animation: numberGlow 1.5s ease-in-out 1 2s forwards; }
+.timeline-item:nth-child(3) .timeline-number { animation: numberGlow 1.5s ease-in-out 1 3.5s forwards; }
   
   .timeline-content h3 { font-size: 20px; margin-bottom: 12px; color: var(--text-main); }
   .timeline-content p { font-size: 15px; color: var(--text-soft); line-height: 1.7; }
