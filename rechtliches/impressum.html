@@ -1,473 +1,40 @@
 <!DOCTYPE html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Impressum – ShineWerk Fahrzeugpflege</title>
-  <meta name="description" content="Impressum von ShineWerk – DM Management, Betreiber dieser Website und Anbieter von High-End Fahrzeugaufbereitung & Versiegelung in Wörth am Rhein." />
-  
-  <!-- Serif font for headings wie auf der Startseite -->
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet" />
-
-  <style>
-    :root {
-      --bg: #f5f5f7;
-      --bg-elevated: #ffffff;
-      --bg-soft: #e5e7eb;
-      --text-main: #111827;
-      --text-soft: #6b7280;
-      --border-subtle: rgba(15, 23, 42, 0.08);
-      --accent-blue: #162b4a;
-      --accent-blue-soft: rgba(22, 43, 74, 0.06);
-      --accent-gradient-from: #162b4a;
-      --accent-gradient-to: #3b82f6;
-      --timeline-gradient-from: #0038d6;
-      --timeline-gradient-to: #60a5fa;
-      --shadow-soft: 0 18px 45px rgba(15, 23, 42, 0.16);
-      --radius-lg: 22px;
-      --radius-pill: 999px;
-      --nav-height: 76px;
-      --hero-image-opacity: 0.45;
-    }
-
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
-    }
-
-    html,
-    body {
-      scroll-behavior: smooth;
-      background-color: var(--bg);
-      color: var(--text-main);
-      font-family: -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui,
-        -apple-system, sans-serif;
-      -webkit-font-smoothing: antialiased;
-      line-height: 1.6;
-    }
-
-    img {
-      max-width: 100%;
-      display: block;
-    }
-
-    a {
-      text-decoration: none;
-      color: inherit;
-    }
-
-    .page {
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-    }
-
-    .container {
-      width: 100%;
-      max-width: 1120px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
-
-    /* HEADER wie Startseite */
-
-    .site-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      backdrop-filter: blur(6px);
-      background: linear-gradient(
-        to bottom,
-        rgba(245, 245, 247, 0.35),
-        rgba(245, 245, 247, 0.35)
-      );
-      border-bottom: 1px solid rgba(15, 23, 42, 0.06);
-    }
-
-    .nav {
-      height: var(--nav-height);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo-img {
-      width: 40px;
-      height: auto;
-      border-radius: 0;
-      object-fit: contain;
-      background: none;
-      border: none;
-      box-shadow: none;
-      padding: 0;
-    }
-
-    .logo-text {
-      display: flex;
-      flex-direction: column;
-      gap: 2px;
-    }
-
-    .logo-text span:first-child {
-      font-family: "Playfair Display", serif;
-      font-size: 18px;
-      letter-spacing: 0.03em;
-    }
-
-    .logo-text span:last-child {
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.16em;
-      color: var(--text-soft);
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 26px;
-      font-size: 14px;
-    }
-
-    .nav-links a {
-      position: relative;
-      color: var(--text-soft);
-      transition: color 0.2s ease;
-      padding-bottom: 4px;
-    }
-
-    .nav-links a:not(.btn)::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 0;
-      width: 0;
-      height: 1px;
-      background: var(--accent-blue);
-      transition: width 0.22s ease;
-    }
-
-    .nav-links a:not(.btn):hover {
-      color: var(--text-main);
-    }
-
-    .nav-links a:not(.btn):hover::after {
-      width: 100%;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      border-radius: var(--radius-pill);
-      border: 1px solid transparent;
-      padding: 10px 20px;
-      font-size: 14px;
-      font-weight: 500;
-      cursor: pointer;
-      transition: all 0.2s ease;
-      background: transparent;
-      color: var(--text-main);
-      gap: 8px;
-      letter-spacing: 0.03em;
-      line-height: 1.1;
-    }
-
-    .nav-links .btn {
-      padding-top: 8px;
-      padding-bottom: 9px;
-    }
-
-    .btn-outline {
-      border-color: rgba(15, 23, 42, 0.14);
-      background: rgba(255, 255, 255, 0.7);
-    }
-
-    .btn-outline:hover {
-      background: #ffffff;
-      border-color: rgba(15, 23, 42, 0.24);
-      box-shadow: 0 10px 22px rgba(15, 23, 42, 0.16);
-    }
-
-    .btn-icon {
-      font-size: 16px;
-      transform: translateY(1px);
-    }
-
-    .nav-toggle {
-      display: none;
-      border: none;
-      background: transparent;
-      cursor: pointer;
-      padding: 6px;
-      margin-left: auto;
-      margin-right: 0;
-    }
-
-    .nav-toggle-line {
-      display: block;
-      width: 18px;
-      height: 2px;
-      border-radius: 999px;
-      background: rgba(15, 23, 42, 0.8);
-      transition: transform 0.18s ease, opacity 0.18s ease;
-    }
-
-    .nav-toggle-line + .nav-toggle-line {
-      margin-top: 4px;
-    }
-
-    .site-header.is-open .nav-toggle-line:first-child {
-      transform: translateY(3px) rotate(45deg);
-    }
-
-    .site-header.is-open .nav-toggle-line:last-child {
-      transform: translateY(-3px) rotate(-45deg);
-    }
-
-    /* SECTION BASE */
-
-    section {
-      padding: 110px 0;
-      background-color: var(--bg);
-    }
-
-    .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-end;
-      gap: 32px;
-      margin-bottom: 44px;
-    }
-
-    .section-title {
-      font-family: "Playfair Display", serif;
-      font-size: 28px;
-      line-height: 1.25;
-    }
-
-    .section-description {
-      font-size: 14px;
-      color: var(--text-soft);
-      max-width: 440px;
-      line-height: 1.8;
-    }
-
-    .section-eyebrow {
-      font-size: 12px;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      color: var(--text-soft);
-      margin-bottom: 10px;
-    }
-
-    /* LEGAL spezifisch */
-
-    .legal-section {
-      padding: 110px 0;
-      background-color: var(--bg);
-    }
-
-    .legal-card {
-      border-radius: var(--radius-lg);
-      background: var(--bg-elevated);
-      border: 1px solid var(--border-subtle);
-      box-shadow: var(--shadow-soft);
-      padding: 28px 26px 30px;
-      font-size: 14px;
-      line-height: 1.75;
-      color: var(--text-soft);
-    }
-
-    .legal-card h2 {
-      font-family: "Playfair Display", serif;
-      font-size: 22px;
-      margin: 0 0 18px;
-      color: var(--text-main);
-    }
-
-    .legal-card h3 {
-      font-weight: 600;
-      margin: 18px 0 8px;
-      font-size: 15px;
-      color: var(--text-main);
-    }
-
-    .legal-card p {
-      margin: 4px 0 8px;
-    }
-
-    .legal-card strong {
-      color: var(--text-main);
-    }
-
-    .legal-card ul {
-      padding-left: 18px;
-      margin: 4px 0 10px;
-    }
-
-    .legal-card li {
-      margin: 2px 0;
-    }
-
-    /* FOOTER wie Startseite */
-
-    footer {
-      border-top: 1px solid rgba(15, 23, 42, 0.08);
-      padding: 22px 0 30px;
-      background: linear-gradient(
-        to top,
-        rgba(15, 23, 42, 0.06),
-        transparent
-      );
-      font-size: 12px;
-      color: var(--text-soft);
-      margin-top: 40px;
-    }
-
-    .footer-inner {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-    }
-
-    .footer-links a:hover {
-      color: var(--text-main);
-    }
-
-    /* WhatsApp FAB */
-
-    .whatsapp-fab {
-      position: fixed;
-      right: 18px;
-      bottom: 18px;
-      z-index: 60;
-    }
-
-    .whatsapp-fab a {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      padding: 10px 16px;
-      border-radius: 999px;
-      background: radial-gradient(circle at 0 0, #4ade80, #16a34a);
-      color: #ecfdf3;
-      font-size: 13px;
-      font-weight: 600;
-      box-shadow: 0 18px 55px rgba(22, 163, 74, 0.5);
-      border: 1px solid rgba(187, 247, 208, 0.6);
-    }
-
-    .whatsapp-fab a:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 22px 65px rgba(22, 163, 74, 0.65);
-    }
-
-    .whatsapp-icon {
-      width: 18px;
-      height: 18px;
-      border-radius: 999px;
-      background: #ecfdf3;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #16a34a;
-      font-size: 15px;
-    }
-
-    @media (max-width: 960px) {
-      .section-header {
-        flex-direction: column;
-        align-items: flex-start;
-      }
-
-      .legal-card {
-        padding: 22px 18px 24px;
-      }
-    }
-
-    @media (max-width: 720px) {
-      .nav-links {
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: var(--nav-height);
-        padding: 10px 20px 14px;
-        background: rgba(245, 245, 247, 0.95);
-        backdrop-filter: blur(18px);
-        border-bottom: 1px solid rgba(15, 23, 42, 0.06);
-        display: none;
-        flex-direction: column;
-        align-items: flex-start;
-        gap: 10px;
-        font-size: 14px;
-      }
-
-      .site-header.is-open .nav-links {
-        display: flex;
-      }
-
-      .nav-toggle {
-        display: inline-flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-      }
-
-      .section-title {
-        font-size: 26px;
-      }
-
-      .whatsapp-fab a span.label {
-        display: none;
-      }
-    }
-  </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Allgemeine Geschäftsbedingungen – ShineWerk Fahrzeugpflege</title>
+  <meta name="description" content="AGB von ShineWerk – DM Management. Bedingungen für Fahrzeugaufbereitung, Keramikversiegelung und Serviceleistungen in Wörth am Rhein.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/css/styles.css">
 </head>
-
 <body>
 <div class="page">
-  <!-- HEADER -->
   <header class="site-header">
-    <div class="container nav">
-      <div class="logo">
-        <img src="/img/logo.png" alt="ShineWerk Logo" class="logo-img" />
-        <div class="logo-text">
-          <span>ShineWerk</span>
-          <span>Impressum</span>
-        </div>
-      </div>
-
-      <!-- Mobile Toggle -->
-      <button class="nav-toggle" aria-label="Menü öffnen oder schließen">
-        <span class="nav-toggle-line"></span>
-        <span class="nav-toggle-line"></span>
-      </button>
-
-      <nav class="nav-links">
-        <a href="https://shinewerk.de">Home</a>
-        <a href="../exclusive">Exclusive</a>
-        <a href="https://wa.me/4915562648989" class="btn btn-outline" target="_blank" rel="noopener">
-          Kontakt via WhatsApp
+    <div class="container">
+      <div class="nav-wrapper">
+        <a href="/" class="logo">
+          <img src="/img/logo.png" alt="ShineWerk Logo" class="logo-img">
+          <div class="logo-text">
+            <span class="logo-main">ShineWerk</span>
+            <span class="logo-sub">Lackveredelung & Versiegelung</span>
+          </div>
         </a>
-      </nav>
+        <nav class="nav-links" id="nav-links">
+          <a href="/">Home</a>
+          <a href="/signature-services">Signature Services</a>
+          <a href="https://wa.me/4915562648989" class="btn btn-primary" target="_blank" rel="noopener">
+            WhatsApp Kontakt
+          </a>
+        </nav>
+        <button class="nav-toggle" id="nav-toggle" aria-label="Menü umschalten">
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+          <span class="burger-line"></span>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -477,77 +44,235 @@
         <div class="section-header">
           <div>
             <div class="section-eyebrow">Rechtliches</div>
-            <h1 class="section-title">Impressum.</h1>
+            <h1 class="section-title">AGB.</h1>
           </div>
           <p class="section-description">
-            Angaben gemäß § 5&nbsp;DDG für ShineWerk – DM Management, Betreiber dieser Website
-            und Anbieter der Leistungen zur Fahrzeugaufbereitung und Versiegelung.
+            Bedingungen für die Durchführung von Fahrzeugaufbereitung, Keramikversiegelung
+            und Dienstleistungen durch ShineWerk – DM Management.
           </p>
         </div>
 
         <article class="legal-card">
-          <h2>Impressum</h2>
+          <h2>Allgemeine Geschäftsbedingungen (AGB)</h2>
 
-          <p><strong>Angaben gemäß § 5 DDG:</strong></p>
-          <p>DM Management</p>
-          <p>Krautgärten 12</p>
-          <p>76744 Wörth am Rhein</p>
-          <p>Deutschland</p>
+          <h3>1. Geltungsbereich</h3>
+          <p>
+            Diese Allgemeinen Geschäftsbedingungen gelten für sämtliche Dienstleistungen,
+            Angebote und Verträge zwischen ShineWerk – DM Management (nachfolgend „ShineWerk“)
+            und dem Kunden. Abweichende Bedingungen des Kunden finden keine Anwendung.
+          </p>
 
-          <p><strong>Inhaber:</strong> David Mißberger</p>
+          <h3>2. Vertragsschluss</h3>
+          <p>
+            Ein Vertrag kommt zustande, sobald eine Buchung bestätigt wurde – schriftlich,
+            telefonisch, per WhatsApp oder über unser Kundenportal. ShineWerk behält sich vor,
+            Aufträge ohne Angabe von Gründen abzulehnen.
+          </p>
 
-          <h3>Kontakt</h3>
-          <p>Telefon: +49 155 62648989</p>
-          <p>E-Mail: info@shinewerk.de</p>
+          <h3>3. Leistungsumfang</h3>
+          <p>
+            Art und Umfang der Leistungen ergeben sich aus dem jeweiligen Angebot bzw.
+            der jeweiligen Auftragsbestätigung. ShineWerk arbeitet nach höchsten Qualitäts-
+            und Reinheitsstandards. Abweichungen oder zusätzliche Arbeiten werden mit dem Kunden
+            abgestimmt und ggf. separat berechnet.
+          </p>
 
-          <h3>Umsatzsteuer-ID</h3>
-          <p><strong>Umsatzsteuer-Identifikationsnummer gemäß § 27a UStG:</strong></p>
-          <p>DE351102842</p>
+          <h3>4. Preise & Zahlung</h3>
+          <p>
+            Alle Preise verstehen sich in Euro und können je nach Fahrzeugzustand variieren.
+            Endpreise werden vor Beginn der Arbeiten mitgeteilt. Die Zahlung erfolgt
+            spätestens bei Abholung des Fahrzeugs, sofern nichts anderes vereinbart wurde.
+          </p>
 
-          <h3>Verantwortlich für den Inhalt</h3>
-          <p>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</p>
-          <p>David Mißberger, Anschrift wie oben.</p>
+          <h3>5. Fahrzeugelemente & Zustand</h3>
+          <p>
+            Der Kunde verpflichtet sich, ShineWerk über besondere Schäden, Vorschäden oder
+            empfindliche Fahrzeugteile zu informieren. ShineWerk haftet nicht für bereits
+            vorhandene Vorschäden oder Schäden durch nicht deklarierte Sonderlacke,
+            Folierungen oder Fremdmodifikationen.
+          </p>
 
-          <!-- Keine Streitschlichtungs-/Schlichtungsstelle, wie gewünscht entfernt -->
+          <h3>6. Haftung</h3>
+          <p>
+            ShineWerk haftet ausschließlich für Vorsatz und grobe Fahrlässigkeit. Eine Haftung
+            für leichte Fahrlässigkeit besteht nur bei Verletzung wesentlicher Vertragspflichten
+            und ist auf den typischen, vorhersehbaren Schaden beschränkt.
+          </p>
+
+          <h3>7. Abhol- & Übergaberegelung</h3>
+          <p>
+            Das Fahrzeug gilt als ordnungsgemäß übergeben, wenn der Kunde es abholt
+            und keine unmittelbaren Beanstandungen äußert. Später gemeldete Mängel können
+            nur berücksichtigt werden, wenn diese zweifelsfrei nachweisbar sind.
+          </p>
+
+          <h3>8. Terminverschiebungen & Stornierungen</h3>
+          <p>
+            Termine können bis 48 Stunden vorher kostenfrei verschoben oder storniert werden.
+            Bei kurzfristigen Absagen (unter 24 Std.) oder Nichterscheinen behält sich
+            ShineWerk vor, bis zu 50% des Auftragswerts in Rechnung zu stellen.
+          </p>
+
+          <h3>9. Garantiebedingungen</h3>
+          <p>
+            Auf Keramikversiegelungen gelten die jeweils angegebenen Garantielaufzeiten,
+            sofern die Pflegehinweise eingehalten werden. Schäden durch Waschstraßen,
+            unsachgemäße Handwäsche oder Fremdeinwirkung sind ausgeschlossen.
+          </p>
+
+          <h3>10. Eigentumsvorbehalt</h3>
+          <p>
+            Bis zur vollständigen Bezahlung bleiben alle Unterlagen, Dokumentationen,
+            Pflegehinweise und digital bereitgestellten Inhalte Eigentum von ShineWerk.
+          </p>
+
+          <h3>11. Schlussbestimmungen</h3>
+          <p>
+            Es gilt deutsches Recht. Änderungen oder Ergänzungen bedürfen der Schriftform.
+            Sollten einzelne Bestimmungen unwirksam sein, bleibt die Gültigkeit der übrigen
+            Regelungen davon unberührt.
+          </p>
         </article>
       </div>
     </section>
   </main>
 
-  <!-- FOOTER -->
-  <footer>
+  <footer class="site-footer">
     <div class="container footer-inner">
       <div>© <span id="year"></span> ShineWerk. Alle Rechte vorbehalten.</div>
-      <div class="footer-links">
-        <a href="rechtliches/impressum.html">Impressum</a>
-        <a href="rechtliches/datenschutz.html">Datenschutz</a>
-        <a href="rechtliches/agb.html">AGB</a>
-      </div>
+      <nav class="footer-nav">
+        <a href="/rechtliches/impressum.html">Impressum</a>
+        <a href="/rechtliches/datenschutz.html">Datenschutz</a>
+        <a href="/rechtliches/agb.html">AGB</a>
+      </nav>
     </div>
   </footer>
 </div>
 
-<!-- WhatsApp FAB -->
 <div class="whatsapp-fab">
-  <a href="https://wa.me/4915562648989" target="_blank" rel="noopener" aria-label="WhatsApp Chat mit ShineWerk starten">
-    <span class="whatsapp-icon">🟢</span>
-    <span class="label">WhatsApp</span>
+  <a href="https://wa.me/4915562648989" target="_blank" rel="noopener" aria-label="WhatsApp Chat">
+    <div class="whatsapp-icon-fab">
+      <img src="/img/wa.png" alt="WhatsApp">
+    </div>
   </a>
 </div>
 
+<style>
+  .legal-section {
+    padding: 160px 0 100px;
+    background-color: var(--bg);
+  }
+  .section-header {
+    margin-bottom: 40px;
+  }
+  .section-title {
+    font-family: "Playfair Display", serif;
+    font-size: 38px;
+    color: var(--text-main);
+    margin-bottom: 12px;
+  }
+  .section-description {
+    font-size: 16px;
+    color: var(--text-soft);
+    max-width: 600px;
+    line-height: 1.7;
+  }
+  .section-eyebrow {
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.15em;
+    color: var(--accent-blue);
+    margin-bottom: 12px;
+    font-weight: 500;
+  }
+  .legal-card {
+    border-radius: var(--radius-lg);
+    background: rgba(255, 255, 255, 0.6);
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.8);
+    box-shadow: 0 18px 45px rgba(15, 23, 42, 0.08);
+    padding: 50px;
+    font-size: 15px;
+    line-height: 1.75;
+    color: var(--text-soft);
+  }
+  .legal-card h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 28px;
+    margin: 0 0 24px;
+    color: var(--text-main);
+  }
+  .legal-card h3 {
+    font-weight: 600;
+    margin: 24px 0 12px;
+    font-size: 18px;
+    color: var(--text-main);
+  }
+  .legal-card p {
+    margin: 8px 0 16px;
+  }
+  .legal-card strong {
+    color: var(--text-main);
+  }
+  .legal-card ul {
+    padding-left: 20px;
+    margin: 8px 0 16px;
+  }
+  .legal-card li {
+    margin: 6px 0;
+  }
+  .whatsapp-fab {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    z-index: 900;
+  }
+  .whatsapp-icon-fab {
+    width: 60px;
+    height: 60px;
+    background: #25d366;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 0 10px 30px rgba(37, 211, 102, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  .whatsapp-icon-fab:hover {
+    transform: scale(1.05) translateY(-3px);
+    box-shadow: 0 15px 35px rgba(37, 211, 102, 0.45);
+  }
+  .whatsapp-icon-fab img {
+    width: 30px;
+    height: 30px;
+  }
+  @media (max-width: 720px) {
+    .legal-section { padding: 140px 0 80px; }
+    .legal-card { padding: 30px 24px; }
+    .section-title { font-size: 32px; }
+  }
+</style>
+
 <script>
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", () => {
     const yearEl = document.getElementById("year");
-    if (yearEl) {
-      yearEl.textContent = new Date().getFullYear();
-    }
+    if (yearEl) yearEl.textContent = new Date().getFullYear();
 
     const header = document.querySelector(".site-header");
-    const toggle = document.querySelector(".nav-toggle");
-
-    if (header && toggle) {
-      toggle.addEventListener("click", function () {
+    const toggle = document.getElementById("nav-toggle");
+    if (toggle && header) {
+      toggle.addEventListener("click", () => {
         header.classList.toggle("is-open");
+        document.body.style.overflow = header.classList.contains("is-open") ? "hidden" : "";
+      });
+      
+      const navLinks = document.querySelectorAll(".nav-links a");
+      navLinks.forEach(link => {
+        link.addEventListener("click", () => {
+          header.classList.remove("is-open");
+          document.body.style.overflow = "";
+        });
       });
     }
   });
