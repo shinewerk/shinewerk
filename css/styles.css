@@ -74,26 +74,28 @@ ul {
   gap: 8px;
   letter-spacing: 0.02em;
 }
+
 .btn-gray {
-  background: rgba(255, 255, 255, 0.05);
+  background: rgba(15, 23, 42, 0.03);
   color: var(--text-main);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(15, 23, 42, 0.12); 
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 8px;
-  padding: 12px 24px;
+  padding: 10px 20px;
   border-radius: var(--radius-pill);
-  font-weight: 600;
-  font-size: 15px;
+  font-weight: 500;
+  font-size: 13px;
   transition: all 0.3s ease;
   text-decoration: none;
   cursor: pointer;
 }
 
 .btn-gray:hover {
-  border-color: #3b82f6;
-  background: rgba(59, 130, 246, 0.08);
+  border-color: rgba(59, 130, 246, 0.4);
+  background: rgba(59, 130, 246, 0.05);
+  transform: translateY(-1px);
 }
 
 .location-actions {
@@ -195,18 +197,18 @@ ul {
   font-weight: 500;
 }
 
-.nav-links a:not(.btn) {
+.nav-links a:not([class*="btn"]) {
   color: var(--text-main);
   opacity: 0.8;
   position: relative;
   padding: 4px 0;
 }
 
-.nav-links a:not(.btn):hover {
+.nav-links a:not([class*="btn"]):hover {
   opacity: 1;
 }
 
-.nav-links a:not(.btn)::after {
+.nav-links a:not([class*="btn"])::after {
   content: '';
   position: absolute;
   bottom: 0;
@@ -217,7 +219,7 @@ ul {
   transition: width 0.3s ease, left 0.3s ease;
 }
 
-.nav-links a:not(.btn):hover::after {
+.nav-links a:not([class*="btn"]):hover::after {
   width: 100%;
   left: 0;
 }
