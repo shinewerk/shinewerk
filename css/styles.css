@@ -18,7 +18,7 @@
   --radius-lg: 22px;
   --radius-pill: 999px;
   
-  --nav-height: 70px; /* Sightly more compact */
+  --nav-height: 70px;
   --container-width: 1120px;
 }
 
@@ -74,6 +74,38 @@ ul {
   gap: 8px;
   letter-spacing: 0.02em;
 }
+.btn-gray {
+  background: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 24px;
+  border-radius: var(--radius-pill);
+  font-weight: 600;
+  font-size: 15px;
+  transition: all 0.3s ease;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+.btn-gray:hover {
+  border-color: #3b82f6;
+  background: rgba(59, 130, 246, 0.08);
+}
+
+.tel-btn-nav {
+  padding: 12px;
+  border-radius: 50%;
+}
+
+.location-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
 
 .btn-primary {
   background: radial-gradient(circle at 0% 0%, var(--accent-gradient-to), var(--accent-gradient-from));
@@ -106,10 +138,10 @@ ul {
 
 .site-header {
   position: fixed;
-  top: 20px; /* Spacing from top for floating effect */
+  top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 40px); /* Account for container padding */
+  width: calc(100% - 40px); 
   max-width: var(--container-width);
   z-index: 1000;
 }
@@ -119,8 +151,8 @@ ul {
   backdrop-filter: blur(15px) saturate(180%);
   -webkit-backdrop-filter: blur(15px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.5);
-  border-radius: var(--radius-pill); /* Fully rounded capsule */
-  padding: 0 10px 0 24px; /* Space for logo left, button right */
+  border-radius: var(--radius-pill);
+  padding: 0 10px 0 24px; 
   height: var(--nav-height);
   display: flex;
   align-items: center;
@@ -195,13 +227,11 @@ ul {
   left: 0;
 }
 
-/* Compact Nav Button */
 .nav-links .btn {
   padding: 10px 20px;
   font-size: 13px;
 }
 
-/* Mobile Toggle */
 .nav-toggle {
   display: none;
   background: transparent;
@@ -224,12 +254,10 @@ ul {
   margin-top: 4px;
 }
 
-/* Mobile Menu Open State */
 .site-header.is-open .burger-line:nth-child(1) { transform: translateY(6px) rotate(45deg); }
 .site-header.is-open .burger-line:nth-child(2) { opacity: 0; }
 .site-header.is-open .burger-line:nth-child(3) { transform: translateY(-6px) rotate(-45deg); }
 
-/* 4. Footer */
 .site-footer {
   background: #ffffff;
   border-top: 1px solid var(--border-subtle);
@@ -261,10 +289,9 @@ ul {
   color: var(--accent-blue);
 }
 
-/* 5. Responsive Nav */
 @media (max-width: 900px) {
   .nav-links {
-    display: none; /* Hide on mobile by default */
+    display: none; 
     position: absolute;
     top: calc(var(--nav-height) + 10px);
     left: 0;
