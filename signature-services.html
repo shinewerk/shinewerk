@@ -131,27 +131,28 @@
             </div>
           </article>
 
-          <article class="glass-card package-card highlight-card">
-            <div class="package-header">
-              <div>
-                <h3 class="package-title">PRECISION</h3>
-                <p class="package-desc">Unser Hauptprogramm. Die optimale Balance aus extremer Glanzsteigerung, Schutz und dauerhaftem Werterhalt.</p>
-              </div>
-              <div class="package-price">ab 1.290 €</div>
-            </div>
-            <div class="package-content">
-              <div class="package-duration">Dauer: ca. 12–16 Std.</div>
-              <ul class="service-list">
-                <li>Umfangreiche Fahrzeugaufbereitung</li>
-                <li>Intensivere Lackkorrektur (je nach Zustand)</li>
-                <li>Keramikversiegelung mit 36 Monaten Standzeit</li>
-                <li>Felgenfronten versiegelt</li>
-              </ul>
-              <div class="package-actions">
-                <a href="https://wa.me/4915562648989?text=Hallo%20ShineWerk%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20kostenlose%20Fahrzeuganalyse%20zum%20Paket%20PRECISION." class="btn btn-primary" target="_blank" rel="noopener">Kostenlose Fahrzeuganalyse anfragen</a>
-              </div>
-            </div>
-          </article>
+          <article class="glass-card package-card highlight-card popular-package">
+  <div class="popular-badge">Am beliebtesten</div>
+  <div class="package-header">
+    <div>
+      <h3 class="package-title">PRECISION</h3>
+      <p class="package-desc">Unser Hauptprogramm. Die optimale Balance aus extremer Glanzsteigerung, Schutz und dauerhaftem Werterhalt.</p>
+    </div>
+    <div class="package-price">ab 1.290 €</div>
+  </div>
+  <div class="package-content">
+    <div class="package-duration">Dauer: ca. 12–16 Std.</div>
+    <ul class="service-list">
+      <li>Umfangreiche Fahrzeugaufbereitung</li>
+      <li>Intensivere Lackkorrektur (je nach Zustand)</li>
+      <li>Keramikversiegelung mit 36 Monaten Standzeit</li>
+      <li>Felgenfronten versiegelt</li>
+    </ul>
+    <div class="package-actions">
+      <a href="https://wa.me/4915562648989?text=Hallo%20ShineWerk%2C%20ich%20interessiere%20mich%20f%C3%BCr%20eine%20kostenlose%20Fahrzeuganalyse%20zum%20Paket%20PRECISION." class="btn btn-primary" target="_blank" rel="noopener">Kostenlose Fahrzeuganalyse anfragen</a>
+    </div>
+  </div>
+</article>
 
           <article class="glass-card package-card premium-card">
             <div class="package-header">
@@ -433,7 +434,30 @@
     flex-wrap: wrap;
     margin-top: 8px;
   }
-
+  .popular-package {
+  position: relative;
+  border-color: var(--accent-blue);
+  box-shadow: 0 15px 45px rgba(59, 130, 246, 0.15);
+  transform: scale(1.02);
+}
+.popular-badge {
+  position: absolute;
+  top: -16px;
+  right: 32px;
+  background: var(--accent-blue);
+  color: #fff;
+  font-size: 13px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  padding: 6px 16px;
+  border-radius: 20px;
+  box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
+}
+@media (max-width: 720px) {
+  .popular-package { transform: scale(1); }
+  .popular-badge { right: 50%; transform: translateX(50%); }
+}
   .addons-section {
     padding: 100px 0;
     position: relative;
