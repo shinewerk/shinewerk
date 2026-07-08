@@ -99,13 +99,11 @@
     <section class="hero-section">
       <div class="container hero-split">
         <div class="hero-content-left hero-fade-up">
-          <div class="hero-text-backdrop">
-            <div class="eyebrow">Lackveredelung & Keramik</div>
-            <h1 class="hero-title animate-words">Exzellenz für deinen Werterhalt.</h1>
-            <p class="hero-subtitle">
-              Kompromisslose Fahrzeugpflege für höchste Ansprüche im Kreis Germersheim. Wir bereiten dein Fahrzeug punktgenau auf und versiegeln es für Jahre.
-            </p>
-          </div>
+          <div class="eyebrow">Lackveredelung & Keramik</div>
+          <h1 class="hero-title animate-words">Exzellenz für deinen Werterhalt.</h1>
+          <p class="hero-subtitle">
+            Kompromisslose Fahrzeugpflege für höchste Ansprüche im Kreis Germersheim. Wir bereiten dein Fahrzeug punktgenau auf und versiegeln es für Jahre.
+          </p>
           <ul class="hero-benefits">
             <li>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
@@ -186,7 +184,7 @@
                 <div class="review-meta">Google Rezension</div>
               </div>
               <div class="review-stars">★★★★★</div>
-              <div class="review-text">Aus alt mach neu! Über 30 Jahre alter, ungepflegter Lack wurde gereinigt, poliert und versiegelt. Ich bin begeistert, so gut hätte ich es nicht erwartet.</div>
+              <div class="review-text">Aus alt mach neu! Über 30 Jahre alter, ungepflegter Lack gereinigt, poliert und versiegelt. Ich bin begeistert, so gut hätte ich es nicht erwartet.</div>
             </article>
             <article class="review-card glass-card">
               <div class="review-header">
@@ -195,6 +193,54 @@
               </div>
               <div class="review-stars">★★★★★</div>
               <div class="review-text">Absolut begeistert von der Keramikversiegelung! Der Lack sieht aus wie neu, fühlt sich super glatt an und glänzt extrem. Besser gehts nicht.</div>
+            </article>
+            <article class="review-card glass-card">
+              <div class="review-header">
+                <div class="review-name">Kathrin Weidemann</div>
+                <div class="review-meta">Google Rezension</div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-text">Super freundlicher Service und von dem Ergebnis innen wie aussen bin ich sehr fasziniert. Jetzt kann sich mein Wagen wieder sehen lassen.</div>
+            </article>
+            <article class="review-card glass-card">
+              <div class="review-header">
+                <div class="review-name">Van Dao Bui</div>
+                <div class="review-meta">Google Rezension</div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-text">Schnelle Terminvergabe und Auto sehr sauber aufbereitet. Bin sehr zufrieden. Absolut zu empfehlen. Vielen Dank.</div>
+            </article>
+            <article class="review-card glass-card">
+              <div class="review-header">
+                <div class="review-name">Thomas Kricke</div>
+                <div class="review-meta">Google Rezension</div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-text">Ich war mit der Leistung sehr zufrieden, sie entspricht genau dem was ich erwartet habe. Werde noch weitere Fahrzeuge dort aufarbeiten lassen.</div>
+            </article>
+            <article class="review-card glass-card">
+              <div class="review-header">
+                <div class="review-name">Anja La</div>
+                <div class="review-meta">Google Rezension</div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-text">Super zufrieden. Fahrzeug sehr gründlich gereinigt und klasse poliert. Gerne wieder.</div>
+            </article>
+            <article class="review-card glass-card">
+              <div class="review-header">
+                <div class="review-name">Muhammed Yücel</div>
+                <div class="review-meta">Google Rezension</div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-text">Mega, Top Service und faire Preise.</div>
+            </article>
+            <article class="review-card glass-card">
+              <div class="review-header">
+                <div class="review-name">Mathias Ehmann</div>
+                <div class="review-meta">Google Rezension</div>
+              </div>
+              <div class="review-stars">★★★★★</div>
+              <div class="review-text">Super Typ, liebevolles cleaning.</div>
             </article>
           </div>
         </div>
@@ -401,12 +447,6 @@ section {
   max-width: 600px;
 }
 
-.hero-text-backdrop {
-  background: radial-gradient(circle at left center, rgba(0,0,0,0.4) 0%, transparent 80%);
-  padding: 20px 0;
-  border-radius: 12px;
-}
-
 .hero-content-left .eyebrow {
   font-size: 13px;
   text-transform: uppercase;
@@ -427,7 +467,7 @@ section {
 .hero-content-left .hero-subtitle {
   font-size: 18px;
   color: #e5e7eb; 
-  margin-bottom: 32px;
+  margin-bottom: 16px;
   line-height: 1.6;
 }
 
@@ -436,7 +476,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 16px;
-  margin-top: 10px;
+  margin-top: 0;
 }
 
 .hero-benefits li {
@@ -753,6 +793,7 @@ section {
 .animate-words { overflow: hidden; }
 .word-wrapper {
   display: inline-block;
+  margin-right: 0.25em;
   position: relative;
   opacity: 0;
   transform: translateY(100%) translateZ(0);
@@ -816,7 +857,7 @@ section {
       words.forEach((word, index) => {
         const span = document.createElement("span");
         span.className = "word-wrapper";
-        span.innerHTML = word + (index === words.length - 1 ? "" : " ");
+        span.textContent = word;
         span.style.animationDelay = `${index * 0.12}s`;
         title.appendChild(span);
       });
