@@ -99,18 +99,20 @@
     <section class="hero-section">
       <div class="container hero-split">
         <div class="hero-content-left hero-fade-up">
-          <div class="eyebrow">Lackveredelung & Keramik</div>
-          <h1 class="hero-title animate-words">Exzellenz für deinen Werterhalt.</h1>
-          <p class="hero-subtitle">
-            Kompromisslose Fahrzeugpflege für höchste Ansprüche im Kreis Germersheim. Wir bereiten dein Fahrzeug punktgenau auf und versiegeln es für Jahre.
-          </p>
+          <div class="hero-text-backdrop">
+            <div class="eyebrow">Lackveredelung & Keramik</div>
+            <h1 class="hero-title animate-words">Exzellenz für deinen Werterhalt.</h1>
+            <p class="hero-subtitle">
+              Kompromisslose Fahrzeugpflege für höchste Ansprüche im Kreis Germersheim. Wir bereiten dein Fahrzeug punktgenau auf und versiegeln es für Jahre.
+            </p>
+          </div>
           <ul class="hero-benefits">
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
               Kostenfreie Fahrzeuganalyse
             </li>
             <li>
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="20 6 9 17 4 12"></polyline></svg>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
               Inklusive Hol- & Bringservice
             </li>
             <li>
@@ -136,37 +138,15 @@
         <div class="section-header-centered scroll-reveal">
           <div class="section-eyebrow">Signature Services</div>
           <h2 class="section-title">Unser Exzellenz-Portfolio</h2>
-          <p class="section-description">Wir denken ganzheitlich. Unsere Pakete beinhalten stets alle notwendigen Schritte für ein perfektes, langlebiges Ergebnis.</p>
+          <p class="section-description">Wir denken ganzheitlich. Unsere Pakete beinhalten stets alle notwendigen Schritte – von der intensiven Vorbereitung über die Defektkorrektur bis hin zum langjährigen Schutz.</p>
         </div>
         
         <div class="card-pile-container">
-          <a href="/signature-services" class="service-pile-card card-1 scroll-reveal delay-1">
+          <a href="/signature-services" class="service-pile-card single-discover-card scroll-reveal delay-1">
             <div class="pile-card-content">
-              <div class="service-label">Schritt 01 · Vorbereitung</div>
-              <h3 class="service-card-title">Tiefgreifende Dekontamination</h3>
-              <p class="service-card-text">Die Basis für Perfektion. Wir befreien den Lack materialschonend von Flugrost, Teer und hartnäckigen Ablagerungen durch eine intensive Detailingwäsche.</p>
-            </div>
-            <div class="pile-card-action">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </div>
-          </a>
-
-          <a href="/signature-services" class="service-pile-card card-2 scroll-reveal delay-2">
-            <div class="pile-card-content">
-              <div class="service-label">Schritt 02 · Defektkorrektur</div>
-              <h3 class="service-card-title">Maximale Tiefe & Klarheit</h3>
-              <p class="service-card-text">Wir holen die maximale Tiefe aus dem Klarlack. Mehrstufige Maschinenarbeit für spiegelklaren Glanz, ohne unnötigen Materialabbau.</p>
-            </div>
-            <div class="pile-card-action">
-              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
-            </div>
-          </a>
-
-          <a href="/signature-services" class="service-pile-card card-3 scroll-reveal delay-3">
-            <div class="pile-card-content">
-              <div class="service-label">Schritt 03 · Keramikversiegelung</div>
-              <h3 class="service-card-title">Kompromissloser Schutz</h3>
-              <p class="service-card-text">Versiegelt für Jahre. Hochwertige Keramiksysteme mit starkem Beading, extremer Glätte und deutlich reduzierter Pflegezeit.</p>
+              <div class="service-label">Veredelungsprogramme</div>
+              <h3 class="service-card-title">Keramikpakete entdecken</h3>
+              <p class="service-card-text">Ob robuster Schutz für den Alltagswagen oder kompromissloses Finish für den Sportwagen – entdecke unsere strukturierten Programme für maximalen Werterhalt.</p>
             </div>
             <div class="pile-card-action">
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
@@ -382,7 +362,6 @@ section {
   max-width: 500px;
 }
 
-/* Neuer Split Hero Bereich */
 .hero-section {
   padding: 200px 0 120px; 
   position: relative;
@@ -422,6 +401,12 @@ section {
   max-width: 600px;
 }
 
+.hero-text-backdrop {
+  background: radial-gradient(circle at left center, rgba(0,0,0,0.4) 0%, transparent 80%);
+  padding: 20px 0;
+  border-radius: 12px;
+}
+
 .hero-content-left .eyebrow {
   font-size: 13px;
   text-transform: uppercase;
@@ -437,7 +422,7 @@ section {
   line-height: 1.15;
   margin-bottom: 24px;
   color: #ffffff; 
-  text-shadow: 0 4px 30px rgba(0,0,0,0.6); 
+  text-shadow: 0 4px 15px rgba(0,0,0,0.8); 
 }
 
 .hero-content-left .hero-subtitle {
@@ -445,6 +430,7 @@ section {
   color: #e5e7eb; 
   margin-bottom: 32px;
   line-height: 1.6;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
 .hero-benefits {
@@ -452,6 +438,7 @@ section {
   display: flex;
   flex-direction: column;
   gap: 16px;
+  margin-top: 10px;
 }
 
 .hero-benefits li {
@@ -459,18 +446,19 @@ section {
   align-items: center;
   gap: 12px;
   font-size: 17px;
-  font-weight: 500;
+  font-weight: 600;
   color: #ffffff;
+  text-shadow: 0 2px 4px rgba(0,0,0,0.4);
 }
 
 .hero-benefits svg {
-  width: 22px;
-  height: 22px;
+  width: 20px;
+  height: 20px;
   color: #3b82f6;
 }
 
 .hero-benefits li:last-child svg {
-  color: #f59e0b; 
+  color: #3b82f6; 
 }
 
 .hero-cta-box {
@@ -506,7 +494,10 @@ section {
   justify-content: center;
 }
 
-/* Restliches Layout */
+.services-section {
+  padding-top: 150px; 
+}
+
 .card-pile-container {
   display: flex;
   flex-direction: column;
@@ -515,9 +506,8 @@ section {
   margin: 0 auto;
   position: relative;
 }
+
 .service-pile-card {
-  position: sticky;
-  top: 110px;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -530,15 +520,13 @@ section {
   box-shadow: 0 15px 35px rgba(15, 23, 42, 0.05);
   margin-bottom: 24px;
   transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+  text-decoration: none;
 }
 .service-pile-card:hover {
   transform: translateY(-5px);
   border-color: rgba(59, 130, 246, 0.6);
   box-shadow: 0 20px 40px rgba(59, 130, 246, 0.15);
 }
-.card-1 { top: 120px; z-index: 10; }
-.card-2 { top: 140px; z-index: 11; }
-.card-3 { top: 160px; z-index: 12; }
 
 .pile-card-content { max-width: 650px; }
 .service-label {
@@ -867,34 +855,6 @@ section {
       rootMargin: "0px 0px -30px 0px"
     });
     revealElements.forEach(el => revealObserver.observe(el));
-
-    const pileCards = document.querySelectorAll(".service-pile-card");
-    if (pileCards.length > 0) {
-      window.addEventListener("scroll", () => {
-        pileCards.forEach((card, index) => {
-          if (index < pileCards.length - 1) {
-            const nextCard = pileCards[index + 1];
-            const stickyTop = 120 + (index * 20);
-            const nextTop = nextCard.getBoundingClientRect().top;
-            const triggerPoint = stickyTop + card.offsetHeight + 24;
-            const overlap = Math.max(0, triggerPoint - nextTop);
-            
-            if (overlap > 0) {
-              const blurVal = Math.min(overlap / 20, 10);
-              const scaleVal = Math.max(1 - (overlap / 1000), 0.9);
-              const opacityVal = Math.max(1 - (overlap / 500), 0.4);
-              card.style.filter = `blur(${blurVal}px)`;
-              card.style.scale = scaleVal;
-              card.style.opacity = opacityVal;
-            } else {
-              card.style.filter = "blur(0px)";
-              card.style.scale = "1";
-              card.style.opacity = "1";
-            }
-          }
-        });
-      });
-    }
   });
 </script>
 </body>
