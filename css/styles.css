@@ -96,11 +96,6 @@ ul {
   background: rgba(59, 130, 246, 0.08);
 }
 
-.tel-btn-nav {
-  padding: 12px;
-  border-radius: 50%;
-}
-
 .location-actions {
   display: flex;
   flex-direction: column;
